@@ -1,202 +1,460 @@
-import React, { useState } from 'react';
-import { 
-  Menu, X, Hammer, BookOpen, Camera, Palette, 
-  Mic2, HeartPulse, Home, Mail, Instagram, Facebook, 
-  Linkedin, ShoppingBag, Music, PenTool, Activity 
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ty Zephyrria - Micro-entreprise</title>
+    <!-- Tailwind CSS pour le style (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Icons Phosphor (via CDN) pour les icônes -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        /* Styles personnalisés supplémentaires */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-link.active {
+            color: #115e59; /* text-teal-800 */
+            background-color: #f0fdfa; /* bg-teal-50 */
+            font-weight: 600;
+        }
+        /* Masquer les sections par défaut */
+        .tab-content {
+            display: none;
+        }
+        /* Afficher la section active */
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
 
-// Composant simple pour les boutons
-const Button = ({ children, onClick, variant = 'primary', className = '' }) => {
-  const baseStyle = "px-4 py-2 rounded-lg font-medium transition-all duration-200";
-  const variants = {
-    primary: "bg-teal-700 text-white hover:bg-teal-800 shadow-md",
-    outline: "border-2 border-teal-700 text-teal-700 hover:bg-teal-50",
-    ghost: "text-gray-600 hover:text-teal-700 hover:bg-gray-100"
-  };
-  return (
-    <button onClick={onClick} className={`${baseStyle} ${variants[variant]} ${className}`}>
-      {children}
-    </button>
-  );
-};
-
-// Composant Carte pour les grilles
-const Card = ({ title, category, image, description, price }) => (
-  <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100">
-    <div className="h-48 overflow-hidden bg-gray-200 relative">
-      <img 
-        src={image || "/api/placeholder/400/320"} 
-        alt={title} 
-        className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" 
-        onError={(e) => {e.target.src = 'https://placehold.co/400x300?text=' + encodeURIComponent(title)}}
-      />
-      <div className="absolute top-2 right-2 bg-white/90 px-2 py-1 rounded text-xs font-bold text-teal-800 uppercase tracking-wide">
-        {category}
-      </div>
-    </div>
-    <div className="p-5 flex-grow flex flex-col justify-between">
-      <div>
-        <h3 className="text-xl font-bold text-gray-800 mb-2">{title}</h3>
-        <p className="text-gray-600 text-sm leading-relaxed mb-4">{description}</p>
-      </div>
-      {price && <div className="text-teal-700 font-bold text-lg mt-auto">{price}</div>}
-    </div>
-  </div>
-);
-
-// --- SECTIONS DU SITE ---
-
-// 1. Création Artisanale
-const ArtisanatSection = () => {
-  const [filter, setFilter] = useState('all');
-
-  const items = [
-    { id: 1, type: 'bijoux', title: "Collier Écume", desc: "Argent massif et verre poli par la mer.", price: "45€" },
-    { id: 2, type: 'bijoux', title: "Boucles d'oreilles Zéphyr", desc: "Laiton doré à l'or fin, inspiration venteuse.", price: "32€" },
-    { id: 3, type: 'gravure', title: "Estampe Phare", desc: "Linogravure originale, tirage limité à 20 ex.", price: "25€" },
-    { id: 4, type: 'gravure', title: "Tampon Ex-Libris", desc: "Gravure sur gomme pour marquer vos livres.", price: "18€" },
-    { id: 5, type: 'divers', title: "Mobile Bois Flotté", desc: "Suspension décorative naturelle.", price: "55€" },
-    { id: 6, type: 'divers', title: "Sac en Toile Peint", desc: "Coton bio, motif unique peint à la main.", price: "20€" },
-  ];
-
-  const filteredItems = filter === 'all' ? items : items.filter(item => item.type === filter);
-
-  return (
-    <div className="space-y-8 animate-fadeIn">
-      <div className="text-center max-w-2xl mx-auto mb-8">
-        <h2 className="text-3xl font-serif text-teal-800 mb-4">L'Atelier de Ty Zephyrria</h2>
-        <p className="text-gray-600">Des créations uniques façonnées par la main et l'esprit, inspirées par la nature et les légendes.</p>
-      </div>
-
-      <div className="flex flex-wrap justify-center gap-4 mb-8">
-        <Button variant={filter === 'all' ? 'primary' : 'outline'} onClick={() => setFilter('all')}>Tout voir</Button>
-        <Button variant={filter === 'bijoux' ? 'primary' : 'outline'} onClick={() => setFilter('bijoux')}>Bijoux Artisanaux</Button>
-        <Button variant={filter === 'gravure' ? 'primary' : 'outline'} onClick={() => setFilter('gravure')}>Gravures</Button>
-        <Button variant={filter === 'divers' ? 'primary' : 'outline'} onClick={() => setFilter('divers')}>Divers</Button>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredItems.map(item => (
-          <Card 
-            key={item.id} 
-            title={item.title} 
-            category={item.type} 
-            description={item.desc}
-            price={item.price}
-            image={`https://placehold.co/400x300/e0f2f1/004d40?text=${item.title}`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-// 2. Livres et Publications
-const LivresSection = () => (
-  <div className="max-w-4xl mx-auto animate-fadeIn">
-    <h2 className="text-3xl font-serif text-teal-800 mb-8 text-center">Bibliothèque & Écrits</h2>
-    <div className="grid gap-8">
-      {[1, 2].map((book) => (
-        <div key={book} className="flex flex-col md:flex-row bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
-          <div className="md:w-1/3 bg-gray-200">
-             <img 
-               src={`https://placehold.co/300x450/fff3e0/e65100?text=Livre+Volume+${book}`} 
-               alt={`Couverture Livre ${book}`} 
-               className="w-full h-full object-cover"
-             />
-          </div>
-          <div className="md:w-2/3 p-6 flex flex-col justify-center">
-            <div className="uppercase text-sm text-orange-600 font-bold mb-2">Poésie & Récits</div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-3">Le Souffle des Marées - Vol. {book}</h3>
-            <p className="text-gray-600 mb-6">
-              Une anthologie explorant les mythes côtiers et la réalité insulaire. Ce volume se concentre sur les tempêtes intérieures et la résilience face aux éléments.
-            </p>
-            <div className="flex gap-4">
-              <Button variant="primary">Commander (15€)</Button>
-              <Button variant="ghost">Lire un extrait</Button>
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 cursor-pointer" onclick="openTab('home')">
+                <div class="w-8 h-8 bg-teal-800 rounded-tr-xl rounded-bl-xl"></div>
+                <span class="font-serif text-2xl font-bold text-teal-800">Ty Zephyrria</span>
             </div>
-          </div>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden lg:flex items-center gap-1">
+                <button onclick="openTab('artisanat')" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-teal-700 hover:bg-gray-50 flex items-center gap-2 transition-colors">
+                    <i class="ph ph-hammer text-lg"></i> Artisanat
+                </button>
+                <button onclick="openTab('livres')" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-teal-700 hover:bg-gray-50 flex items-center gap-2 transition-colors">
+                    <i class="ph ph-book-open text-lg"></i> Livres
+                </button>
+                <button onclick="openTab('photos')" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-teal-700 hover:bg-gray-50 flex items-center gap-2 transition-colors">
+                    <i class="ph ph-camera text-lg"></i> Photos
+                </button>
+                <button onclick="openTab('graphisme')" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-teal-700 hover:bg-gray-50 flex items-center gap-2 transition-colors">
+                    <i class="ph ph-paint-brush text-lg"></i> Graphisme
+                </button>
+                <button onclick="openTab('chant')" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-teal-700 hover:bg-gray-50 flex items-center gap-2 transition-colors">
+                    <i class="ph ph-microphone text-lg"></i> Chant
+                </button>
+                <button onclick="openTab('sante')" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-teal-700 hover:bg-gray-50 flex items-center gap-2 transition-colors">
+                    <i class="ph ph-heartbeat text-lg"></i> E-Santé
+                </button>
+            </nav>
+
+            <!-- Bouton Menu Mobile -->
+            <button class="lg:hidden p-2 text-gray-600 focus:outline-none" onclick="toggleMobileMenu()">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
         </div>
-      ))}
-    </div>
-  </div>
-);
 
-// 3. Photos (Prestation & Artistique)
-const PhotoSection = () => {
-  const [mode, setMode] = useState('artistique'); // 'artistique' ou 'prestation'
-
-  return (
-    <div className="animate-fadeIn space-y-8">
-      <div className="flex justify-center mb-8 bg-gray-100 p-1 rounded-full w-max mx-auto">
-        <button 
-          onClick={() => setMode('artistique')}
-          className={`px-6 py-2 rounded-full font-medium transition-all ${mode === 'artistique' ? 'bg-white shadow text-teal-800' : 'text-gray-500 hover:text-gray-700'}`}
-        >
-          Artistique
-        </button>
-        <button 
-          onClick={() => setMode('prestation')}
-          className={`px-6 py-2 rounded-full font-medium transition-all ${mode === 'prestation' ? 'bg-white shadow text-teal-800' : 'text-gray-500 hover:text-gray-700'}`}
-        >
-          Prestations & Forfaits
-        </button>
-      </div>
-
-      {mode === 'artistique' ? (
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
-          {[1, 2, 3, 4, 5, 6].map((n) => (
-            <div key={n} className="break-inside-avoid rounded-lg overflow-hidden group relative">
-              <img 
-                src={`https://placehold.co/400x${n % 2 === 0 ? '500' : '300'}/263238/ffffff?text=Art+Photo+${n}`} 
-                alt="Galerie" 
-                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-medium">
-                Voir en grand
-              </div>
+        <!-- Menu Mobile (Caché par défaut) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="p-4 space-y-2">
+                <button onclick="openTab('artisanat'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-50 font-medium flex items-center gap-3">
+                    <i class="ph ph-hammer text-lg"></i> Artisanat
+                </button>
+                <button onclick="openTab('livres'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-50 font-medium flex items-center gap-3">
+                    <i class="ph ph-book-open text-lg"></i> Livres
+                </button>
+                <button onclick="openTab('photos'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-50 font-medium flex items-center gap-3">
+                    <i class="ph ph-camera text-lg"></i> Photos
+                </button>
+                <button onclick="openTab('graphisme'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-50 font-medium flex items-center gap-3">
+                    <i class="ph ph-paint-brush text-lg"></i> Graphisme
+                </button>
+                <button onclick="openTab('chant'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-50 font-medium flex items-center gap-3">
+                    <i class="ph ph-microphone text-lg"></i> Chant
+                </button>
+                <button onclick="openTab('sante'); toggleMobileMenu()" class="w-full text-left px-4 py-3 rounded-lg hover:bg-gray-50 font-medium flex items-center gap-3">
+                    <i class="ph ph-heartbeat text-lg"></i> E-Santé
+                </button>
             </div>
-          ))}
         </div>
-      ) : (
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-teal-600">
-            <h3 className="text-2xl font-bold mb-4">Séance Portrait</h3>
-            <ul className="space-y-3 text-gray-600 mb-6">
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-teal-500 rounded-full"></div> 1h de shooting</li>
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-teal-500 rounded-full"></div> 10 photos retouchées HD</li>
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-teal-500 rounded-full"></div> Galerie privée en ligne</li>
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-teal-500 rounded-full"></div> Extérieur ou domicile</li>
-            </ul>
-            <p className="text-3xl font-bold text-teal-800 mb-6">150€</p>
-            <Button className="w-full">Réserver</Button>
-          </div>
-          <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-orange-400">
-            <h3 className="text-2xl font-bold mb-4">Reportage Événement</h3>
-            <ul className="space-y-3 text-gray-600 mb-6">
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-orange-400 rounded-full"></div> Demi-journée (4h)</li>
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-orange-400 rounded-full"></div> Reportage complet</li>
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-orange-400 rounded-full"></div> Post-traitement soigné</li>
-              <li className="flex items-center gap-2"><div className="w-2 h-2 bg-orange-400 rounded-full"></div> Livraison sous 1 semaine</li>
-            </ul>
-            <p className="text-3xl font-bold text-gray-800 mb-6">Sur devis</p>
-            <Button variant="outline" className="w-full">Me contacter</Button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
+    </header>
 
-// 4. Graphisme
-const GraphismeSection = () => (
-  <div className="animate-fadeIn">
-    <div className="text-center mb-10">
-      <h2 className="text-3xl font-serif text-teal-800 mb-4">Identité Visuelle & Design</h2>
-      <p className="text-gray-600 max-w-2xl mx-auto">Donner vie à vos projets par l'image. Logos, maquettes, illustrations.</p>
-    </div>
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {['Logo', 'Flyer', 'Web', 'Illustration'].map((item, i) => (
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow container mx-auto px-4 py-8 md:py-12 relative">
+        
+        <!-- ACCUEIL -->
+        <section id="home" class="tab-content active fade-in">
+            <div class="text-center py-12">
+                <h1 class="text-5xl md:text-6xl font-serif text-teal-900 mb-6 tracking-tight">Ty Zephyrria</h1>
+                <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-10 font-light">
+                    Une micro-entreprise aux multiples facettes. <br/>
+                    De la matière brute au numérique, de la voix au soin.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <!-- Cartes Navigation Rapide -->
+                    <div onclick="openTab('artisanat')" class="cursor-pointer p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-teal-200 flex flex-col items-center gap-3 group">
+                        <i class="ph ph-hammer text-4xl text-teal-600 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium text-gray-800">Création Artisanale</span>
+                    </div>
+                    <div onclick="openTab('livres')" class="cursor-pointer p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-teal-200 flex flex-col items-center gap-3 group">
+                        <i class="ph ph-book-open text-4xl text-teal-600 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium text-gray-800">Livres</span>
+                    </div>
+                    <div onclick="openTab('photos')" class="cursor-pointer p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-teal-200 flex flex-col items-center gap-3 group">
+                        <i class="ph ph-camera text-4xl text-teal-600 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium text-gray-800">Photos</span>
+                    </div>
+                    <div onclick="openTab('graphisme')" class="cursor-pointer p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-teal-200 flex flex-col items-center gap-3 group">
+                        <i class="ph ph-paint-brush text-4xl text-teal-600 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium text-gray-800">Graphisme</span>
+                    </div>
+                    <div onclick="openTab('chant')" class="cursor-pointer p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-teal-200 flex flex-col items-center gap-3 group">
+                        <i class="ph ph-microphone text-4xl text-teal-600 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium text-gray-800">Chant</span>
+                    </div>
+                    <div onclick="openTab('sante')" class="cursor-pointer p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-teal-200 flex flex-col items-center gap-3 group">
+                        <i class="ph ph-heartbeat text-4xl text-teal-600 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium text-gray-800">Consulting Santé</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ARTISANAT -->
+        <section id="artisanat" class="tab-content fade-in">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-3xl font-serif text-teal-800 mb-4">L'Atelier de Ty Zephyrria</h2>
+                <p class="text-gray-600">Bijoux, gravures et objets uniques façonnés à la main.</p>
+            </div>
+            
+            <!-- Filtres -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <button onclick="filterArtisanat('all')" class="filter-btn px-4 py-2 rounded-lg font-medium bg-teal-700 text-white hover:bg-teal-800 transition-colors" data-filter="all">Tout voir</button>
+                <button onclick="filterArtisanat('bijoux')" class="filter-btn px-4 py-2 rounded-lg font-medium border-2 border-teal-700 text-teal-700 hover:bg-teal-50 transition-colors" data-filter="bijoux">Bijoux Artisanaux</button>
+                <button onclick="filterArtisanat('gravure')" class="filter-btn px-4 py-2 rounded-lg font-medium border-2 border-teal-700 text-teal-700 hover:bg-teal-50 transition-colors" data-filter="gravure">Gravures</button>
+                <button onclick="filterArtisanat('divers')" class="filter-btn px-4 py-2 rounded-lg font-medium border-2 border-teal-700 text-teal-700 hover:bg-teal-50 transition-colors" data-filter="divers">Divers</button>
+            </div>
+
+            <!-- Grille de produits -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Items Bijoux -->
+                <div class="artisanat-item bijoux bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col">
+                    <img src="https://placehold.co/400x300/e0f2f1/004d40?text=Collier+Écume" alt="Bijou" class="w-full h-48 object-cover">
+                    <div class="p-5 flex-grow">
+                        <span class="text-xs font-bold text-teal-800 uppercase">Bijoux</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Collier Écume</h3>
+                        <p class="text-gray-600 text-sm mb-4">Argent massif et verre poli.</p>
+                        <div class="text-teal-700 font-bold text-lg">45€</div>
+                    </div>
+                </div>
+                <div class="artisanat-item bijoux bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col">
+                    <img src="https://placehold.co/400x300/e0f2f1/004d40?text=Boucles+Zéphyr" alt="Bijou" class="w-full h-48 object-cover">
+                    <div class="p-5 flex-grow">
+                        <span class="text-xs font-bold text-teal-800 uppercase">Bijoux</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Boucles Zéphyr</h3>
+                        <p class="text-gray-600 text-sm mb-4">Laiton doré à l'or fin.</p>
+                        <div class="text-teal-700 font-bold text-lg">32€</div>
+                    </div>
+                </div>
+
+                <!-- Items Gravure -->
+                <div class="artisanat-item gravure bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col">
+                    <img src="https://placehold.co/400x300/f3e5f5/4a148c?text=Estampe+Phare" alt="Gravure" class="w-full h-48 object-cover">
+                    <div class="p-5 flex-grow">
+                        <span class="text-xs font-bold text-teal-800 uppercase">Gravure</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Estampe Phare</h3>
+                        <p class="text-gray-600 text-sm mb-4">Linogravure originale.</p>
+                        <div class="text-teal-700 font-bold text-lg">25€</div>
+                    </div>
+                </div>
+
+                <!-- Items Divers -->
+                <div class="artisanat-item divers bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 flex flex-col">
+                    <img src="https://placehold.co/400x300/fff3e0/e65100?text=Mobile+Bois" alt="Divers" class="w-full h-48 object-cover">
+                    <div class="p-5 flex-grow">
+                        <span class="text-xs font-bold text-teal-800 uppercase">Divers</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Mobile Bois Flotté</h3>
+                        <p class="text-gray-600 text-sm mb-4">Suspension décorative naturelle.</p>
+                        <div class="text-teal-700 font-bold text-lg">55€</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIVRES -->
+        <section id="livres" class="tab-content fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-serif text-teal-800 mb-8 text-center">Bibliothèque & Écrits</h2>
+                <div class="space-y-8">
+                    <!-- Livre 1 -->
+                    <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <div class="md:w-1/3 bg-gray-200">
+                            <img src="https://placehold.co/300x450/fff3e0/e65100?text=Livre+Vol.+1" alt="Couverture" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-2/3 p-6 flex flex-col justify-center">
+                            <div class="uppercase text-sm text-orange-600 font-bold mb-2">Poésie</div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">Le Souffle des Marées - Vol. 1</h3>
+                            <p class="text-gray-600 mb-6">Une anthologie explorant les mythes côtiers et la réalité insulaire.</p>
+                            <button class="w-fit px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-800">Commander (15€)</button>
+                        </div>
+                    </div>
+                     <!-- Livre 2 -->
+                     <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                        <div class="md:w-1/3 bg-gray-200">
+                            <img src="https://placehold.co/300x450/fff3e0/e65100?text=Livre+Vol.+2" alt="Couverture" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-2/3 p-6 flex flex-col justify-center">
+                            <div class="uppercase text-sm text-orange-600 font-bold mb-2">Roman</div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">Les Ombres du Port</h3>
+                            <p class="text-gray-600 mb-6">Un récit policier au cœur des brumes portuaires.</p>
+                            <button class="w-fit px-4 py-2 bg-teal-700 text-white rounded-lg hover:bg-teal-800">Commander (18€)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHOTOS -->
+        <section id="photos" class="tab-content fade-in">
+            <div class="flex justify-center mb-8 bg-gray-100 p-1 rounded-full w-max mx-auto">
+                <button onclick="switchPhotoMode('artistique')" id="btn-artistique" class="px-6 py-2 rounded-full font-medium transition-all bg-white shadow text-teal-800">Artistique</button>
+                <button onclick="switchPhotoMode('prestation')" id="btn-prestation" class="px-6 py-2 rounded-full font-medium transition-all text-gray-500 hover:text-gray-700">Prestations</button>
+            </div>
+
+            <!-- Mode Artistique -->
+            <div id="view-artistique" class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+                <div class="break-inside-avoid rounded-lg overflow-hidden"><img src="https://placehold.co/400x500/263238/ffffff?text=Art+1" class="w-full rounded-lg hover:opacity-90 transition"></div>
+                <div class="break-inside-avoid rounded-lg overflow-hidden"><img src="https://placehold.co/400x300/263238/ffffff?text=Art+2" class="w-full rounded-lg hover:opacity-90 transition"></div>
+                <div class="break-inside-avoid rounded-lg overflow-hidden"><img src="https://placehold.co/400x600/263238/ffffff?text=Art+3" class="w-full rounded-lg hover:opacity-90 transition"></div>
+                <div class="break-inside-avoid rounded-lg overflow-hidden"><img src="https://placehold.co/400x400/263238/ffffff?text=Art+4" class="w-full rounded-lg hover:opacity-90 transition"></div>
+            </div>
+
+            <!-- Mode Prestation -->
+            <div id="view-prestation" class="hidden grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-teal-600">
+                    <h3 class="text-2xl font-bold mb-4">Séance Portrait</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li>• 1h de shooting</li>
+                        <li>• 10 photos retouchées HD</li>
+                        <li>• Galerie privée</li>
+                    </ul>
+                    <p class="text-3xl font-bold text-teal-800 mb-6">150€</p>
+                    <button class="w-full px-4 py-2 bg-teal-700 text-white rounded-lg">Réserver</button>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-orange-400">
+                    <h3 class="text-2xl font-bold mb-4">Événementiel</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li>• Demi-journée (4h)</li>
+                        <li>• Reportage complet</li>
+                        <li>• Post-traitement soigné</li>
+                    </ul>
+                    <p class="text-3xl font-bold text-gray-800 mb-6">Sur devis</p>
+                    <button class="w-full px-4 py-2 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50">Contacter</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRAPHISME -->
+        <section id="graphisme" class="tab-content fade-in">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif text-teal-800 mb-4">Identité Visuelle & Design</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Logos, maquettes, illustrations.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-square bg-purple-50 rounded-lg flex flex-col items-center justify-center p-4 hover:bg-purple-100 transition cursor-pointer">
+                    <i class="ph ph-pen-nib text-5xl text-purple-700 mb-2"></i>
+                    <span class="font-bold text-purple-900">Logo</span>
+                </div>
+                <div class="aspect-square bg-purple-50 rounded-lg flex flex-col items-center justify-center p-4 hover:bg-purple-100 transition cursor-pointer">
+                    <i class="ph ph-article text-5xl text-purple-700 mb-2"></i>
+                    <span class="font-bold text-purple-900">Flyer</span>
+                </div>
+                <div class="aspect-square bg-purple-50 rounded-lg flex flex-col items-center justify-center p-4 hover:bg-purple-100 transition cursor-pointer">
+                    <i class="ph ph-desktop text-5xl text-purple-700 mb-2"></i>
+                    <span class="font-bold text-purple-900">Web</span>
+                </div>
+                <div class="aspect-square bg-purple-50 rounded-lg flex flex-col items-center justify-center p-4 hover:bg-purple-100 transition cursor-pointer">
+                    <i class="ph ph-paint-brush-broad text-5xl text-purple-700 mb-2"></i>
+                    <span class="font-bold text-purple-900">Art</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHANT -->
+        <section id="chant" class="tab-content fade-in">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-gradient-to-br from-indigo-900 to-purple-800 text-white p-10 rounded-2xl shadow-xl mb-8 text-center">
+                    <i class="ph ph-microphone-stage text-6xl text-purple-300 mb-4"></i>
+                    <h2 class="text-3xl font-serif mb-2">Voix & Interprétation</h2>
+                    <p class="text-indigo-200">Concerts, Événements privés, Coaching vocal</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center bg-white p-4 rounded-lg shadow border border-gray-100">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-4 text-indigo-700"><i class="ph ph-music-note"></i></div>
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-gray-800">Demo Jazz Standard</h4>
+                        </div>
+                        <button class="p-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 text-sm">Play ▶</button>
+                    </div>
+                    <div class="flex items-center bg-white p-4 rounded-lg shadow border border-gray-100">
+                        <div class="bg-indigo-100 p-3 rounded-full mr-4 text-indigo-700"><i class="ph ph-music-note"></i></div>
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-gray-800">Demo Chant Lyrique</h4>
+                        </div>
+                        <button class="p-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 text-sm">Play ▶</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E-SANTE -->
+        <section id="sante" class="tab-content fade-in">
+            <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-serif text-teal-800 mb-6">Consulting Santé & Numérique</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Allier expertise médicale et innovation numérique. J'accompagne les professionnels et les structures dans leur transition digitale et l'optimisation de leurs parcours de soins.
+                    </p>
+                    <button class="px-6 py-3 bg-teal-700 text-white rounded-lg hover:bg-teal-800 font-bold shadow-lg mt-4">Prendre Rendez-vous</button>
+                </div>
+                <div class="md:w-1/2 bg-blue-50 rounded-2xl p-8 border border-blue-100 w-full">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2 text-blue-800">
+                        <i class="ph ph-check-circle"></i> Domaines d'expertise
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 bg-white p-3 rounded shadow-sm"><span class="text-green-500">✓</span> Télémédecine</li>
+                        <li class="flex items-center gap-3 bg-white p-3 rounded shadow-sm"><span class="text-green-500">✓</span> Gestion de projet e-Santé</li>
+                        <li class="flex items-center gap-3 bg-white p-3 rounded shadow-sm"><span class="text-green-500">✓</span> Rédaction médicale</li>
+                        <li class="flex items-center gap-3 bg-white p-3 rounded shadow-sm"><span class="text-green-500">✓</span> Formation des équipes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-300 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h4 class="text-xl font-serif text-white mb-4">Ty Zephyrria</h4>
+            <div class="flex justify-center gap-6 mb-8">
+                <i class="ph ph-instagram-logo text-2xl hover:text-white cursor-pointer"></i>
+                <i class="ph ph-facebook-logo text-2xl hover:text-white cursor-pointer"></i>
+                <i class="ph ph-linkedin-logo text-2xl hover:text-white cursor-pointer"></i>
+            </div>
+            <div class="text-sm text-slate-500">
+                © <span id="year"></span> Ty Zephyrria. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mettre à jour l'année
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Fonction pour changer d'onglet principal
+        function openTab(tabId) {
+            // Cacher toutes les sections
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Enlever l'état actif des boutons
+            const buttons = document.querySelectorAll('.nav-link');
+            // Note: simple reset, pour un style plus poussé on pourrait ajouter des ID aux boutons
+            
+            // Afficher la section demandée
+            const selectedTab = document.getElementById(tabId);
+            if(selectedTab) {
+                selectedTab.classList.add('active');
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Menu Mobile
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Filtre Artisanat
+        function filterArtisanat(category) {
+            const items = document.querySelectorAll('.artisanat-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Gérer le style des boutons
+            buttons.forEach(btn => {
+                if(btn.dataset.filter === category) {
+                    btn.classList.remove('bg-transparent', 'text-teal-700', 'border-2');
+                    btn.classList.add('bg-teal-700', 'text-white');
+                } else {
+                    btn.classList.add('bg-transparent', 'text-teal-700', 'border-2');
+                    btn.classList.remove('bg-teal-700', 'text-white');
+                }
+            });
+
+            // Filtrer les items
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex'; // ou block selon votre layout, flex ici pour la card
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Switch Photos
+        function switchPhotoMode(mode) {
+            const artistView = document.getElementById('view-artistique');
+            const prestaView = document.getElementById('view-prestation');
+            const btnArt = document.getElementById('btn-artistique');
+            const btnPresta = document.getElementById('btn-prestation');
+
+            if(mode === 'artistique') {
+                artistView.classList.remove('hidden');
+                prestaView.classList.add('hidden');
+                
+                btnArt.classList.add('bg-white', 'shadow', 'text-teal-800');
+                btnArt.classList.remove('text-gray-500');
+                
+                btnPresta.classList.remove('bg-white', 'shadow', 'text-teal-800');
+                btnPresta.classList.add('text-gray-500');
+            } else {
+                artistView.classList.add('hidden');
+                prestaView.classList.remove('hidden');
+
+                btnPresta.classList.add('bg-white', 'shadow', 'text-teal-800');
+                btnPresta.classList.remove('text-gray-500');
+                
+                btnArt.classList.remove('bg-white', 'shadow', 'text-teal-800');
+                btnArt.classList.add('text-gray-500');
+            }
+        }
+    </script>
+</body>
+</html>er', 'Web', 'Illustration'].map((item, i) => (
         <div key={i} className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center relative overflow-hidden group cursor-pointer">
            <img 
             src={`https://placehold.co/300x300/f3e5f5/7b1fa2?text=${item}`} 
