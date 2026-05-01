@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialisation des différentes sections dynamiques
     initWind();
     initFireFlames();
+    initWaves();
     initDroplets();
     initFoliage();
 });
@@ -112,8 +113,56 @@ window.addEventListener('resize', () => {
     resizeTimeout = setTimeout(() => {
         initWind();
         initFireFlames();
+        initWaves();
+        initDroplets();
     }, 250);
 });
+
+/**
+ * Génère dynamiquement les vagues pour qu'elles gardent une taille fixe en pixels.
+ */
+function initWaves() {
+    const svg = document.querySelector('.wave-container svg');
+    if (!svg) return;
+
+    const rect = svg.getBoundingClientRect();
+    const svgWidthPx = rect.width;
+    if (svgWidthPx === 0) return;
+    const scale = svgWidthPx / 1000;
+
+    // Paramètres fixes en PIXELS pour la stabilité visuelle
+    const wavelengthPx = 100; 
+    const amplitudePx = 15;
+
+    function buildPath(yOffsetPx, closed = false) {
+        const numSegments = Math.ceil(svgWidthPx / wavelengthPx) + 1;
+        let d = `M 0 ${(yOffsetPx / scale).toFixed(1)}`;
+        
+        for (let i = 0; i < numSegments; i++) {
+            const cpX = (i * wavelengthPx + wavelengthPx / 2) / scale;
+            const cpY = (yOffsetPx + amplitudePx) / scale;
+            const endX = ((i + 1) * wavelengthPx) / scale;
+            const endY = (yOffsetPx / scale);
+            d += ` Q ${cpX.toFixed(1)} ${cpY.toFixed(1)}, ${endX.toFixed(1)} ${endY.toFixed(1)}`;
+        }
+
+        if (closed) {
+            // Fermeture du tracé pour le fond dégradé
+            d += ` L 1000 100 Q 950 115, 900 100 T 800 100 T 700 100 T 600 100 T 500 100 T 400 100 T 300 100 T 200 100 T 100 100 T 0 100 Z`;
+        }
+        return d;
+    }
+
+    const waveFill = document.getElementById('wave-fill');
+    const waveLine1 = document.getElementById('wave-line-1');
+    const waveLine2 = document.getElementById('wave-line-2');
+    const waveLine3 = document.getElementById('wave-line-3');
+
+    if (waveFill) waveFill.setAttribute('d', buildPath(0, true));
+    if (waveLine1) waveLine1.setAttribute('d', buildPath(0));
+    if (waveLine2) waveLine2.setAttribute('d', buildPath(20));
+    if (waveLine3) waveLine3.setAttribute('d', buildPath(40));
+}
 
 /**
  * Génère dynamiquement les gouttes d'eau.
@@ -121,26 +170,73 @@ window.addEventListener('resize', () => {
 function initDroplets() {
     const container = document.getElementById('droplets-collection');
     if (!container) return;
+    const svg = container.closest('svg');
+    if (!svg) return;
 
-    const dropletData = [
-        [35, 10, 21, 34], [20, 5, 155, 90], [90, 60, 75, 13], [130, 13, 50, 43], [180, 35, 18, 23],
-        [200, 5, 80, 60], [245, 45, 60, 41], [265, 20, 60, 13], [305, 28, 60, 33], [350, 35, 52, 48],
-        [390, 1, 50, 43], [420, 8, 131, 57], [430, 55, 22, 28], [510, 15, 60, 41],
-        [520, 8, 161, 77], [630, 25, 12, 15], [660, 45, 24, 30], [680, 10, 75, 55], [750, 35, 16, 21],
-        [780, 5, 10, 13], [795, 10, 60, 41], [800, 25, 138, 60], [890, 23, 50, 43], [900, 1, 138, 75]
-    ];
+    // Récupération de la largeur réelle de l'SVG pour calculer l'échelle
+    // On utilise getBoundingClientRect pour avoir la taille de rendu exacte
+    const rect = svg.getBoundingClientRect();
+    const svgWidthPx = rect.width;
+    if (svgWidthPx === 0) return;
+    
+    // Le viewBox est de 1000 unités de large. 
+    // L'échelle nous permet de convertir les pixels en unités SVG.
+    const scale = svgWidthPx / 1000;
+
+    // Paramètres en PIXELS pour la stabilité visuelle
+    const targetBaseW_Px = 30; // Largeur de base souhaitée à l'écran
+    const minSpacingPx = 15;   // Espace minimum entre les gouttes
+    
+    // On calcule le nombre de gouttes maximum pour éviter de saturer l'espace
+    const maxDroplets = Math.floor(svgWidthPx / (targetBaseW_Px + minSpacingPx));
+    const numDroplets = Math.min(maxDroplets, 25); // Capé à 25 pour le style
 
     container.innerHTML = '';
     const fragment = document.createDocumentFragment();
-    dropletData.forEach(([x, y, w, h]) => {
-        const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-        use.setAttribute('href', '#real-droplet');
-        use.setAttribute('x', x);
-        use.setAttribute('y', y);
-        use.setAttribute('width', w);
-        use.setAttribute('height', h);
-        fragment.appendChild(use);
-    });
+    
+    const placed = []; // Stockage des positions {x, w} en pixels
+
+    for (let i = 0; i < numDroplets; i++) {
+        let attempts = 0;
+        let success = false;
+
+        while (attempts < 50 && !success) {
+            // Sélection parmi 4 tailles fixes en pixels (20, 30, 40, 50)
+            const sizes = [20, 30, 40, 50];
+            const wPx = sizes[Math.floor(Math.random() * sizes.length)];
+            const hPx = wPx * (1.2 + Math.random() * 0.4);
+            
+            // Position x en pixels
+            const xPx = Math.random() * (svgWidthPx - wPx);
+            // Position y en pixels (zone haute entre 0 et 40px)
+            const yPx = Math.random() * 40;
+
+            // Vérification de collision/espacement
+            const overlap = placed.some(other => {
+                return !(xPx + wPx + minSpacingPx < other.x || xPx > other.x + other.w + minSpacingPx);
+            });
+
+            if (!overlap) {
+                success = true;
+                placed.push({ x: xPx, w: wPx });
+
+                // Conversion des pixels en unités SVG relatives au viewBox (0-1000)
+                const xSvg = xPx / scale;
+                const ySvg = yPx / scale;
+                const wSvg = wPx / scale;
+                const hSvg = hPx / scale;
+
+                const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+                use.setAttribute('href', '#real-droplet');
+                use.setAttribute('x', xSvg.toFixed(1));
+                use.setAttribute('y', ySvg.toFixed(1));
+                use.setAttribute('width', wSvg.toFixed(1));
+                use.setAttribute('height', hSvg.toFixed(1));
+                fragment.appendChild(use);
+            }
+            attempts++;
+        }
+    }
     container.appendChild(fragment);
 }
 
