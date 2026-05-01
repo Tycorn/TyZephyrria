@@ -1,0 +1,739 @@
+:root {
+    --primary: #5c4033;
+    --secondary: #8b5a2b;
+    --accent: #d2b48c;
+    --bg: #fbf9f6;
+    --white: #ffffff;
+    --black: #000000;
+    --ocean-blue: #3399FF;
+    --ocean-deep: #0091E2;
+    --text: #333333;
+    --fire-red: #e25822;
+    --fire-orange: #ff9d00;
+    --fire-yellow: #ffcd00;
+    --leaf-bright: #7fb069;
+    --leaf-dark: #3e5622;
+    --leaf-mid: #5d7a32;
+    --branch: #4a3428;
+    --font-title: 'Pinyon Script', cursive;
+    --font-header: 'Cinzel', serif;
+    --font-body: 'Quicksand', sans-serif;
+}
+
+@keyframes drawWind {
+    0% { stroke-dashoffset: 600; opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* === HEADER === */
+header {
+    background-color: var(--white);
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: var(--font-title);
+    color: var(--primary);
+    font-size: 2.8rem;
+    cursor: pointer;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.cart-status {
+    position: absolute;
+    right: 2rem;
+    cursor: pointer;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+}
+
+/* === HERO === */
+.hero-container{
+    width: 100%;
+    height: auto; 
+    min-height: 40vh;
+    background: linear-gradient(180deg, #9BCDFF, #0d9488);
+    overflow: hidden;
+    display: flex;
+    position: relative; /* Indispensable pour ancrer les flammes en bas */
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px 80px 20px; 
+    box-sizing: border-box;
+    }        
+
+.hero-image-wrapped {
+    width: 60%;
+    max-width: 800px;
+    position: relative;             
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 5;      
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex; 
+    align-items: center;
+    justify-content: center;                  
+}
+
+.hero-image-wrapped img{
+    width: 100%;
+    height: auto;  
+    display: block;    /* Supprime l'espace vide sous l'image */
+    object-fit: contain; 
+}        
+/* État si l'image échoue */
+.hero-banner.img-failed {
+    background-image: linear-gradient(180deg, #9BCDFF, #0d9488) !important;
+    background-size: cover;
+}
+.error-message {
+    display: none;
+    color: white;
+    font-family: var(--font-header);
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    z-index: 6;
+}
+
+.img-failed .error-message {
+    display: block;
+}
+
+/* === SECTIONS VENT === */
+.wind-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%; /* Back to the top */
+    overflow: hidden;
+    z-index: 100; /* High enough to be on top but not extreme */
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    pointer-events: none;
+}
+
+/* Symbole du vent avec spirale fluide et animation de tracé */
+.wind-symbol {
+    width: 18%;
+    max-width: 180px;
+    min-width: 60px;
+    height: auto;
+    opacity: 0.7;
+    transition: transform 0.5s ease;
+}
+
+.wind-symbol:nth-child(5) {
+    transform: scale(0.6) translateY(-5px);
+    opacity: 0.7;
+}
+
+.wind-symbol:nth-child(2) {
+    transform: scale(1.2) translateY(-10px);
+    opacity: 0.8;
+}
+
+.wind-symbol:nth-child(6) {
+    transform: scale(0.8) translateY(-5px);
+    opacity: 0.9;
+}
+
+.wind-symbol:nth-child(3) {
+    transform: scale(0.8) translateY(10px);
+    opacity: 0.7;
+}
+
+.wind-symbol:nth-child(4) {
+    transform: scale(1.0) translateY(5px);
+    opacity: 0.9;
+}
+
+ .wind-symbol:nth-child(7) {
+    transform: scale(0.8) translateY(-15px);
+    opacity: 0.8;
+}
+
+ .wind-symbol:nth-child(8) {
+    transform: scale(1.0) translateY(12px);
+    opacity: 0.9;
+}
+
+.wind-path {
+    fill: none;
+    stroke: url(#windGradient);
+    stroke-width: 8; 
+    stroke-linecap: round;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: drawWind 6s ease-in-out forwards infinite alternate;
+}
+
+
+/* === SOUS-SECTION FEU (DANS LE HERO) === */
+.spacer-below-hero {
+    position: absolute;
+    bottom: 0; /* On le descend légèrement pour l'effet de chevauchement */
+    left: 0;
+    height: 120px;
+    width: 100%;
+    z-index: 10;
+    pointer-events: none; /* Pour ne pas gêner les clics sur le hero */
+}
+
+.fire-base {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(to top, var(--fire-red), var(--fire-orange), transparent);
+    z-index: 5;
+    opacity: 0.90;
+}
+
+.fire-container {
+    position: absolute;
+    bottom: 0; /* Raised by 10px */
+    width: 100%;
+    height: 100%;
+}
+
+.fire-layer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Center the generated flames */
+    align-items: flex-end;
+    flex-wrap: nowrap; 
+    overflow: hidden;
+}
+
+.layer-back { fill: var(--fire-red); opacity: 0.5; }
+.layer-mid { fill: var(--fire-orange); opacity: 0.75; margin-bottom: -5px; }
+.layer-front { fill: var(--fire-yellow); opacity: 0.85; margin-bottom: -10px; }
+
+.fire-group {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 0 0 auto;
+    width: 50px;
+    margin: 0 -1px; /* Closer by 5px (was 3px gap, now 2px overlap) */
+    transition: transform 0.3s ease;
+}
+
+.flame-svg {
+    width: 60px; /* Taille réduite pour faire tenir les 16 flammes */
+    height: 110px;
+    transform-origin: bottom center;
+    animation: flameRise 2.5s infinite ease-in-out;
+}
+
+@keyframes flameRise {
+    0%, 100% { transform: scaleX(0.7) scaleY(0.8) rotate(0deg); }
+    50% { transform: scaleX(0.7) scaleY(0.9) rotate(2deg); }
+}
+
+/* === CADRE ARTISTIQUE === */
+.artistic-frame {
+    max-width: 900px;
+    margin: 3rem auto 5rem;
+    padding: 7rem 4rem 5rem 4rem;
+    position: relative;
+    background-color: var(--white);
+    z-index: 10;
+    text-align: center;
+    border-radius: 40px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.04);
+    overflow: visible; /* Empêche le débordement hors du cadre arrondi */
+}
+
+/* Bordure zébrée */
+.artistic-frame::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 40px;
+    padding: 6px;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--black),
+        var(--black) 12px,
+        var(--white) 12px,
+        var(--white) 24px
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 20;
+}
+
+/* Conteneur des vagues calé au sommet du cadre */
+.wave-container {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 150px; 
+    z-index: 1;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.droplet-shape {
+    filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.1));
+}
+
+.droplet-highlight {
+    fill: white;
+    opacity: 0.85;
+}
+
+/* Nouveau conteneur pour le feuillage du bas */
+.foliage-bottom-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.leaf-bright { fill: var(--leaf-bright); }
+.leaf-mid { fill: var(--leaf-mid); }
+.leaf-dark { fill: var(--leaf-dark); }
+.branch-path { stroke: var(--branch); fill: none; stroke-linecap: round; opacity: 0.9; }
+
+.content-section {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+h2 {
+    font-family: var(--font-header);
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.intro-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* === GRILLE CATEGORIES === */
+/* --- 1. LE CONTENEUR DE GRILLE --- */
+.grid-container {
+    display: grid;
+/* 'auto-fit' crée les colonnes selon la place sans laisser d’espace */
+/* 'minmax' définit la taille mini (pour mobile) et maxi (1fr) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* --- 2. LA CASE (L'ÉLÉMENT INDIVIDUEL) --- */
+.card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;    /* Centre horizontalement tout le contenu */
+    overflow: hidden;
+    height: 100%;           /* Force toutes les cases à avoir la même hauteur */
+    flex-direction: column; /* Empile l'image puis le texte */            
+}
+
+/* --- 3. LE CADRE PHOTO CARRÉ --- */
+.card-wrapped {
+  width: 100%;            /* Prend toute la largeur de la case */
+  aspect-ratio: 1 / 1;    /* <--- allonge le format pour laisser place en dessous pour le texte */
+  display: flex;
+  align-items: center;    /* Centre l'image verticalement si elle est étroite */
+  justify-content: center;    /* Centre l'image horizontalement */
+  overflow: hidden;
+  background-color: #ffffff; /* Fond pour combler si l'image est fine */
+}
+
+/* --- 4. L'IMAGE À L'INTÉRIEUR --- */
+.card-wrapped img { 
+    max-width: 100%; 
+    max-height: 100%; 
+    aspect-ratio: 1 / 1;    /* <--- FORCE LE FORMAT CARRÉ */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* 'contain' = image entière, non rognée, sans zoom */
+    display: block;
+}
+
+/* --- 5. LE TEXTE EN DESSOUS --- */
+.card-info { 
+    padding: 15px;
+    text-align: center; 
+}
+
+/* === SECTION POURQUOI TY ZEPHYRRIA === */
+.why-section {
+    background-color: var(--white);
+    padding: 5rem 2rem;
+    margin-bottom: 5rem;
+}
+
+.why-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background: var(--bg);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.why-image {
+    flex: 0 0 150px;
+    height: 250px;
+    background: url('https://static.wixstatic.com/media/6e0a7d_6febe207834e45ecb940df14d8fc545f~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_6febe207834e45ecb940df14d8fc545f~mv2.png') center/cover;
+    border-radius: 15px;
+    box-shadow: 15px 15px 0 #D1E8FF;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.why-text {
+    flex: 1;
+    text-align: left;
+}
+
+li{
+    list-style-type: none; /* Enlève la puce ronde */
+    position: relative; /* Référentiel pour le tiret */
+    padding-left: 2rem; /* On tabule tout le texte vers la droite */
+}
+li::before{
+    content: "-"; /* On insère le tiret */
+    position: absolute; /* On le sort du flux pour le placer à gauche */
+    left: 1rem; /* Le tiret reste au bord gauche */
+    top: 0; /* Aligné en haut de la ligne */
+}
+
+.why-text h2 {
+    font-family: var(--font-header);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.why-text h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--primary);
+}
+
+.why-text p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+/* === SECTION QUI SUIS-JE === */
+.about-section {
+    background-color: var(--white);
+    padding: 5rem 2rem;
+    margin-bottom: 5rem;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background: var(--bg);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.about-image {
+    flex: 0 0 70px;
+    height: 170px;
+    background: url('https://static.wixstatic.com/media/6e0a7d_6febe207834e45ecb940df14d8fc545f~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_6febe207834e45ecb940df14d8fc545f~mv2.png') center/cover;
+    border-radius: 15px;
+    box-shadow: 15px 15px 0 #D1E8FF;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+li{
+    list-style-type: none; /* Enlève la puce ronde */
+    position: relative; /* Référentiel pour le tiret */
+    padding-left: 2rem; /* On tabule tout le texte vers la droite */
+}
+li::before{
+    content: "-"; /* On insère le tiret */
+    position: absolute; /* On le sort du flux pour le placer à gauche */
+    left: 1rem; /* Le tiret reste au bord gauche */
+    top: 0; /* Aligné en haut de la ligne */
+}
+
+.about-text h2 {
+    font-family: var(--font-header);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.about-text h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--primary);
+}
+
+.about-text p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: #444;
+}
+
+/* === SOCIAL & SHARING === */
+.social-links-section {
+    padding: 3rem 2rem;
+    background: var(--white);
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.social-group {
+    margin-bottom: 3rem;
+}
+
+.social-group h3 {
+    font-family: var(--font-header);
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.social-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--primary);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon-link:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+.social-icon-link svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* === CONTACT === */
+.contact-section {
+    background: var(--white);
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 3rem auto 0;
+    text-align: left;
+}
+
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.submit-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--font-header);
+    transition: opacity 0.3s;
+}
+
+.submit-btn:hover { opacity: 0.9; }
+
+footer {
+    padding: 4rem 2rem;
+    background: #f4f1ee;
+    color: var(--primary);
+    text-align: center;
+    font-size: 0.8rem;
+    border-top: 1px solid #e8e4e0;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .cart-status {
+        position: static;
+        margin-top: 0.5rem;
+    }
+
+    .hero-container {
+        height: auto;
+        min-height: auto;
+        padding: 40px 15px 80px 15px;
+        flex-direction: column;
+    }
+
+    .hero-image-wrapped {
+        width: 90%;
+        height: auto;
+        padding: 0;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+                
+
+
+    .layer-back { padding-left: 0; }
+    .layer-mid { padding-left: 0; }
+    
+    .artistic-frame { 
+        padding: 10rem 1.2rem 3rem 1.2rem; 
+        width: 95%; 
+        margin-top: 2rem;
+    }
+
+    /* Symboles du vent - en masquer certains pour éviter l'encombrement */
+    .wind-symbol:nth-child(n+5) {
+        display: none;
+    }
+    
+    .wind-symbol { 
+        width: 18%;
+        opacity: 0.7;
+    }
+
+    .spacer-below-hero { height: 80px; }
+
+    /* --- SECTION QUI SUIS-JE (MOBILE) --- */
+    .about-container, .why-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .about-image, .why-image {
+        flex: none;
+        width: 120px;
+        height: 120px;
+        box-shadow: 8px 8px 0 var(--accent);
+    }
+
+    .about-text, .why-text {
+        text-align: center;
+    }
+
+    .about-text h2::after, .why-text h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
