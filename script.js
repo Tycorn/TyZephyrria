@@ -36,7 +36,9 @@ function initWind() {
         );
     }
 
-    container.innerHTML = '';
+    // On ne supprime que les symboles, pas les définitions SVG du gradient
+    container.querySelectorAll('.wind-symbol').forEach(el => el.remove());
+    
     const fragment = document.createDocumentFragment();
     
     windData.forEach(data => {

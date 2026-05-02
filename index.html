@@ -29,18 +29,23 @@
                 <!-- Message d'erreur masqué par défaut -->
                 <div class="error-message">Image non disponible</div>
                 <div class="wind-container">
-                    <!-- Les symboles de vent sont générés dynamiquement par script.js -->
-                </div>
-
-                <!-- SOUS-SECTION -->
-                <div class="spacer-below-hero">
+                    <!-- Définitions des ressources pour le vent -->
                     <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
                         <defs>
                             <linearGradient id="windGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                                 <stop offset="0%" style="stop-color:#ffffff; stop-opacity:0" />
-                                <stop offset="60%" style="stop-color:#ffffff; stop-opacity:0.8" />
+                                <stop offset="45%" style="stop-color:#ffffff; stop-opacity:0.8" />
                                 <stop offset="100%" style="stop-color:#888888; stop-opacity:1" />
                             </linearGradient>
+                        </defs>
+                    </svg>
+                    <!-- Les symboles de vent sont générés dynamiquement par script.js -->
+                </div>
+
+                <!-- SOUS-SECTION FEU ANIME -->
+                <div class="spacer-below-hero">
+                    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+                        <defs>
                         </defs>
                         <symbol id="multi-flame" viewBox="0 0 40 70">
                             <path d="M 10 60 
