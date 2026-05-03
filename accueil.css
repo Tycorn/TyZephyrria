@@ -15,7 +15,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: 70px;
     background-color: #96d8fce6;
     /* Bleu clair */
     color: #0c0091e7;
@@ -23,6 +23,7 @@ body {
     display: flex;
     justify-content: center;
     /* Centrage horizontal du titre */
+    flex-direction: column;
     align-items: center;
     padding: 0 20px;
     box-sizing: border-box;
@@ -33,6 +34,15 @@ body {
 .top-banner h1 {
     margin: 0;
     font-size: 1.5rem;
+    line-height: 1.1;
+    /* Resserre l'espace */
+}
+
+.top-banner .small-text {
+    margin: 7px 0 0 0;
+    /* Remonte le slogan */
+    font-size: 1.3rem;
+    font-family: 'Dancing Script', cursive;
 }
 
 .cart-icon {
@@ -670,5 +680,36 @@ footer {
     footer {
         padding: 20px 15px;
         font-size: 0.75rem;
+    }
+}
+
+/* Styles Haut de Page */
+.back-to-top-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    background-color: transparent;
+}
+
+.back-link {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.15rem;
+    color: #333;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    color: #0064C8;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .back-to-top-row {
+        justify-content: center;
+    }
+
+    .desktop-only {
+        display: none;
     }
 }
