@@ -1,0 +1,123 @@
+/* ==========================================================================
+   PAGE VALEURS - STYLES SPÉCIFIQUES
+   ========================================================================== */
+
+.page-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.page-content h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #0c0091;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.values-intro {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    text-align: center;
+}
+
+/* Grille des valeurs */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.value-card {
+    padding: 20px;
+    border-left: 4px solid #96d8fc;
+    background: #f9fdf9;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-card h3 {
+    color: #0064C8;
+    margin-top: 0;
+}
+
+.split-section {
+    background: #f4faff;
+    /* Bleu très léger */
+    padding: 30px;
+    border-radius: 20px;
+    border-left: 5px solid #96d8fc;
+    /* Rappel de la bordure des valeurs */
+}
+
+/* Styles spécifiques pour le texte de la section split */
+.split-text h3 {
+    font-family: 'Dancing Script', cursive;
+    color: #0c0091;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+/* Styles spécifiques pour l'image de la section split */
+.split-image {
+    max-width: 35%;
+    /* Par défaut c'est 50%, vous pouvez baisser à 35% ou 30% */
+}
+
+
+/* Liste des 4 éléments */
+.elements-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0 20px 40px;
+    /* Alinéa de 40px à gauche */
+    text-align: left;
+    display: inline-block;
+}
+
+.elements-list li {
+    position: relative;
+    padding-left: 25px;
+    /* Espace pour l'icône */
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.elements-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 15px;
+    height: 15px;
+    background-color: #a35d02;
+    /* Couleur bronze/or comme l'accueil */
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M13 10V2L5 14h6v8l8-12h-6z'/></svg>") no-repeat center;
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M13 10V2L5 14h6v8l8-12h-6z'/></svg>") no-repeat center;
+}
+
+/* --- Adaptation d'affichage (Responsive) --- */
+@media (max-width: 1000px) {
+    .page-content h2 {
+        font-size: 2rem;
+    }
+
+    .page-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .elements-list {
+        margin-left: 20px;
+        /* Moins d'alinéa sur mobile */
+    }
+}
