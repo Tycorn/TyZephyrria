@@ -73,7 +73,7 @@ function initFireFlames() {
     const layers = ['.layer-back', '.layer-mid', '.layer-front'];
     
     const flameBaseWidth = 50; 
-    const step = 48; // Rapproché de 5px (53px -> 48px)    
+    const step = 20; // Très serré pour un chevauchement massif    
     const windowWidth = window.innerWidth;
     const numFlames = Math.ceil(windowWidth / step) + 5;
 
