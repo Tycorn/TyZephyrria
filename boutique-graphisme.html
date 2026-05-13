@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue sur Ty Zephyrria</title>
+    <title>Boutique Graphisme - Ty Zephyrria</title>
     <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="accueil.css">
+    <link rel="stylesheet" href="boutique-graphisme.css">
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Dancing+Script:wght@600&display=swap"
         rel="stylesheet">
 </head>
@@ -22,10 +22,7 @@
     <div class="main-content">
         <nav>
             <div class="nav-container-new">
-
-                <!-- Ligne 2 : Gauche | Centre | Droite -->
                 <div class="nav-row row-main">
-                    <!-- Groupe Gauche -->
                     <ul class="nav-menu menu-side menu-left">
                         <li class="nav-item btn-underlined small-text">
                             <a href="valeurs.html" class="two-lines">Ty Zephyrria,<br>ses valeurs</a>
@@ -50,7 +47,7 @@
                             <a href="boutique-photo.html">Photographie</a>
                         </li>
                         <li class="nav-item btn-bordered dropdown">
-                            <a href="boutique-graphisme.html">Graphisme</a>
+                            <a href="boutique-graphisme.html" class="active-nav">Graphisme</a>
                             <ul class="dropdown-content">
                                 <li><a href="boutique-graphisme.html">Tout</a></li>
                                 <li><a href="boutique-graphisme.html?cat=logo">Logo</a></li>
@@ -71,14 +68,12 @@
                         </li>
                     </ul>
 
-                    <!-- Bloc Accueil -->
                     <ul class="nav-menu menu-accueil">
                         <li class="nav-item btn-underlined">
                             <a href="accueil.html">Accueil</a>
                         </li>
                     </ul>
 
-                    <!-- Groupe Droite -->
                     <ul class="nav-menu menu-side menu-right">
                         <li class="nav-item btn-underlined small-text">
                             <a href="contact.html">Contactez-moi</a>
@@ -91,68 +86,202 @@
             </div>
         </nav>
 
-        <section class="frame-section">
-            <!-- Colonne gauche -->
-            <div class="side-column">
-                <a href="boutique-creations.html" class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_611ffd96f48a4ae0a392282c78cd8752~mv2.png/v1/fit/w_407,h_550,q_90,enc_avif,quality_auto/6e0a7d_611ffd96f48a4ae0a392282c78cd8752~mv2.png"
-                        alt="Créations artisanales">
-                    <span>Créations artisanales</span>
-                </a>
-                <div class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_8a3f5b73820e4bc2b243e19a1cf7bc6e~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_8a3f5b73820e4bc2b243e19a1cf7bc6e~mv2.png"
-                        alt="Photographie">
-                    <span>Photographie</span>
-                </div>
+        <main class="page-content">
+            <h2 class="page-title">Boutique Graphisme</h2>
+
+            <!-- Barre de Filtres -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">Tout</button>
+                <button class="filter-btn" data-filter="logo">Logo</button>
+                <button class="filter-btn" data-filter="cartes">Cartes de visite</button>
+                <button class="filter-btn" data-filter="affiches">Affiches</button>
             </div>
 
-            <!-- Cadre central -->
-            <div class="central-frame">
-                <div class="central-content">
-                    <div class="central-text">
-                        <h2>Venez découvrir mon univers</h2>
-                        <p><strong>TY ZEPHYRRIA</strong> est née de la rencontre entre la curiosité et l'inspiration,
-                            portée par un souffle de créativité permanent.</p>
-                        <p><strong>"Ne rêve pas ta Vie, vis tes rêves"</strong>...(A. de St Exupéry)<br>Laissez place à
-                            la candeur, l'émerveillement, les rêveries et venez découvrir mon univers sous ses multiples
-                            facettes.</p>
-                        <ul style="text-align: left; display: inline-block; margin-top: 10px;">
-                            <li><strong>Des créations artisanales</strong> façonnés à la main (bijoux fantaisies,
-                                gravures sur verre, pyrogravure, personnalisation d'objets du quotidien en point de
-                                croix…)</li>
-                            <li><strong>Un univers photographique</strong> nourri par plus de 15 ans de passion.</li>
-                            <li><strong>Du graphisme</strong> pour mettre à votre service mes capacités en dessins
-                                vectoriels (logo, carte de visite, affiche…)</li>
-                            <li><strong>Du travail d'auteur</strong> avec réalisation d'illustrations en
-                                multi-techniques (dessins, peinture…) et ouvrages d'écriture (livres…)
-                        </ul>
-                        <p style="margin-top: 15px;"><i>N'hésitez pas à visiter mes <strong>réseaux sociaux</strong> où
-                                vous trouverez un nouvel univers, celui du chant, au travers de mon association de
-                                guitare-voix <br><strong>"Braizhe de Phoenix"</strong>.</i></p>
+            <!-- Grille de Produits -->
+            <div class="product-grid" id="productGrid">
+                <!-- Logos -->
+                <div class="product-card" data-category="logo">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400&auto=format&fit=crop"
+                            alt="Design Logo">
+                        <span class="product-tag">Logo</span>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pack Identité Visuelle</h3>
+                        <p class="product-price">Sur devis</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="logo">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?q=80&w=400&auto=format&fit=crop"
+                            alt="Logo Minimaliste">
+                        <span class="product-tag">Logo</span>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Création Logo Unique</h3>
+                        <p class="product-price">150,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <!-- Cartes de visite -->
+                <div class="product-card" data-category="cartes">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1589118949245-7d38baf380d6?q=80&w=400&auto=format&fit=crop"
+                            alt="Cartes de visite">
+                        <span class="product-tag">Cartes de visite</span>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cartes de Visite Premium</h3>
+                        <p class="product-price">45,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <!-- Affiches -->
+                <div class="product-card" data-category="affiches">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1621600411688-4be93cd68504?q=80&w=400&auto=format&fit=crop"
+                            alt="Affiche Événement">
+                        <span class="product-tag">Affiches</span>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Affiche Événementielle</h3>
+                        <p class="product-price">80,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="affiches">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=400&auto=format&fit=crop"
+                            alt="Poster Décoratif">
+                        <span class="product-tag">Affiches</span>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Poster Personnalisé</h3>
+                        <p class="product-price">35,00 €</p>
+                        <button class="add-to-cart">Détails</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Colonne droite -->
-            <div class="side-column">
-                <a href="boutique-graphisme.html" class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_4117af25f99d4bccbb722fcb0d989a5f~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_4117af25f99d4bccbb722fcb0d989a5f~mv2.png"
-                        alt="Graphisme">
-                    <span><strong>Graphisme</strong><br><strong>et<br><strong>illustrations vectorielles</strong></span>
-                </a>
-                <a href="boutique-auteur-et-illustrations-manuelles.html" class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_3aba1afb2dab4bbfa3a686ef7b26b60e~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_3aba1afb2dab4bbfa3a686ef7b26b60e~mv2.png"
-                        alt="Auteur">
-                    <span><strong>Auteur</strong><br><strong>et</strong><br><strong>illustrations
-                            manuelles</strong></span>
-                </a>
-            </div>
-        </section>
+            <!-- Section Exemples de Créations -->
+            <section class="creations-portfolio">
+                <h2 class="section-title">Portfolio Créations Graphiques</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <button class="like-button" data-item-id="graph-logo-cancer" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <img src="https://static.wixstatic.com/media/6e0a7d_7d5ba8366e37463b96875e43c2774182~mv2.jpg/v1/fit/w_646,h_550,q_90,enc_avif,quality_auto/6e0a7d_7d5ba8366e37463b96875e43c2774182~mv2.jpg"
+                            alt="Exemple Logo">
+                        <div class="portfolio-overlay">
+                            <span>Logo pour dépistage du cancer du poumon</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <button class="like-button" data-item-id="graph-logo-organes" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <img src="https://static.wixstatic.com/media/6e0a7d_627fa834e7be48eba26703ea9db08062~mv2.jpg/v1/fit/w_646,h_550,q_90,enc_avif,quality_auto/6e0a7d_627fa834e7be48eba26703ea9db08062~mv2.jpg"
+                            alt="Exemple Carte">
+                        <div class="portfolio-overlay">
+                            <span>Logo commémoratif des donneurs d'organes</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <button class="like-button" data-item-id="graph-logo-hopital" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <img src="https://static.wixstatic.com/media/6e0a7d_78525163b6fa40b492049bf48fce90ee~mv2.png/v1/fit/w_646,h_550,q_90,enc_avif,quality_auto/6e0a7d_78525163b6fa40b492049bf48fce90ee~mv2.png"
+                            alt="Exemple Branding">
+                        <div class="portfolio-overlay">
+                            <span>Logo associatif "Colore mon hôpital"</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <button class="like-button" data-item-id="graph-logo-havre-1" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <img src="https://static.wixstatic.com/media/6e0a7d_f3e6d50bcd9140099f71e3de4e92bf13~mv2.png/v1/fit/w_646,h_550,q_90,enc_avif,quality_auto/6e0a7d_f3e6d50bcd9140099f71e3de4e92bf13~mv2.png"
+                            alt="Exemple Affiche">
+                        <div class="portfolio-overlay">
+                            <span>Logo Jeunes Professionnels du Havre</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <button class="like-button" data-item-id="graph-logo-havre-2" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <img src="https://static.wixstatic.com/media/6e0a7d_62b5e8947190412fb406a8fcfd5eff94~mv2.jpg/v1/fit/w_646,h_550,q_90,enc_avif,quality_auto/6e0a7d_62b5e8947190412fb406a8fcfd5eff94~mv2.jpg"
+                            alt="Exemple Branding">
+                        <div class="portfolio-overlay">
+                            <span>Ecusson Jeunes Professionnels du Havre</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <button class="like-button" data-item-id="graph-logo-tech" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800&auto=format&fit=crop"
+                            alt="Exemple Branding">
+                        <div class="portfolio-overlay">
+                            <span>Identité Visuelle Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-        <div class="btn-pro-container">
-            <a href="pro.html" class="btn-pro">accès professionnel entreprise</a>
-        </div>
-
+        <!-- ==========================================================================
+             SECTION SOCIALE (SUIVEZ-MOI / PARTAGEZ)
+             ========================================================================== -->
         <section id="social-section" class="social-container">
             <div class="social-line">
                 <strong>Suivez-moi</strong>
@@ -234,7 +363,7 @@
                         </svg><span>Instagram</span></div>
                     <div class="social-item"><svg viewBox="0 0 24 24" fill="#000000">
                             <path
-                                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.82.31-.74.5-1.24 1.33-1.35 2.22-.14 1.18.36 2.35 1.28 3.07 1.05.77 2.47.88 3.59.25 1.02-.64 1.58-1.84 1.61-3.03.01-3.75-.01-7.51.01-11.27zm9.06 6.06c-1.31-.02-2.61-.01-3.91.02-.08-1.53-.63-3.09-1.75-4.17-1.12-1.11-2.7-1.62-4.24-1.79v-4.03c1.44.05 2.89.35 4.2.97.57.26 1.1.59 1.62.93.01-2.92-.01-5.84.02-8.75.08-1.4.54-2.79 1.35-3.94 1.31-1.92 3.58-3.17 5.91-3.21 1.43-.08 2.86.31 4.08 1.03 2.02 1.19 3.44 3.37 3.65 5.71.02.5.03 1 .01 1.49.18 1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02-1.48.04-2.96.04-4.44.9.32 1.98.23 2.82.31.74.5 1.24 1.33 1.35 2.22.14 1.18.36 2.35 1.28 3.07 1.05.77 2.47.88 3.59.25 1.02.64 1.58-1.84 1.61-3.03.01-3.75-.01-7.51.01-11.27z" />
+                                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.82.31-.74.5-1.24 1.33-1.35 2.22-.14 1.18.36 2.35 1.28 3.07 1.05.77 2.47.88 3.59.25 1.02-.64 1.58-1.84 1.61-3.03.01-3.75-.01-7.51.01-11.27zm9.06 6.06c-1.31-.02-2.61-.01-3.91.02-.08-1.53-.63-3.09-1.75-4.17-1.12-1.11-2.7-1.62-4.24-1.79v-4.03c1.44.05 2.89.35 4.2.97.57.26 1.1.59 1.62.93.01-2.92-.01-5.84.02-8.75.08-1.4.54-2.79 1.35-3.94 1.31-1.92 3.58-3.17 5.91-3.21 1.43-.08 2.86.31 4.08 1.03 2.02 1.19 3.44 3.37 3.65 5.71.02.5.03 1 .01 1.49.18 1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02-1.48.04-2.96.04-4.44.9.32 1.98.23 2.82.31.74.5 1.24 1.33 1.35 2.22.14 1.18.36 2.35 1.28 3.07 1.05.77 2.47.88 3.59.25 1.02-.64 1.58-1.84 1.61-3.03.01-3.75-.01-7.51.01-11.27z" />
                         </svg><span>TikTok</span></div>
                     <div class="social-item"><svg viewBox="0 0 24 24" fill="#000000">
                             <path
@@ -263,7 +392,9 @@
         </section>
     </div>
 
-    <!-- Section Image Pre-Footer -->
+    <!-- ==========================================================================
+         IMAGE PRE-FOOTER
+         ========================================================================== -->
     <section class="pre-footer-section">
         <div class="image-container">
             <img src="https://static.wixstatic.com/media/6e0a7d_ef13b520ca6747d2a06981fe4918bf04~mv2.jpg"
@@ -271,12 +402,17 @@
         </div>
     </section>
 
-    <!-- Section Haut de Page -->
+    <!-- ==========================================================================
+         BOUTON HAUT DE PAGE (BACK TO TOP)
+         ========================================================================== -->
     <div class="back-to-top-row">
         <a href="#top" class="back-link">Haut de page</a>
         <a href="#top" class="back-link desktop-only">Haut de page</a>
     </div>
 
+    <!-- ==========================================================================
+         PIED DE PAGE (FOOTER)
+         ========================================================================== -->
     <!-- ==========================================================================
          COMPTEUR DE VISITES (Global)
          ========================================================================== -->

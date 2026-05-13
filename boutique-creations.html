@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue sur Ty Zephyrria</title>
+    <title>Boutique Créations - Ty Zephyrria</title>
     <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="accueil.css">
+    <link rel="stylesheet" href="boutique-creations.css">
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Dancing+Script:wght@600&display=swap"
         rel="stylesheet">
 </head>
@@ -22,10 +22,7 @@
     <div class="main-content">
         <nav>
             <div class="nav-container-new">
-
-                <!-- Ligne 2 : Gauche | Centre | Droite -->
                 <div class="nav-row row-main">
-                    <!-- Groupe Gauche -->
                     <ul class="nav-menu menu-side menu-left">
                         <li class="nav-item btn-underlined small-text">
                             <a href="valeurs.html" class="two-lines">Ty Zephyrria,<br>ses valeurs</a>
@@ -37,7 +34,7 @@
 
                     <ul class="nav-menu menu-center-buttons">
                         <li class="nav-item btn-bordered dropdown">
-                            <a href="boutique-creations.html">Créations artisanales</a>
+                            <a href="boutique-creations.html" class="active-nav">Créations artisanales</a>
                             <ul class="dropdown-content">
                                 <li><a href="boutique-creations.html">Tout</a></li>
                                 <li><a href="boutique-creations.html?cat=bijoux">Bijoux fantaisies</a></li>
@@ -63,22 +60,26 @@
                             <ul class="dropdown-content">
                                 <li><a href="boutique-auteur-et-illustrations-manuelles.html">Tout</a></li>
                                 <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=auteur">Auteur</a></li>
-                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=crayon">Dessins au Crayon</a></li>
-                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=aquarelle">Aquarelle</a></li>
-                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=acrylique">Acrylique</a></li>
-                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=autres">Autres techniques</a></li>
+                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=crayon">Dessins au
+                                        Crayon</a></li>
+                                <li><a
+                                        href="boutique-auteur-et-illustrations-manuelles.html?cat=aquarelle">Aquarelle</a>
+                                </li>
+                                <li><a
+                                        href="boutique-auteur-et-illustrations-manuelles.html?cat=acrylique">Acrylique</a>
+                                </li>
+                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=autres">Autres
+                                        techniques</a></li>
                             </ul>
                         </li>
                     </ul>
 
-                    <!-- Bloc Accueil -->
                     <ul class="nav-menu menu-accueil">
                         <li class="nav-item btn-underlined">
                             <a href="accueil.html">Accueil</a>
                         </li>
                     </ul>
 
-                    <!-- Groupe Droite -->
                     <ul class="nav-menu menu-side menu-right">
                         <li class="nav-item btn-underlined small-text">
                             <a href="contact.html">Contactez-moi</a>
@@ -91,68 +92,269 @@
             </div>
         </nav>
 
-        <section class="frame-section">
-            <!-- Colonne gauche -->
-            <div class="side-column">
-                <a href="boutique-creations.html" class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_611ffd96f48a4ae0a392282c78cd8752~mv2.png/v1/fit/w_407,h_550,q_90,enc_avif,quality_auto/6e0a7d_611ffd96f48a4ae0a392282c78cd8752~mv2.png"
-                        alt="Créations artisanales">
-                    <span>Créations artisanales</span>
-                </a>
-                <div class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_8a3f5b73820e4bc2b243e19a1cf7bc6e~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_8a3f5b73820e4bc2b243e19a1cf7bc6e~mv2.png"
-                        alt="Photographie">
-                    <span>Photographie</span>
-                </div>
+        <main class="page-content">
+            <h2 class="page-title">Boutique Créations Artisanales</h2>
+
+            <!-- Barre de Filtres -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">Tout</button>
+                <button class="filter-btn" data-filter="bijoux">Bijoux fantaisies</button>
+                <button class="filter-btn" data-filter="point-de-croix">Point de croix</button>
+                <button class="filter-btn" data-filter="gravure">Gravures diverses</button>
+                <button class="filter-btn" data-filter="bois">Travail sur bois</button>
             </div>
 
-            <!-- Cadre central -->
-            <div class="central-frame">
-                <div class="central-content">
-                    <div class="central-text">
-                        <h2>Venez découvrir mon univers</h2>
-                        <p><strong>TY ZEPHYRRIA</strong> est née de la rencontre entre la curiosité et l'inspiration,
-                            portée par un souffle de créativité permanent.</p>
-                        <p><strong>"Ne rêve pas ta Vie, vis tes rêves"</strong>...(A. de St Exupéry)<br>Laissez place à
-                            la candeur, l'émerveillement, les rêveries et venez découvrir mon univers sous ses multiples
-                            facettes.</p>
-                        <ul style="text-align: left; display: inline-block; margin-top: 10px;">
-                            <li><strong>Des créations artisanales</strong> façonnés à la main (bijoux fantaisies,
-                                gravures sur verre, pyrogravure, personnalisation d'objets du quotidien en point de
-                                croix…)</li>
-                            <li><strong>Un univers photographique</strong> nourri par plus de 15 ans de passion.</li>
-                            <li><strong>Du graphisme</strong> pour mettre à votre service mes capacités en dessins
-                                vectoriels (logo, carte de visite, affiche…)</li>
-                            <li><strong>Du travail d'auteur</strong> avec réalisation d'illustrations en
-                                multi-techniques (dessins, peinture…) et ouvrages d'écriture (livres…)
-                        </ul>
-                        <p style="margin-top: 15px;"><i>N'hésitez pas à visiter mes <strong>réseaux sociaux</strong> où
-                                vous trouverez un nouvel univers, celui du chant, au travers de mon association de
-                                guitare-voix <br><strong>"Braizhe de Phoenix"</strong>.</i></p>
+            <!-- Grille de Produits -->
+            <div class="product-grid" id="productGrid">
+                <!-- Bijoux -->
+                <div class="product-card" data-category="bijoux">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bijoux-amethyste" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=400&auto=format&fit=crop"
+                            alt="Collier améthyste">
+                        <span class="product-tag">Bijoux</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Collier Améthyste</h3>
+                        <p class="product-price">25,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bijoux">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bijoux-plumes-1" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
+                            alt="Boucles d'oreilles">
+                        <span class="product-tag">Bijoux</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Boucles d'oreilles Plumes</h3>
+                        <p class="product-price">18,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bijoux">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bijoux-plumes-2" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
+                            alt="Boucles d'oreilles">
+                        <span class="product-tag">Bijoux</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Boucles d'oreilles Plumes</h3>
+                        <p class="product-price">18,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bijoux">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bijoux-plumes-3" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
+                            alt="Boucles d'oreilles">
+                        <span class="product-tag">Bijoux</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Boucles d'oreilles Plumes</h3>
+                        <p class="product-price">18,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bijoux">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bijoux-plumes-3" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
+                            alt="Boucles d'oreilles">
+                        <span class="product-tag">Bijoux</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Boucles d'oreilles Plumes</h3>
+                        <p class="product-price">18,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <!-- Point de croix -->
+                <div class="product-card" data-category="point-de-croix">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-pt-croix-vagues" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1517420812313-8054047e3350?q=80&w=400&auto=format&fit=crop"
+                            alt="Broderie">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tableau "Vagues de Bretagne"</h3>
+                        <p class="product-price">45,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <!-- Gravures -->
+                <div class="product-card" data-category="gravure">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1589987607627-616cab5c2665?q=80&w=400&auto=format&fit=crop"
+                            alt="Verre gravé">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Verre Gravé Personnalisé</h3>
+                        <p class="product-price">15,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-galet" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?q=80&w=400&auto=format&fit=crop"
+                            alt="Galet gravé">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pierre Gravée Mantra</h3>
+                        <p class="product-price">12,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <!-- Bois -->
+                <div class="product-card" data-category="bois">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bois-plateau" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?q=80&w=400&auto=format&fit=crop"
+                            alt="Plateau chêne">
+                        <span class="product-tag">Travail sur bois</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Plateau en Chêne Massif</h3>
+                        <p class="product-price">55,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bois">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bois-porte-cles" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=400&auto=format&fit=crop"
+                            alt="Porte-clés bois">
+                        <span class="product-tag">Travail sur bois</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Porte-clés Sculpté Main</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
                     </div>
                 </div>
             </div>
+        </main>
 
-            <!-- Colonne droite -->
-            <div class="side-column">
-                <a href="boutique-graphisme.html" class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_4117af25f99d4bccbb722fcb0d989a5f~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_4117af25f99d4bccbb722fcb0d989a5f~mv2.png"
-                        alt="Graphisme">
-                    <span><strong>Graphisme</strong><br><strong>et<br><strong>illustrations vectorielles</strong></span>
-                </a>
-                <a href="boutique-auteur-et-illustrations-manuelles.html" class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_3aba1afb2dab4bbfa3a686ef7b26b60e~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_3aba1afb2dab4bbfa3a686ef7b26b60e~mv2.png"
-                        alt="Auteur">
-                    <span><strong>Auteur</strong><br><strong>et</strong><br><strong>illustrations
-                            manuelles</strong></span>
-                </a>
-            </div>
-        </section>
-
-        <div class="btn-pro-container">
-            <a href="pro.html" class="btn-pro">accès professionnel entreprise</a>
-        </div>
-
+        <!-- ==========================================================================
+             SECTION SOCIALE (SUIVEZ-MOI / PARTAGEZ)
+             ========================================================================== -->
         <section id="social-section" class="social-container">
             <div class="social-line">
                 <strong>Suivez-moi</strong>
@@ -263,7 +465,9 @@
         </section>
     </div>
 
-    <!-- Section Image Pre-Footer -->
+    <!-- ==========================================================================
+         IMAGE PRE-FOOTER
+         ========================================================================== -->
     <section class="pre-footer-section">
         <div class="image-container">
             <img src="https://static.wixstatic.com/media/6e0a7d_ef13b520ca6747d2a06981fe4918bf04~mv2.jpg"
@@ -271,12 +475,17 @@
         </div>
     </section>
 
-    <!-- Section Haut de Page -->
+    <!-- ==========================================================================
+         BOUTON HAUT DE PAGE (BACK TO TOP)
+         ========================================================================== -->
     <div class="back-to-top-row">
         <a href="#top" class="back-link">Haut de page</a>
         <a href="#top" class="back-link desktop-only">Haut de page</a>
     </div>
 
+    <!-- ==========================================================================
+         PIED DE PAGE (FOOTER)
+         ========================================================================== -->
     <!-- ==========================================================================
          COMPTEUR DE VISITES (Global)
          ========================================================================== -->

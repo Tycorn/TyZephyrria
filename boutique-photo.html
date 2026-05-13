@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue sur Ty Zephyrria</title>
+    <title>Boutique Photo - Ty Zephyrria</title>
     <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="accueil.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Dancing+Script:wght@600&display=swap"
+    <link rel="stylesheet" href="boutique-photo.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Dancing+Script:wght@600&family=Cinzel:wght@400;700&family=Quicksand:wght@300;500;600&display=swap"
         rel="stylesheet">
 </head>
 
-<body>
+<body id="top">
 
+    <!-- ==========================================================================
+         BANIERE FIXE (TOP BANNER)
+         ========================================================================== -->
     <header class="top-banner">
         <h1>Bienvenue sur Ty Zephyrria</h1>
         <p class="small-text">« La Multipotentialité au service de la Curiosité »</p>
@@ -20,10 +24,11 @@
     </header>
 
     <div class="main-content">
+        <!-- ==========================================================================
+             MENU DE NAVIGATION
+             ========================================================================== -->
         <nav>
             <div class="nav-container-new">
-
-                <!-- Ligne 2 : Gauche | Centre | Droite -->
                 <div class="nav-row row-main">
                     <!-- Groupe Gauche -->
                     <ul class="nav-menu menu-side menu-left">
@@ -35,6 +40,7 @@
                         </li>
                     </ul>
 
+                    <!-- Groupe Centre -->
                     <ul class="nav-menu menu-center-buttons">
                         <li class="nav-item btn-bordered dropdown">
                             <a href="boutique-creations.html">Créations artisanales</a>
@@ -47,7 +53,7 @@
                             </ul>
                         </li>
                         <li class="nav-item btn-bordered">
-                            <a href="boutique-photo.html">Photographie</a>
+                            <a href="boutique-photo.html" class="active-nav">Photographie</a>
                         </li>
                         <li class="nav-item btn-bordered dropdown">
                             <a href="boutique-graphisme.html">Graphisme</a>
@@ -63,10 +69,16 @@
                             <ul class="dropdown-content">
                                 <li><a href="boutique-auteur-et-illustrations-manuelles.html">Tout</a></li>
                                 <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=auteur">Auteur</a></li>
-                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=crayon">Dessins au Crayon</a></li>
-                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=aquarelle">Aquarelle</a></li>
-                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=acrylique">Acrylique</a></li>
-                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=autres">Autres techniques</a></li>
+                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=crayon">Dessins au
+                                        Crayon</a></li>
+                                <li><a
+                                        href="boutique-auteur-et-illustrations-manuelles.html?cat=aquarelle">Aquarelle</a>
+                                </li>
+                                <li><a
+                                        href="boutique-auteur-et-illustrations-manuelles.html?cat=acrylique">Acrylique</a>
+                                </li>
+                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=autres">Autres
+                                        techniques</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -91,68 +103,138 @@
             </div>
         </nav>
 
-        <section class="frame-section">
-            <!-- Colonne gauche -->
-            <div class="side-column">
-                <a href="boutique-creations.html" class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_611ffd96f48a4ae0a392282c78cd8752~mv2.png/v1/fit/w_407,h_550,q_90,enc_avif,quality_auto/6e0a7d_611ffd96f48a4ae0a392282c78cd8752~mv2.png"
-                        alt="Créations artisanales">
-                    <span>Créations artisanales</span>
-                </a>
-                <div class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_8a3f5b73820e4bc2b243e19a1cf7bc6e~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_8a3f5b73820e4bc2b243e19a1cf7bc6e~mv2.png"
-                        alt="Photographie">
-                    <span>Photographie</span>
-                </div>
-            </div>
+        <main class="container">
+            <!-- Hero Section Photo -->
+            <section class="photo-hero">
+                <h2 class="page-title">Boutique Photo</h2>
 
-            <!-- Cadre central -->
-            <div class="central-frame">
-                <div class="central-content">
-                    <div class="central-text">
-                        <h2>Venez découvrir mon univers</h2>
-                        <p><strong>TY ZEPHYRRIA</strong> est née de la rencontre entre la curiosité et l'inspiration,
-                            portée par un souffle de créativité permanent.</p>
-                        <p><strong>"Ne rêve pas ta Vie, vis tes rêves"</strong>...(A. de St Exupéry)<br>Laissez place à
-                            la candeur, l'émerveillement, les rêveries et venez découvrir mon univers sous ses multiples
-                            facettes.</p>
-                        <ul style="text-align: left; display: inline-block; margin-top: 10px;">
-                            <li><strong>Des créations artisanales</strong> façonnés à la main (bijoux fantaisies,
-                                gravures sur verre, pyrogravure, personnalisation d'objets du quotidien en point de
-                                croix…)</li>
-                            <li><strong>Un univers photographique</strong> nourri par plus de 15 ans de passion.</li>
-                            <li><strong>Du graphisme</strong> pour mettre à votre service mes capacités en dessins
-                                vectoriels (logo, carte de visite, affiche…)</li>
-                            <li><strong>Du travail d'auteur</strong> avec réalisation d'illustrations en
-                                multi-techniques (dessins, peinture…) et ouvrages d'écriture (livres…)
-                        </ul>
-                        <p style="margin-top: 15px;"><i>N'hésitez pas à visiter mes <strong>réseaux sociaux</strong> où
-                                vous trouverez un nouvel univers, celui du chant, au travers de mon association de
-                                guitare-voix <br><strong>"Braizhe de Phoenix"</strong>.</i></p>
+                <div class="photo-nav-buttons">
+                    <button class="photo-nav-btn active" id="btn-photos">Photographies</button>
+                    <button class="photo-nav-btn" id="btn-presta">Prestations Photos</button>
+                </div>
+
+                <div class="photo-intro-text">
+                    <p>Découvrez mon univers à travers l'objectif. De la capture de l'instant sauvage à la magie de la
+                        scène,
+                        chaque cliché est une fenêtre ouverte sur une émotion. Parcourez mes thèmes favoris ou
+                        sollicitez-moi
+                        pour vos besoins spécifiques en photographie de spectacle.</p>
+
+                    <a href="https://www.instagram.com/tycorn_pictures?igsh=MTJyY2t3Z21zNmkwYw=="
+                        class="insta-link-wrapper" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="#E4405F">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                        <span>Tycorn_pictures</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Grille de Thèmes (Portfolio principal) -->
+            <div class="themes-grid" id="themesGrid">
+                <div class="theme-card" data-theme="nature">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600&auto=format&fit=crop"
+                            alt="Nature"></div>
+                    <div class="theme-info">
+                        <h3>Nature & Paysages</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="animaux">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=600&auto=format&fit=crop"
+                            alt="Animaux"></div>
+                    <div class="theme-info">
+                        <h3>Monde Animal</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="spectacles">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1514525253361-bee8718a300a?q=80&w=600&auto=format&fit=crop"
+                            alt="Spectacles"></div>
+                    <div class="theme-info">
+                        <h3>Spectacles & Scène</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="macro">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1476101015682-330df3e81cb8?q=80&w=600&auto=format&fit=crop"
+                            alt="Macro"></div>
+                    <div class="theme-info">
+                        <h3>Macro & Détails</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="urbain">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=600&auto=format&fit=crop"
+                            alt="Urbain"></div>
+                    <div class="theme-info">
+                        <h3>Urbain & Archi</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="nuit">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop"
+                            alt="Nuit"></div>
+                    <div class="theme-info">
+                        <h3>Nuit & Étoiles</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="portrait">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop"
+                            alt="Portrait"></div>
+                    <div class="theme-info">
+                        <h3>Portraits</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="noirblanc">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1502759683299-cdcc69741a7f?q=80&w=600&auto=format&fit=crop"
+                            alt="Noir et Blanc"></div>
+                    <div class="theme-info">
+                        <h3>Noir & Blanc</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="voyage">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=600&auto=format&fit=crop"
+                            alt="Voyage"></div>
+                    <div class="theme-info">
+                        <h3>Voyages</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="mer">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=600&auto=format&fit=crop"
+                            alt="Mer"></div>
+                    <div class="theme-info">
+                        <h3>Bords de Mer</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="saisons">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?q=80&w=600&auto=format&fit=crop"
+                            alt="Saisons"></div>
+                    <div class="theme-info">
+                        <h3>Saisons</h3>
+                    </div>
+                </div>
+                <div class="theme-card" data-theme="insolite">
+                    <div class="theme-image"><img
+                            src="https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=600&auto=format&fit=crop"
+                            alt="Insolite"></div>
+                    <div class="theme-info">
+                        <h3>Insolite</h3>
                     </div>
                 </div>
             </div>
+        </main>
 
-            <!-- Colonne droite -->
-            <div class="side-column">
-                <a href="boutique-graphisme.html" class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_4117af25f99d4bccbb722fcb0d989a5f~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_4117af25f99d4bccbb722fcb0d989a5f~mv2.png"
-                        alt="Graphisme">
-                    <span><strong>Graphisme</strong><br><strong>et<br><strong>illustrations vectorielles</strong></span>
-                </a>
-                <a href="boutique-auteur-et-illustrations-manuelles.html" class="box">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_3aba1afb2dab4bbfa3a686ef7b26b60e~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_3aba1afb2dab4bbfa3a686ef7b26b60e~mv2.png"
-                        alt="Auteur">
-                    <span><strong>Auteur</strong><br><strong>et</strong><br><strong>illustrations
-                            manuelles</strong></span>
-                </a>
-            </div>
-        </section>
-
-        <div class="btn-pro-container">
-            <a href="pro.html" class="btn-pro">accès professionnel entreprise</a>
-        </div>
-
+        <!-- ==========================================================================
+             SECTION SOCIALE (SUIVEZ-MOI / PARTAGEZ)
+             ========================================================================== -->
         <section id="social-section" class="social-container">
             <div class="social-line">
                 <strong>Suivez-moi</strong>
@@ -234,7 +316,7 @@
                         </svg><span>Instagram</span></div>
                     <div class="social-item"><svg viewBox="0 0 24 24" fill="#000000">
                             <path
-                                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.82.31-.74.5-1.24 1.33-1.35 2.22-.14 1.18.36 2.35 1.28 3.07 1.05.77 2.47.88 3.59.25 1.02-.64 1.58-1.84 1.61-3.03.01-3.75-.01-7.51.01-11.27zm9.06 6.06c-1.31-.02-2.61-.01-3.91.02-.08-1.53-.63-3.09-1.75-4.17-1.12-1.11-2.7-1.62-4.24-1.79v-4.03c1.44.05 2.89.35 4.2.97.57.26 1.1.59 1.62.93.01-2.92-.01-5.84.02-8.75.08-1.4.54-2.79 1.35-3.94 1.31-1.92 3.58-3.17 5.91-3.21 1.43-.08 2.86.31 4.08 1.03 2.02 1.19 3.44 3.37 3.65 5.71.02.5.03 1 .01 1.49.18 1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02-1.48.04-2.96.04-4.44.9.32 1.98.23 2.82.31.74.5 1.24 1.33 1.35 2.22.14 1.18.36 2.35 1.28 3.07 1.05.77 2.47.88 3.59.25 1.02.64 1.58-1.84 1.61-3.03.01-3.75-.01-7.51.01-11.27z" />
+                                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.82.31-.74.5-1.24 1.33-1.35 2.22-.14 1.18.36 2.35 1.28 3.07 1.05.77 2.47.88 3.59.25 1.02-.64 1.58-1.84 1.61-3.03.01-3.75-.01-7.51.01-11.27zm9.06 6.06c-1.31-.02-2.61-.01-3.91.02-.08-1.53-.63-3.09-1.75-4.17-1.12-1.11-2.7-1.62-4.24-1.79v-4.03c1.44.05 2.89.35 4.2.97.57.26 1.1.59 1.62.93.01-2.92-.01-5.84.02-8.75.08-1.4.54-2.79 1.35-3.94 1.31-1.92-3.58 3.17-5.91-3.21 1.43-.08 2.86.31 4.08 1.03 2.02 1.19 3.44 3.37 3.65 5.71.02.5.03 1 .01 1.49.18 1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02-1.48.04-2.96.04-4.44.9.32 1.98.23 2.82.31.74.5 1.24 1.33 1.35 2.22-.14 1.18.36 2.35 1.28 3.07 1.05.77 2.47.88 3.59.25 1.02-.64 1.58-1.84 1.61-3.03.01-3.75-.01-7.51.01-11.27z" />
                         </svg><span>TikTok</span></div>
                     <div class="social-item"><svg viewBox="0 0 24 24" fill="#000000">
                             <path
@@ -261,36 +343,87 @@
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- Section Image Pre-Footer -->
-    <section class="pre-footer-section">
-        <div class="image-container">
-            <img src="https://static.wixstatic.com/media/6e0a7d_ef13b520ca6747d2a06981fe4918bf04~mv2.jpg"
-                alt="Visuel Ty Zephyrria">
+
+        <!-- ==========================================================================
+             IMAGE PRE-FOOTER
+             ========================================================================== -->
+        <section class="pre-footer-section">
+            <div class="image-container">
+                <img src="https://static.wixstatic.com/media/6e0a7d_ef13b520ca6747d2a06981fe4918bf04~mv2.jpg"
+                    alt="Visuel Ty Zephyrria">
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             BOUTON HAUT DE PAGE (BACK TO TOP)
+             ========================================================================== -->
+        <div class="back-to-top-row">
+            <a href="#top" class="back-link">Haut de page</a>
+            <a href="#top" class="back-link desktop-only">Haut de page</a>
         </div>
-    </section>
 
-    <!-- Section Haut de Page -->
-    <div class="back-to-top-row">
-        <a href="#top" class="back-link">Haut de page</a>
-        <a href="#top" class="back-link desktop-only">Haut de page</a>
+        <!-- ==========================================================================
+             COMPTEUR DE VISITES
+             ========================================================================== -->
+        <div class="visitor-counter">
+            <span>VISITES :</span>
+            <span id="visit-count" class="count-number">...</span>
+        </div>
+
+        <!-- PIED DE PAGE -->
+        <footer>
+            <p>&copy; 2026 TY ZEPHYRRIA — SAINT-NAZAIRE — FRANCE</p>
+            <p>Créations artisanales, Photographie, Graphisme et Auto-édition</p>
+        </footer>
     </div>
 
-    <!-- ==========================================================================
-         COMPTEUR DE VISITES (Global)
-         ========================================================================== -->
-    <div class="visitor-counter">
-        <span>VISITES :</span>
-        <span id="visit-count" class="count-number">...</span>
+    <!-- MODALE GALERIE -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-close">&times;</div>
+            <div class="modal-content">
+                <h2 id="galleryTitle" class="checkout-main-title">Galerie</h2>
+                <div class="modal-photo-grid" id="modalPhotoGrid"></div>
+            </div>
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 TY ZEPHYRRIA — SAINT-NAZAIRE — FRANCE</p>
-        <p>Créations artisanales, Photographie, Graphisme et Auto-édition</p>
-    </footer>
+    <!-- MODALE PRESTATIONS -->
+    <div id="prestaModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-close">&times;</div>
+            <div class="modal-image">
+                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800&auto=format&fit=crop"
+                    alt="Prestation Spectacle">
+                <p class="small-text presta-travel-fee">* Frais de déplacement à prévoir selon la zone géographique.</p>
+            </div>
+            <div class="modal-content prestations-content">
+                <h2 class="checkout-main-title">Prestations Photographie</h2>
 
-    <script src="script.js"></script>
+                <div class="presta-details">
+                    <h3>Photographie de Spectacle</h3>
+                    <p>Capturer l'énergie, l'émotion et la magie des arts vivants. Je propose des reportages photo pour
+                        vos concerts, pièces de théâtre, danse ou tout autre événement scénique.*</p>
+                    <div class="presta-price">À partir de 120,00 €</div>
+                </div>
+
+                <div class="presta-actions">
+                    <button class="confirm-order-btn">Demander un devis</button>
+                    <!--<button class="like-button" data-item-id="presta-photo-spectacle" title="J'aime">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ZOOM POPUP -->
+                    <div id="zoomPopup" class="zoom-popup">
+                        <img src="" id="zoomImg" alt="Zoom">
+                    </div>
+
+                    <script src="script.js"></script>
 </body>
 
 </html>

@@ -33,26 +33,39 @@
                         </li>
                     </ul>
 
-                    <!-- Groupe Centre -->
                     <ul class="nav-menu menu-center-buttons">
                         <li class="nav-item btn-bordered dropdown">
-                            <a href="#">Créations artisanales</a>
+                            <a href="boutique-creations.html">Créations artisanales</a>
                             <ul class="dropdown-content">
-                                <li><a href="bijoux.html">Bijoux fantaisie</a></li>
-                                <li><a href="gravure.html">Gravure sur verre</a></li>
-                                <li><a href="pyrogravure.html">Pyrogravure</a></li>
-                                <li><a href="point-de-croix.html">Point de croix</a></li>
-                                <li><a href="illustrations.html">Illustrations</a></li>
+                                <li><a href="boutique-creations.html">Tout</a></li>
+                                <li><a href="boutique-creations.html?cat=bijoux">Bijoux fantaisies</a></li>
+                                <li><a href="boutique-creations.html?cat=point-de-croix">Point de croix</a></li>
+                                <li><a href="boutique-creations.html?cat=gravure">Gravures diverses</a></li>
+                                <li><a href="boutique-creations.html?cat=bois">Travail sur bois</a></li>
                             </ul>
                         </li>
                         <li class="nav-item btn-bordered">
-                            <a href="photographie.html">Photographie</a>
+                            <a href="boutique-photo.html">Photographie</a>
                         </li>
-                        <li class="nav-item btn-bordered">
-                            <a href="graphisme.html">Graphisme</a>
+                        <li class="nav-item btn-bordered dropdown">
+                            <a href="boutique-graphisme.html">Graphisme</a>
+                            <ul class="dropdown-content">
+                                <li><a href="boutique-graphisme.html">Tout</a></li>
+                                <li><a href="boutique-graphisme.html?cat=logo">Logo</a></li>
+                                <li><a href="boutique-graphisme.html?cat=cartes">Cartes de visite</a></li>
+                                <li><a href="boutique-graphisme.html?cat=affiches">Affiches</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item btn-bordered">
-                            <a href="auteur_illustrations.html">Auteur/Illustrations</a>
+                        <li class="nav-item btn-bordered dropdown">
+                            <a href="boutique-auteur-et-illustrations-manuelles.html">Auteur/Illustrations</a>
+                            <ul class="dropdown-content">
+                                <li><a href="boutique-auteur-et-illustrations-manuelles.html">Tout</a></li>
+                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=auteur">Auteur</a></li>
+                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=crayon">Dessins au Crayon</a></li>
+                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=aquarelle">Aquarelle</a></li>
+                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=acrylique">Acrylique</a></li>
+                                <li><a href="boutique-auteur-et-illustrations-manuelles.html?cat=autres">Autres techniques</a></li>
+                            </ul>
                         </li>
                     </ul>
 
@@ -69,7 +82,7 @@
                             <a href="contact.html">Contactez-moi</a>
                         </li>
                         <li class="nav-item btn-underlined small-text">
-                            <a href="medias.html">RDV sur les médias</a>
+                            <a href="#social-section">RDV sur les médias</a>
                         </li>
                     </ul>
                 </div>
@@ -139,7 +152,7 @@
             </div>
         </section>
 
-        <section class="social-container">
+        <section id="social-section" class="social-container">
             <div class="social-line">
                 <strong>Suivez-moi</strong>
                 <svg class="arrow-svg" viewBox="42 68.5 116 62.999" xmlns="http://www.w3.org/2000/svg">
@@ -263,11 +276,20 @@
         <a href="#top" class="back-link desktop-only">Haut de page</a>
     </div>
 
+    <!-- ==========================================================================
+         COMPTEUR DE VISITES (Global)
+         ========================================================================== -->
+    <div class="visitor-counter">
+        <span>VISITES :</span>
+        <span id="visit-count" class="count-number">...</span>
+    </div>
+
     <footer>
         <p>&copy; 2026 TY ZEPHYRRIA — SAINT-NAZAIRE — FRANCE</p>
         <p>Créations artisanales, Photographie, Graphisme et Auto-édition</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>

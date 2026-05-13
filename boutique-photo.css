@@ -1,0 +1,265 @@
+/* ==========================================================================
+   BOUTIQUE PHOTO - STYLES SPÉCIFIQUES
+   ========================================================================== */
+
+.photo-hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.8));
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+.photo-nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.photo-nav-btn {
+    padding: 12px 25px;
+    border: 1px solid #0064C8;
+    background: white;
+    color: #0064C8;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.photo-nav-btn:hover,
+.photo-nav-btn.active {
+    background: #0064C8;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 100, 200, 0.2);
+}
+
+.photo-intro-text {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Instagram Link Section */
+.insta-link-wrapper {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+.insta-link-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.insta-link-wrapper svg {
+    width: 30px;
+    height: 30px;
+}
+
+/* Theme Grid */
+.themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.theme-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 100, 200, 0.15);
+}
+
+.theme-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.theme-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.theme-card:hover .theme-image img {
+    transform: scale(1.1);
+}
+
+.theme-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.theme-info h3 {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    color: #0064C8;
+}
+
+/* Modal sizing override for Photography */
+.modal-container {
+    width: 85% !important;
+    max-width: 1100px !important;
+}
+
+.modal-image {
+    position: relative;
+}
+
+/* Photo Grid Inside Modal */
+.modal-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-photo-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 200px;
+    cursor: zoom-in;
+}
+
+.modal-photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-photo-item .quick-add-btn {
+    bottom: 50px;
+    /* Remonté pour ne pas chevaucher le titre */
+}
+
+.modal-photo-item .like-button {
+    bottom: 50px;
+}
+
+/* Prestations Styling */
+.prestations-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between !important;
+    text-align: center;
+    padding: 30px !important;
+}
+
+.prestations-content .checkout-main-title {
+    margin: 0 0 15px 0;
+    font-size: 2.2rem;
+    color: #0064C8;
+    text-align: center;
+}
+
+.presta-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.presta-details h3 {
+    font-family: 'Cinzel', serif;
+    color: #333;
+    margin: 0;
+}
+
+.presta-price {
+    font-size: 1.8rem;
+    color: #0064C8;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.presta-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.presta-actions .confirm-order-btn {
+    flex: 0 1 300px;
+    margin: 0;
+}
+
+.presta-actions .like-button {
+    position: static;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.presta-travel-fee {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.75rem !important;
+    color: #777;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 3px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+/* ZOOM POPUP */
+.zoom-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 3000;
+    display: none;
+    /* Masqué par défaut */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.zoom-popup img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
