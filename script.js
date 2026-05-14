@@ -437,6 +437,14 @@ function initPhotoBoutique() {
         });
     }
 
+    const prestaThemeCard = document.getElementById('prestaThemeCard');
+    if (prestaThemeCard && prestaModal) {
+        prestaThemeCard.addEventListener('click', () => {
+            prestaModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
     const galleryData = {
         'nature': [{ id: 'ph-nat-1', url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600', title: 'Forêt', price: '15 €' }],
         'animaux': [{ id: 'ph-ani-1', url: 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=600', title: 'Tortue', price: '20 €' }],
@@ -463,6 +471,7 @@ function initPhotoBoutique() {
             if (data && grid) {
                 title.textContent = card.querySelector('h3').textContent;
                 grid.innerHTML = '';
+                
                 data.forEach(photo => {
                     const item = document.createElement('div');
                     item.className = 'modal-photo-item product-image';
@@ -473,7 +482,10 @@ function initPhotoBoutique() {
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/></svg>
                         </button>
-                        <img src="${photo.url}" alt="${photo.title}" class="zoomable-img">
+                        <button class="zoom-icon-btn" title="Agrandir">
+                            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor" stroke="none"/></svg>
+                        </button>
+                        <img src="${photo.url}" alt="${photo.title}" class="zoomable-img" loading="lazy">
                         <div class="photo-info-overlay" style="padding: 10px; text-align: center; background: rgba(255,255,255,0.9); position: absolute; bottom: 0; width: 100%; font-size: 0.9rem;">
                             <strong>${photo.title}</strong><br>${photo.price}
                         </div>
@@ -486,16 +498,59 @@ function initPhotoBoutique() {
         });
     }
 
+    let currentZoomImages = [];
+    let currentZoomIndex = 0;
+
     document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('zoomable-img')) {
+        const zoomImgTarget = e.target.closest('.zoomable-img');
+        if (zoomImgTarget) {
+            e.preventDefault();
+            e.stopPropagation();
             if (zoomPopup && zoomImg) {
-                zoomImg.src = e.target.src;
+                currentZoomImages = Array.from(document.querySelectorAll('#modalPhotoGrid .zoomable-img'));
+                currentZoomIndex = currentZoomImages.indexOf(zoomImgTarget);
+                if (currentZoomIndex === -1) {
+                    currentZoomImages = [zoomImgTarget];
+                    currentZoomIndex = 0;
+                }
+                zoomImg.src = currentZoomImages[currentZoomIndex].src.replace('&w=600', '&w=1600');
                 zoomPopup.style.display = 'flex';
             }
         }
     });
 
     if (zoomPopup) {
+        const zoomPrev = document.getElementById('zoomPrev');
+        const zoomNext = document.getElementById('zoomNext');
+        const zoomClose = document.getElementById('zoomClose');
+
+        if (zoomPrev) {
+            zoomPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentZoomImages.length > 0) {
+                    currentZoomIndex = (currentZoomIndex - 1 + currentZoomImages.length) % currentZoomImages.length;
+                    zoomImg.src = currentZoomImages[currentZoomIndex].src.replace('&w=600', '&w=1600');
+                }
+            });
+        }
+        
+        if (zoomNext) {
+            zoomNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentZoomImages.length > 0) {
+                    currentZoomIndex = (currentZoomIndex + 1) % currentZoomImages.length;
+                    zoomImg.src = currentZoomImages[currentZoomIndex].src.replace('&w=600', '&w=1600');
+                }
+            });
+        }
+
+        if (zoomClose) {
+            zoomClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                zoomPopup.style.display = 'none';
+            });
+        }
+
         zoomPopup.addEventListener('click', () => { zoomPopup.style.display = 'none'; });
         zoomPopup.addEventListener('contextmenu', (e) => { e.preventDefault(); zoomPopup.style.display = 'none'; });
     }
@@ -837,92 +892,3 @@ function initVisitorCounter() {
 
 
 
-
-function initPhotoBoutique() {
-    const btnPhotos = document.getElementById('btn-photos');
-    const btnPresta = document.getElementById('btn-presta');
-    const prestaModal = document.getElementById('prestaModal');
-    const galleryModal = document.getElementById('galleryModal');
-    const themesGrid = document.getElementById('themesGrid');
-    const zoomPopup = document.getElementById('zoomPopup');
-    const zoomImg = document.getElementById('zoomImg');
-
-    // Fermeture des modales (générique)
-    document.querySelectorAll('.modal-close').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.modal').forEach(m => m.classList.remove('active'));
-            document.body.style.overflow = '';
-        });
-    });
-
-    // Ouverture Modale Prestations
-    if (btnPresta && prestaModal) {
-        btnPresta.addEventListener('click', () => {
-            prestaModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-
-    const galleryData = {
-        'nature': [{ id: 'ph-nat-1', url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600', title: 'Forêt', price: '15 €' }],
-        'animaux': [{ id: 'ph-ani-1', url: 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=600', title: 'Tortue', price: '20 €' }],
-        'spectacles': [{ id: 'ph-spe-1', url: 'https://images.unsplash.com/photo-1514525253361-bee8718a300a?q=80&w=600', title: 'Scène', price: '25 €' }],
-        'macro': [{ id: 'ph-mac-1', url: 'https://images.unsplash.com/photo-1476101015682-330df3e81cb8?q=80&w=600', title: 'Fleur', price: '15 €' }],
-        'urbain': [{ id: 'ph-urb-1', url: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=600', title: 'Ville', price: '18 €' }],
-        'nuit': [{ id: 'ph-nui-1', url: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600', title: 'Étoiles', price: '30 €' }],
-        'portrait': [{ id: 'ph-por-1', url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600', title: 'Regard', price: '22 €' }],
-        'noirblanc': [{ id: 'ph-nb-1', url: 'https://images.unsplash.com/photo-1502759683299-cdcc69741a7f?q=80&w=600', title: 'Contraste', price: '15 €' }],
-        'voyage': [{ id: 'ph-voy-1', url: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=600', title: 'Horizon', price: '20 €' }],
-        'mer': [{ id: 'ph-mer-1', url: 'https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=600', title: 'Vagues', price: '18 €' }],
-        'saisons': [{ id: 'ph-sai-1', url: 'https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?q=80&w=600', title: 'Automne', price: '15 €' }],
-        'insolite': [{ id: 'ph-ins-1', url: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=600', title: 'Angle', price: '25 €' }]
-    };
-
-    if (themesGrid && galleryModal) {
-        themesGrid.addEventListener('click', (e) => {
-            const card = e.target.closest('.theme-card');
-            if (!card) return;
-            const theme = card.dataset.theme;
-            const data = galleryData[theme];
-            const grid = document.getElementById('modalPhotoGrid');
-            const title = document.getElementById('galleryTitle');
-            if (data && grid) {
-                title.textContent = card.querySelector('h3').textContent;
-                grid.innerHTML = '';
-                data.forEach(photo => {
-                    const item = document.createElement('div');
-                    item.className = 'modal-photo-item product-image';
-                    item.innerHTML = `
-                        <button class="like-button" data-item-id="${photo.id}" title="J'aime">
-                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
-                        </button>
-                        <button class="quick-add-btn" title="Ajout rapide au panier">
-                            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/></svg>
-                        </button>
-                        <img src="${photo.url}" alt="${photo.title}" class="zoomable-img">
-                        <div class="photo-info-overlay" style="padding: 10px; text-align: center; background: rgba(255,255,255,0.9); position: absolute; bottom: 0; width: 100%; font-size: 0.9rem;">
-                            <strong>${photo.title}</strong><br>${photo.price}
-                        </div>
-                    `;
-                    grid.appendChild(item);
-                });
-                galleryModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    }
-
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('zoomable-img')) {
-            if (zoomPopup && zoomImg) {
-                zoomImg.src = e.target.src;
-                zoomPopup.style.display = 'flex';
-            }
-        }
-    });
-
-    if (zoomPopup) {
-        zoomPopup.addEventListener('click', () => { zoomPopup.style.display = 'none'; });
-        zoomPopup.addEventListener('contextmenu', (e) => { e.preventDefault(); zoomPopup.style.display = 'none'; });
-    }
-}
