@@ -257,7 +257,7 @@ function initBoutiqueFilter() {
 
 function initLikes() {
     const savedLikes = JSON.parse(localStorage.getItem('tyZephyrriaLikes')) || [];
-    
+
     // Initialiser les boutons existants
     document.querySelectorAll('.like-button').forEach(btn => {
         const itemId = btn.getAttribute('data-item-id');
@@ -471,7 +471,7 @@ function initPhotoBoutique() {
             if (data && grid) {
                 title.textContent = card.querySelector('h3').textContent;
                 grid.innerHTML = '';
-                
+
                 data.forEach(photo => {
                     const item = document.createElement('div');
                     item.className = 'modal-photo-item product-image';
@@ -533,7 +533,7 @@ function initPhotoBoutique() {
                 }
             });
         }
-        
+
         if (zoomNext) {
             zoomNext.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -765,7 +765,7 @@ window.initCheckout = function () {
             finalCart.forEach(item => {
                 // Version Texte
                 itemsDetails += `- ${item.title} (${item.price})\n`;
-                
+
                 // Version HTML avec miniature
                 itemsHtml += `
                     <li style="margin-bottom: 15px; display: flex; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 10px;">
@@ -780,7 +780,7 @@ window.initCheckout = function () {
                 total += priceNum;
             });
             itemsHtml += "</ul>";
-            
+
             const formattedTotal = total.toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' });
 
             // Changement d'état du bouton
@@ -798,28 +798,28 @@ window.initCheckout = function () {
                 cart_details: itemsDetails, // Gardé pour la compatibilité
                 cart_html: itemsHtml,       // Nouvelle variable avec les photos
                 total_amount: formattedTotal,
-                cc_email: sendCopy ? email : "" 
+                cc_email: sendCopy ? email : ""
             };
 
             // Envoi via EmailJS
             emailjs.send("service_6qeqf35", "template_ypwrd7s", templateParams)
                 .then((response) => {
                     console.log('SUCCESS!', response.status, response.text);
-                    
+
                     // Affichage de la modale de succès
                     const thankYouModal = document.getElementById('thankYouModal');
                     if (thankYouModal) {
                         thankYouModal.classList.add('active');
                         document.body.style.overflow = 'hidden';
                     }
-                    
+
                     // Vider le panier RÉEL (localStorage)
                     localStorage.removeItem('tyZephyrriaCart');
                 })
                 .catch((error) => {
                     console.error('FAILED...', error);
                     alert("Désolé, une erreur technique est survenue. Merci de nous contacter directement par mail à tyzephyrria@gmail.com.");
-                    
+
                     // Réactiver le bouton en cas d'échec
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalBtnText;
@@ -869,23 +869,44 @@ function initVisitorCounter() {
     const lastVisit = localStorage.getItem('tyZephyrria_lastVisit');
 
     // Déterminer si on doit incrémenter ou juste lire
-    let url = 'https://api.counterapi.dev/v1/tyzephyrria/global'; // Lecture simple
+    let url = 'https://api.counterapi.dev/v1/tyzephyrria/global/'; // Lecture simple
 
     if (!lastVisit || (now - parseInt(lastVisit)) > thirtyMinutes) {
         url = 'https://api.counterapi.dev/v1/tyzephyrria/global/up'; // Incrémentation
-        localStorage.setItem('tyZephyrria_lastVisit', now.toString());
     }
 
     fetch(url)
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            return res.json();
+        })
         .then(data => {
-            if (data && data.count) {
+            if (data && typeof data.count !== 'undefined') {
                 counterEl.textContent = data.count.toLocaleString('fr-FR');
+                if (url.endsWith('/up')) {
+                    localStorage.setItem('tyZephyrria_lastVisit', now.toString());
+                }
+            } else {
+                throw new Error("Pas de compteur dans les données");
             }
         })
         .catch(err => {
-            console.error("Erreur compteur:", err);
-            counterEl.textContent = "---";
+            console.warn("Erreur compteur principal:", err);
+            // Si l'incrémentation échoue (ex: limite atteinte), on tente une lecture simple
+            if (url.endsWith('/up')) {
+                fetch('https://api.counterapi.dev/v1/tyzephyrria/global/')
+                    .then(r => r.json())
+                    .then(d => {
+                        if (d && typeof d.count !== 'undefined') {
+                            counterEl.textContent = d.count.toLocaleString('fr-FR');
+                        } else {
+                            counterEl.textContent = "---";
+                        }
+                    })
+                    .catch(() => counterEl.textContent = "---");
+            } else {
+                counterEl.textContent = "---";
+            }
         });
 }
 
