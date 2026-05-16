@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Ty Zephyrria</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="contact.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Dancing+Script:wght@600&family=Quicksand:wght@300;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="banner-placeholder"></div>
+
+    <div class="main-content">
+        <div id="nav-placeholder"></div>
+
+        <main class="page-content">
+            <h2 class="page-title">Contactez-moi</h2>
+
+            <div class="contact-container">
+                <div class="contact-intro">
+                    <p>Une question ? Un projet de création sur mesure ? Ou simplement l'envie de partager un retour sur
+                        mon univers ?</p>
+                    <p>N'hésitez pas à m'envoyer un message via le formulaire ci-dessous. Je vous répondrai avec plaisir
+                        dans les plus brefs délais.</p>
+                </div>
+
+                <form id="contactForm" action="https://formspree.io/f/xzdonwbg" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Votre Nom Prénom</label>
+                        <input type="text" id="name" name="name" placeholder="Ex: Jean Dupont" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Votre Email</label>
+                        <input type="email" id="email" name="email" placeholder="Ex: jean.dupont@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Choisissez un sujet</option>
+                            <option value="creation">Création artisanale</option>
+                            <option value="photo">Photographie / Prestation</option>
+                            <option value="graphisme">Graphisme / Identité visuelle</option>
+                            <option value="auteur">Auto-édition / Illustrations</option>
+                            <option value="autre">Autre demande</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Votre Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Comment puis-je vous aider ?"
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Envoyer mon message</button>
+                </form>
+            </div>
+
+            <div id="social-placeholder"></div>
+        </main>
+    </div>
+
+    <div id="pre-footer-placeholder"></div>
+    <div id="back-to-top-placeholder"></div>
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

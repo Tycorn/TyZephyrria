@@ -9,46 +9,46 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Pinyon+Script&family=Quicksand:wght@300;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1 id="logo">Bienvenue sur Ty Zephyrria</h1>
-        <div class="cart-status">🛒 Panier</div>
-    </header>
+    <div id="banner-placeholder"></div>
+    <div class="main-content">
+        <div id="nav-placeholder"></div>
 
-    <div id="home-page">
-        <section class="hero" id="main-hero">
-            <div class="hero-container">
-                <div class="hero-image-wrapped">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_ef13b520ca6747d2a06981fe4918bf04~mv2.jpg"
-                        alt="Bannière Ty Zephyrria">
-                </div>
-                <!-- Message d'erreur masqué par défaut -->
-                <div class="error-message">Image non disponible</div>
-                <div class="wind-container">
-                    <!-- Définitions des ressources pour le vent -->
-                    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="windGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#ffffff; stop-opacity:0" />
-                                <stop offset="45%" style="stop-color:#ffffff; stop-opacity:0.8" />
-                                <stop offset="100%" style="stop-color:#888888; stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <!-- Les symboles de vent sont générés dynamiquement par script.js -->
-                </div>
+        <div id="home-page">
+            <section class="hero" id="main-hero">
+                <div class="hero-container">
+                    <div class="hero-image-wrapped">
+                        <img src="assets/0-accueil-valeurs-qui-suis-je/ty-zephyrria-officiel.jpg"
+                            alt="Bannière Ty Zephyrria">
+                    </div>
+                    <!-- Message d'erreur masqué par défaut -->
+                    <div class="error-message">Image non disponible</div>
+                    <div class="wind-container">
+                        <!-- Définitions des ressources pour le vent -->
+                        <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="windGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#ffffff; stop-opacity:0" />
+                                    <stop offset="45%" style="stop-color:#ffffff; stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#888888; stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <!-- Les symboles de vent sont générés dynamiquement par script.js -->
+                    </div>
 
-                <!-- SOUS-SECTION FEU ANIME -->
-                <div class="spacer-below-hero">
-                    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
-                        <defs>
-                        </defs>
-                        <symbol id="multi-flame" viewBox="0 0 40 70">
-                            <path d="M 10 60 
+                    <!-- SOUS-SECTION FEU ANIME -->
+                    <div class="spacer-below-hero">
+                        <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+                            <defs>
+                            </defs>
+                            <symbol id="multi-flame" viewBox="0 0 40 70">
+                                <path d="M 10 60 
                                     C 10 60, 5 50, 5 43
                                     C 5.5 43, 2 37, 9 13
                                     C 7 15, 5 30, 11 45
@@ -64,359 +64,246 @@
                                     C 34 37, 35 50, 35 60
                                     A 12 10 0 0 1 10 60
                                     Z" />
-                        </symbol>
+                            </symbol>
+                        </svg>
+
+                        <div class="fire-base"></div>
+
+                        <div class="fire-container">
+                            <!-- Les flammes sont générées dynamiquement par script.js pour simplifier le HTML -->
+                            <div class="fire-layer layer-back"></div>
+                            <div class="fire-layer layer-mid"></div>
+                            <div class="fire-layer layer-front"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <main class="artistic-frame">
+                <div class="wave-container">
+                    <!-- Viewbox ajustée pour que le haut soit à 0 -->
+                    <svg width="100%" viewBox="0 0 1000 130" style="overflow: visible;"
+                        preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="dropletGradient" cx="50%" cy="50%" r="50%" fx="35%" fy="35%">
+                                <stop offset="0%" style="stop-color:#a5ccff" />
+                                <stop offset="100%" style="stop-color:var(--ocean-blue)" />
+                            </radialGradient>
+                            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:var(--ocean-deep);stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:var(--ocean-blue);stop-opacity:0" />
+                            </linearGradient>
+                            <!-- Symbole de la goutte (Boîte de 50x60) -->
+                            <symbol id="real-droplet" viewBox="0 0 50 60">
+                                <!-- On groupe les éléments pour leur appliquer une rotation anti-horaire (-10 degrés autour du centre 25,30) -->
+                                <g transform="rotate(-5 25 30)">
+                                    <path d="M18 0 C 23 12, 28 18, 29 26 A 6 6 0 0 1 2 28 C 2 13, 13 17, 18 0 Z"
+                                        fill="url(#dropletGradient)" />
+                                    <ellipse class="droplet-highlight" cx="11" cy="22" rx="2.5" ry="4"
+                                        transform="rotate(19 7 16)" />
+                                </g>
+                            </symbol>
+                        </defs>
+
+                        <!-- Dégradé remonté tout en haut (y=0) -->
+                        <path id="wave-fill"
+                            d="M0 0 Q 50 15, 100 0 T 200 0 T 300 0 T 400 0 T 500 0 T 600 0 T 700 0 T 800 0 T 900 0 T 1000 0 L 1000 100 Q 950 115, 900 100 T 800 100 T 700 100 T 600 100 T 500 100 T 400 100 T 300 100 T 200 100 T 100 100 T 0 100 Z"
+                            fill="url(#waveGradient)" />
+
+                        <!-- Lignes de vagues remontées (y=0, 20, 40) -->
+                        <path id="wave-line-1"
+                            d="M0 0 Q 25 15, 50 0 T 100 0 T 150 0 T 200 0 T 250 0 T 300 0 T 350 0 T 400 0 T 450 0 T 500 0 T 550 0 T 600 0 T 650 0 T 700 0 T 750 0 T 800 0 T 850 0 T 900 0 T 950 0 T 1000 0"
+                            stroke="var(--ocean-deep)" stroke-width="1.5" fill="none" opacity="0.2" />
+                        <path id="wave-line-2"
+                            d="M0 20 Q 25 35, 50 20 T 100 20 T 150 20 T 200 20 T 250 20 T 300 20 T 350 20 T 400 20 T 450 20 T 500 20 T 550 20 T 600 20 T 650 20 T 700 20 T 750 20 T 800 20 T 850 20 T 900 20 T 950 20 T 1000 20"
+                            stroke="var(--ocean-deep)" stroke-width="2" fill="none" opacity="0.4" />
+                        <path id="wave-line-3"
+                            d="M0 40 Q 25 55, 50 40 T 100 40 T 150 40 T 200 40 T 250 40 T 300 40 T 350 40 T 400 40 T 450 40 T 500 40 T 550 40 T 600 40 T 650 40 T 700 40 T 750 40 T 800 40 T 850 40 T 900 40 T 950 40 T 1000 40"
+                            stroke="var(--ocean-deep)" stroke-width="2.5" fill="none" opacity="0.6" />
+
+                        <!-- Les gouttes sont générées dynamiquement par script.js -->
+                        <g id="droplets-collection"></g>
                     </svg>
-
-                    <div class="fire-base"></div>
-
-                    <div class="fire-container">
-                        <!-- Les flammes sont générées dynamiquement par script.js pour simplifier le HTML -->
-                        <div class="fire-layer layer-back"></div>
-                        <div class="fire-layer layer-mid"></div>
-                        <div class="fire-layer layer-front"></div>
-                    </div>
                 </div>
-            </div>
-        </section>
-
-        <main class="artistic-frame">
-            <div class="wave-container">
-                <!-- Viewbox ajustée pour que le haut soit à 0 -->
-                <svg width="100%" viewBox="0 0 1000 130" style="overflow: visible;" preserveAspectRatio="xMidYMin meet"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <radialGradient id="dropletGradient" cx="50%" cy="50%" r="50%" fx="35%" fy="35%">
-                            <stop offset="0%" style="stop-color:#a5ccff" />
-                            <stop offset="100%" style="stop-color:var(--ocean-blue)" />
-                        </radialGradient>
-                        <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color:var(--ocean-deep);stop-opacity:0.2" />
-                            <stop offset="100%" style="stop-color:var(--ocean-blue);stop-opacity:0" />
-                        </linearGradient>
-                        <!-- Symbole de la goutte (Boîte de 50x60) -->
-                        <symbol id="real-droplet" viewBox="0 0 50 60">
-                            <!-- On groupe les éléments pour leur appliquer une rotation anti-horaire (-10 degrés autour du centre 25,30) -->
-                            <g transform="rotate(-5 25 30)">
-                                <path d="M18 0 C 23 12, 28 18, 29 26 A 6 6 0 0 1 2 28 C 2 13, 13 17, 18 0 Z"
-                                    fill="url(#dropletGradient)" />
-                                <ellipse class="droplet-highlight" cx="11" cy="22" rx="2.5" ry="4"
-                                    transform="rotate(19 7 16)" />
-                            </g>
-                        </symbol>
-                    </defs>
-
-                    <!-- Dégradé remonté tout en haut (y=0) -->
-                    <path id="wave-fill"
-                        d="M0 0 Q 50 15, 100 0 T 200 0 T 300 0 T 400 0 T 500 0 T 600 0 T 700 0 T 800 0 T 900 0 T 1000 0 L 1000 100 Q 950 115, 900 100 T 800 100 T 700 100 T 600 100 T 500 100 T 400 100 T 300 100 T 200 100 T 100 100 T 0 100 Z"
-                        fill="url(#waveGradient)" />
-
-                    <!-- Lignes de vagues remontées (y=0, 20, 40) -->
-                    <path id="wave-line-1"
-                        d="M0 0 Q 25 15, 50 0 T 100 0 T 150 0 T 200 0 T 250 0 T 300 0 T 350 0 T 400 0 T 450 0 T 500 0 T 550 0 T 600 0 T 650 0 T 700 0 T 750 0 T 800 0 T 850 0 T 900 0 T 950 0 T 1000 0"
-                        stroke="var(--ocean-deep)" stroke-width="1.5" fill="none" opacity="0.2" />
-                    <path id="wave-line-2"
-                        d="M0 20 Q 25 35, 50 20 T 100 20 T 150 20 T 200 20 T 250 20 T 300 20 T 350 20 T 400 20 T 450 20 T 500 20 T 550 20 T 600 20 T 650 20 T 700 20 T 750 20 T 800 20 T 850 20 T 900 20 T 950 20 T 1000 20"
-                        stroke="var(--ocean-deep)" stroke-width="2" fill="none" opacity="0.4" />
-                    <path id="wave-line-3"
-                        d="M0 40 Q 25 55, 50 40 T 100 40 T 150 40 T 200 40 T 250 40 T 300 40 T 350 40 T 400 40 T 450 40 T 500 40 T 550 40 T 600 40 T 650 40 T 700 40 T 750 40 T 800 40 T 850 40 T 900 40 T 950 40 T 1000 40"
-                        stroke="var(--ocean-deep)" stroke-width="2.5" fill="none" opacity="0.6" />
-
-                    <!-- Les gouttes sont générées dynamiquement par script.js -->
-                    <g id="droplets-collection"></g>
-                </svg>
-            </div>
-            <div class="content-section">
-                <div class="intro-text">
-                    <p><strong>TY ZEPHYRRIA</strong> est née de la rencontre entre la curiosité et
-                        l'inspiration, portée par un souffle de créativité permanent.</p>
-                    <p><strong>Vision Artistique :</strong> Des bijoux fantaisies façonnés à la main, des gravures
-                        délicates et des illustrations qui capturent l'instant.</p>
-                    <p><strong>Vision Cérébrale :</strong> Un regard de photographe affûté par 15 ans de pratique et le
-                        goût du partage à travers l'auto-édition.</p>
-                    <p><strong>Vision Fonctionnelle :</strong> Un accompagnement graphique et informatique sur mesure
-                        pour donner vie à votre identité visuelle et logistique.</p>
-                    <br>
-                    <p><strong>"Ne rêve pas ta Vie, vis tes rêves"</strong>...(A. de St Exupéry)<br>Laissez place à la
-                        candeur, l'émerveillement, les rêveries et venez découvrir mon univers sous ses multiples
-                        facettes.</p>
-                </div>
-            </div>
-
-            <!-- Illustration végétale basse intégrée dans le cadre -->
-            <div class="foliage-bottom-container">
-                <svg width="100%" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMax slice"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <symbol id="long-leaf" viewBox="0 0 15 45">
-                            <path
-                                d="M7.5 45 C 7.5 45, 0 30, 0 15 C 0 5, 7.5 0, 7.5 0 C 7.5 0, 15 5, 15 15 C 15 30, 7.5 45, 7.5 45" />
-                        </symbol>
-                    </defs>
-
-                    <!-- 5 branchages entrelacés -->
-                    <path class="branch-path" d="M-10 100 Q 150 60, 350 90 T 700 70 T 1010 100" stroke-width="4" />
-                    <path class="branch-path" d="M20 115 Q 250 50, 500 100 T 980 60" stroke-width="3" />
-                    <path class="branch-path" d="M300 110 Q 450 80, 600 105 T 1030 90" stroke-width="2.5" />
-                    <path class="branch-path" d="M-50 80 Q 100 110, 250 85 T 600 95" stroke-width="3" opacity="0.6" />
-                    <path class="branch-path" d="M650 115 Q 800 70, 950 110" stroke-width="2" opacity="0.7" />
-
-                    <!-- 30 feuilles élancées orientées différemment générées par script.js -->
-                    <g id="foliage-group"></g>
-                </svg>
-            </div>
-        </main>
-
-        <!-- ACCUEIL -->
-        <div class="grid-container">
-            <div class="card">
-                <div class="card-wrapped">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_611ffd96f48a4ae0a392282c78cd8752~mv2.png/v1/fit/w_407,h_550,q_90,enc_avif,quality_auto/6e0a7d_611ffd96f48a4ae0a392282c78cd8752~mv2.png"
-                        alt="[Image de Créations artisanales]">
-                </div>
-                <div class="card-info">Créations Artisanales</div>
-            </div>
-            <div class="card">
-                <div class="card-wrapped">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_8a3f5b73820e4bc2b243e19a1cf7bc6e~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_8a3f5b73820e4bc2b243e19a1cf7bc6e~mv2.png"
-                        alt="[Image de Photographie]">
-                </div>
-                <div class="card-info">Photographie</div>
-            </div>
-            <div class="card">
-                <div class="card-wrapped">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_4117af25f99d4bccbb722fcb0d989a5f~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_4117af25f99d4bccbb722fcb0d989a5f~mv2.png"
-                        alt="[Image de Graphisme]">
-                </div>
-                <div class="card-info">Graphisme</div>
-            </div>
-            <div class="card">
-                <div class="card-wrapped">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_3aba1afb2dab4bbfa3a686ef7b26b60e~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_3aba1afb2dab4bbfa3a686ef7b26b60e~mv2.png"
-                        alt="[Image de Livre]">
-                </div>
-                <div class="card-info">Auto-édition</div>
-            </div>
-            <div class="card">
-                <div class="card-wrapped">
-                    <img src="https://static.wixstatic.com/media/6e0a7d_f9bf8ee106284e8eafe8326db3fc5f22~mv2.png/v1/fit/w_794,h_550,q_90,enc_avif,quality_auto/6e0a7d_f9bf8ee106284e8eafe8326db3fc5f22~mv2.png"
-                        alt="[Image de Tablette et Santé]">
-                </div>
-                <div class="card-info">Spécialiste Assistant Clinique</div>
-            </div>
-        </div>
-
-        <!-- SECTION POURQUOI TY ZEPHYRRIA -->
-        <section class="why-section">
-            <div class="why-container">
-                <div class="why-image" title="Fondements de la micro-entreprise"></div>
-                <div class="why-text">
-                    <h2>Pourquoi Ty Zephyrria ?</h2>
-                    <p>"Ne rêve pas ta Vie, vis tes rêves!"</p>
-                    <p>Passionnée et curieuse dans un certain nombre de domaines, notamment celui de la création, j'ai
-                        fondé <strong>Ty Zephyrria</strong> pour réunir mes différentes facettes artistiques et autres
-                        potentiels sous une même <strong>énergie</strong>.</p>
-                    <p>Fascinée et inspirée par le monde animal et la nature, il m'était assez évident d'en faire mon
-                        fil conducteur avec les 4 éléments:</p>
-                    <div li::before>
-                        <li>Le <strong>feu</strong> pour l'ardeur, la curiosité et la passion artistique.</li>
-                        <li>L'<strong>air</strong> pour l'intuition et l'inspiration de la liberté cérébrale.</li>
-                        <li>La <strong>terre</strong> pour l'enracinement logique, la cohérence et la fonctionnalité
-                            dans un environnement concret.</li>
-                        <li>L'<strong>eau</strong> pour la fluidité, la cohésion et la bienveillance de l'altruisme.
-                        </li>
-                    </div><br>
-                    <p>Mon parcours de 15 ans dans l'image me permet aujourd'hui de vous accompagner avec une vision
-                        globale, qu'il s'agisse de créer un bijou qui vous ressemble ou de construire votre propre
-                        identité visuelle personnelle ou professionnelle.</p>
-                    <p>Le tout dans une <strong>énergie vivante</strong> authentique et en perpétuel émerveillement,
-                        telle une Divergeante ou un Caméléon (^^ pardon, j'adore ce film et cette série, c'était trop
-                        tentant...).<br>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION QUI SUIS-JE -->
-        <section class="about-section">
-            <div class="about-container">
-                <div class="about-image" title="Portrait de l'artisan"></div>
-                <div class="about-text">
-                    <h2>Qui suis-je ?</h2>
-                    <p>Passionnée et curieuse dans un certain nombre de domaines, notamment celui de la création, j'ai
-                        fondé <strong>Ty Zephyrria</strong> pour réunir mes différentes facettes artistiques et autres
-                        potentiels sous une même <strong>énergie vivante: la nature et ses 4 éléments</strong>.</p>
-                    <p>C'est pourquoi début décembre 2025 j'ai eu l'envie soudaine de transformer cette énergie par la
-                        créativite, ou de la canaliser dans une micro-entreprise<br>
-                    <p>"Ty Zephyrria" est en réalité un acronyme qui me représente:</p>
-                    <li::before>
-                        <li><strong>T</strong> = Tycorn, mon pseudo instagram photo depuis quelques années maintenant.
-                        <li><strong>Y</strong> = Yech'mat.
-                        <li><strong>Z</strong> = Zèbre, représentant les animaux, la nature, la Terre.
-                        <li><strong>E</strong> = Engagée dans divers projets humanitaire ou de solidarité.
-                        <li><strong>P</strong> = Phoenix, symbole du feu, de la renaissance, des vies multiples et
-                            surtout le nom de mon groupe de guitare-voix "Braizhe de Phoenix" que je vous invite à
-                            visiter sur instagram.
-                        <li><strong>H</strong> = Humanité...croyons-y encore!
-                        <li><strong>Y</strong> = Yin-Yang, reflet de l'équilibre, symbole de la Vie, de l'énergie
-                            vivante, fondement de Ty Zephyrria.
-                        <li><strong>R</strong> = Rêveuse...comme un enfant
-                        <li><strong>R</strong> = Respect...tout le monde le mérite et le doit à son prochain.
-                        <li><strong>I</strong> = Indomptable comme les zèbres! ^^
-                        <li><strong>A</strong> = Alyzée (rappelant le Zéphyre, vent maritime) c'était le nom du voilier
-                            sur lequel j'ai fait mes premiers pas vers le large, l'aventure, la liberté dans les voiles
-                            sur l'immensité marine, conquérante de...la baie où j'allais en vacances! Mais cétait déjà
-                            dingue!!)
-                            <br>
-                            <p>Etant petite justement, j'étais de nature très vive, curieuse et dynamique, pleine
-                                d'envie de découverte et bavarde. Tout cela ne m'a jamais quitté. Mais pourquoi garder
-                                toutes cette énergie confinée ?</p>
-                            <p>Pour tenter de m'expliquer cela, je pensais avec toute la naïveté d'un enfant que j'étais
-                                ainsi pour compenser le handicap mental de ma grande soeur qui a de fait des difficultés
-                                à s'exprimer...ou peut-être est-ce elle qui a fait qui je suis aujourd'hui ? Qui
-                                sait...?</p>
-                            <p>..."Qui garde son âme d'enfant ne vieillit jamais"...Laissez-vous aussi place à la
-                                candeur, l'émerveillement, les rêveries et la découverte.</p>
-                </div>
-            </div>
-        </section>
-
-        <!—SECTIONS SUIVEZ-MOI ET PARTAGEZ -->
-            <section class="social-links-section">
-                <div class="social-group">
-                    <h3>Suivez-moi</h3>
-                    <div class="social-icons">
-                        <!-- Facebook -->
-                        <a href="https://facebook.com/tyzephyrria" target="_blank" class="social-icon-link"
-                            aria-label="Suivre sur Facebook">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                        </a>
-                        <!-- Instagram 1 -->
-                        <a href="https://instagram.com/tyzephyrria_artisat" target="_blank" class="social-icon-link"
-                            aria-label="Suivre sur Instagram (Artisanat)">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
-                        <!-- Instagram 2 -->
-                        <a href="https://instagram.com/tyzephyrria_photo" target="_blank" class="social-icon-link"
-                            aria-label="Suivre sur Instagram (Photo)">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
-                        <!-- Instagram 3 -->
-                        <a href="https://instagram.com/tyzephyrria_graphisme" target="_blank" class="social-icon-link"
-                            aria-label="Suivre sur Instagram (Graphisme)">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
-                        <!-- Youtube -->
-                        <a href="https://youtube.com/c/tyzephyrria" target="_blank" class="social-icon-link"
-                            aria-label="Suivre sur Youtube">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="social-group">
-                    <h3>Partagez ce site</h3>
-                    <div class="social-icons">
-                        <!-- Partager Facebook -->
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://tyzephyrria.fr" target="_blank"
-                            class="social-icon-link" aria-label="Partager sur Facebook">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                            </svg>
-                        </a>
-                        <!-- Instagram (Lien vers profil car partage direct URL rare) -->
-                        <a href="https://instagram.com" target="_blank" class="social-icon-link"
-                            aria-label="Partager sur Instagram">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
-                        <!-- Partager X -->
-                        <a href="https://twitter.com/intent/tweet?url=https://tyzephyrria.fr&text=Découvrez Ty Zephyrria !"
-                            target="_blank" class="social-icon-link" aria-label="Partager sur X">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z" />
-                            </svg>
-                        </a>
-                        <!-- Partager WhatsApp -->
-                        <a href="https://wa.me/?text=Découvrez Ty Zephyrria : https://tyzephyrria.fr" target="_blank"
-                            class="social-icon-link" aria-label="Partager sur WhatsApp">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.412.001 12.049a11.82 11.82 0 001.611 6.008L0 24l6.132-1.61a11.805 11.805 0 005.912 1.586h.005c6.635 0 12.046-5.411 12.049-12.047a11.823 11.823 0 00-3.48-8.452" />
-                            </svg>
-                        </a>
-                        <!-- Partager LinkedIn -->
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://tyzephyrria.fr"
-                            target="_blank" class="social-icon-link" aria-label="Partager sur LinkedIn">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-                        <!-- Partager Pinterest -->
-                        <a href="https://pinterest.com/pin/create/button/?url=https://tyzephyrria.fr&media=https://images.unsplash.com/photo-1452860606245-08befc0ff44b&description=Découvrez Ty Zephyrria !"
-                            target="_blank" class="social-icon-link" aria-label="Partager sur Pinterest">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.965 1.406-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.497 3.141 1.122.337 2.303.521 3.527.521 6.615 0 11.984-5.364 11.984-11.985S18.635 0 12.017 0z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FORMULAIRE DE CONTACT -->
-            <section class="contact-section" id="contact">
                 <div class="content-section">
-                    <h2>Nous contacter</h2>
-                    <p>Une question ? Un projet sur mesure ? Écrivez-nous !</p>
+                    <div class="intro-text">
+                        <p><strong>TY ZEPHYRRIA</strong> est née de la rencontre entre la curiosité et
+                            l'inspiration, portée par un souffle de créativité permanent.</p>
+                        <p><strong>Vision Artistique :</strong> Des bijoux fantaisies façonnés à la main, des gravures
+                            délicates et des illustrations qui capturent l'instant.</p>
+                        <p><strong>Vision Cérébrale :</strong> Un regard de photographe affûté par 15 ans de pratique et
+                            le
+                            goût du partage à travers l'auto-édition.</p>
+                        <p><strong>Vision Fonctionnelle :</strong> Un accompagnement graphique et informatique sur
+                            mesure
+                            pour donner vie à votre identité visuelle et logistique.</p>
+                        <br>
+                        <p><strong>"Ne rêve pas ta Vie, vis tes rêves"</strong>...(A. de St Exupéry)<br>Laissez place à
+                            la
+                            candeur, l'émerveillement, les rêveries et venez découvrir mon univers sous ses multiples
+                            facettes.</p>
+                    </div>
                 </div>
-                <form class="contact-form" action="https://formspree.io/f/tyzephyrria@gmail.com" method="POST">
-                    <div class="form-group">
-                        <label>Nom</label>
-                        <input type="text" name="nom" placeholder="Votre nom" required>
+
+                <!-- Illustration végétale basse intégrée dans le cadre -->
+                <div class="foliage-bottom-container">
+                    <svg width="100%" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMax slice"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <symbol id="long-leaf" viewBox="0 0 15 45">
+                                <path
+                                    d="M7.5 45 C 7.5 45, 0 30, 0 15 C 0 5, 7.5 0, 7.5 0 C 7.5 0, 15 5, 15 15 C 15 30, 7.5 45, 7.5 45" />
+                            </symbol>
+                        </defs>
+
+                        <!-- 5 branchages entrelacés -->
+                        <path class="branch-path" d="M-10 100 Q 150 60, 350 90 T 700 70 T 1010 100" stroke-width="4" />
+                        <path class="branch-path" d="M20 115 Q 250 50, 500 100 T 980 60" stroke-width="3" />
+                        <path class="branch-path" d="M300 110 Q 450 80, 600 105 T 1030 90" stroke-width="2.5" />
+                        <path class="branch-path" d="M-50 80 Q 100 110, 250 85 T 600 95" stroke-width="3"
+                            opacity="0.6" />
+                        <path class="branch-path" d="M650 115 Q 800 70, 950 110" stroke-width="2" opacity="0.7" />
+
+                        <!-- 30 feuilles élancées orientées différemment générées par script.js -->
+                        <g id="foliage-group"></g>
+                    </svg>
+                </div>
+            </main>
+
+            <!-- ACCUEIL -->
+            <div class="grid-container">
+                <div class="card">
+                    <div class="card-wrapped">
+                        <img src="assets/0-accueil-valeurs-qui-suis-je/boutique-creations.png"
+                            alt="[Image de Créations artisanales]">
                     </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" placeholder="votre@email.com" required>
+                    <div class="card-info">Créations Artisanales</div>
+                </div>
+                <div class="card">
+                    <div class="card-wrapped">
+                        <img src="assets/0-accueil-valeurs-qui-suis-je/boutique-photo.png"
+                            alt="[Image de Photographie]">
                     </div>
-                    <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="message" rows="4" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                    <div class="card-info">Photographie</div>
+                </div>
+                <div class="card">
+                    <div class="card-wrapped">
+                        <img src="assets/0-accueil-valeurs-qui-suis-je/boutique-graphisme.png"
+                            alt="[Image de Graphisme]">
                     </div>
-                    <button type="submit" class="submit-btn">Envoyer le message</button>
-                </form>
+                    <div class="card-info">Graphisme</div>
+                </div>
+                <div class="card">
+                    <div class="card-wrapped">
+                        <img src="assets/0-accueil-valeurs-qui-suis-je/boutique-auteur.png" alt="[Image de Livre]">
+                    </div>
+                    <div class="card-info">Auto-édition</div>
+                </div>
+                <div class="card">
+                    <a href="e-sante.html" style="text-decoration: none; color: inherit;">
+                        <div class="card-wrapped">
+                            <img src="assets/0-accueil-valeurs-qui-suis-je/specialiste-d-application-clinique.png"
+                                alt="[Image de Tablette et Santé]">
+                        </div>
+                        <div class="card-info">Spécialiste Assistant Clinique</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECTION POURQUOI TY ZEPHYRRIA -->
+            <section class="why-section">
+                <div class="why-container">
+                    <div class="why-image" title="Fondements de la micro-entreprise"></div>
+                    <div class="why-text">
+                        <h2>Pourquoi Ty Zephyrria ?</h2>
+                        <p>"Ne rêve pas ta Vie, vis tes rêves!"</p>
+                        <p>Passionnée et curieuse dans un certain nombre de domaines, notamment celui de la création,
+                            j'ai
+                            fondé <strong>Ty Zephyrria</strong> pour réunir mes différentes facettes artistiques et
+                            autres
+                            potentiels sous une même <strong>énergie</strong>.</p>
+                        <p>Fascinée et inspirée par le monde animal et la nature, il m'était assez évident d'en faire
+                            mon
+                            fil conducteur avec les 4 éléments :</p>
+                        <ul>
+                            <li>Le <strong>feu</strong> pour l'ardeur, la curiosité et la passion artistique.</li>
+                            <li>L'<strong>air</strong> pour l'intuition et l'inspiration de la liberté cérébrale.</li>
+                            <li>La <strong>terre</strong> pour l'enracinement logique, la cohérence et la fonctionnalité
+                                dans un environnement concret.</li>
+                            <li>L'<strong>eau</strong> pour la fluidité, la cohésion et la bienveillance de l'altruisme.
+                            </li>
+                        </ul><br>
+                        <p>Mon parcours de 15 ans dans l'image me permet aujourd'hui de vous accompagner avec une vision
+                            globale, qu'il s'agisse de créer un bijou qui vous ressemble ou de construire votre propre
+                            identité visuelle personnelle ou professionnelle.</p>
+                        <p>Le tout dans une <strong>énergie vivante</strong> authentique et en perpétuel émerveillement,
+                            telle une Divergeante ou un Caméléon (^^ pardon, j'adore ce film et cette série, c'était
+                            trop
+                            tentant...).</p>
+                    </div>
+                </div>
             </section>
+
+            <!-- SECTION QUI SUIS-JE -->
+            <section class="about-section">
+                <div class="about-container">
+                    <div class="about-image" title="Portrait de l'artisan"></div>
+                    <div class="about-text">
+                        <h2>Qui suis-je ?</h2>
+                        <p>Passionnée et curieuse dans un certain nombre de domaines, notamment celui de la création,
+                            j'ai
+                            fondé <strong>Ty Zephyrria</strong> pour réunir mes différentes facettes artistiques et
+                            autres
+                            potentiels sous une même <strong>énergie vivante: la nature et ses 4 éléments</strong>.</p>
+                        <p>C'est pourquoi début décembre 2025 j'ai eu l'envie soudaine de transformer cette énergie par
+                            la
+                            créativite, ou de la canaliser dans une micro-entreprise.</p>
+                        <p>"Ty Zephyrria" est en réalité un acronyme qui me représente :</p>
+                        <ul>
+                            <li><strong>T</strong> = Tycorn, mon pseudo instagram photo depuis quelques années
+                                maintenant.
+                            </li>
+                            <li><strong>Y</strong> = Yech'mat.</li>
+                            <li><strong>Z</strong> = Zèbre, représentant les animaux, la nature, la Terre.</li>
+                            <li><strong>E</strong> = Engagée dans divers projets humanitaire ou de solidarité.</li>
+                            <li><strong>P</strong> = Phoenix, symbole du feu, de la renaissance, des vies multiples et
+                                surtout le nom de mon groupe de guitare-voix "Braizhe de Phoenix" que je vous invite à
+                                visiter sur instagram.</li>
+                            <li><strong>H</strong> = Humanité...croyons-y encore!</li>
+                            <li><strong>Y</strong> = Yin-Yang, reflet de l'équilibre, symbole de la Vie, de l'énergie
+                                vivante, fondement de Ty Zephyrria.</li>
+                            <li><strong>R</strong> = Rêveuse...comme un enfant</li>
+                            <li><strong>R</strong> = Respect...tout le monde le mérite et le doit à son prochain.</li>
+                            <li><strong>I</strong> = Indomptable comme les zèbres! ^^</li>
+                            <li><strong>A</strong> = Alyzée (rappelant le Zéphyre, vent maritime) c'était le nom du
+                                voilier
+                                sur lequel j'ai fait mes premiers pas vers le large, l'aventure, la liberté dans les
+                                voiles
+                                sur l'immensité marine, conquérante de...la baie où j'allais en vacances! Mais cétait
+                                déjà
+                                dingue!!)</li>
+                        </ul>
+                        <br>
+                        <p>Etant petite justement, j'étais de nature très vive, curieuse et dynamique, pleine
+                            d'envie de découverte et bavarde. Tout cela ne m'a jamais quitté. Mais pourquoi garder
+                            toutes cette énergie confinée ?</p>
+                        <p>Pour tenter de m'expliquer cela, je pensais avec toute la naïveté d'un enfant que j'étais
+                            ainsi pour compenser le handicap mental de ma grande soeur qui a de fait des difficultés
+                            à s'exprimer...ou peut-être est-ce elle qui a fait qui je suis aujourd'hui ? Qui
+                            sait...?</p>
+                        <p>..."Qui garde son âme d'enfant ne vieillit jamais"... Laissez-vous aussi place à la
+                            candeur, l'émerveillement, les rêveries et la découverte.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div id="social-placeholder"></div>
+        </div>
     </div>
 
-    <!-- ==========================================================================
-         COMPTEUR DE VISITES (Global)
-         ========================================================================== -->
-    <div class="visitor-counter">
-        <span>VISITES :</span>
-        <span id="visit-count" class="count-number">...</span>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 TY ZEPHYRRIA — SAINT-NAZAIRE — FRANCE</p>
-    </footer>
+    <div id="pre-footer-placeholder"></div>
+    <div id="back-to-top-placeholder"></div>
+    <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
 </body>

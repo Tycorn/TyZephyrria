@@ -312,6 +312,25 @@
     box-sizing: border-box;
 }
 
+.zoom-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    max-height: 95%;
+}
+
+.zoom-description {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+    max-width: 800px;
+    font-family: 'Inter', sans-serif;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
 .zoom-popup img {
     width: 100%;
     height: 100%;
@@ -321,6 +340,9 @@
     border-radius: 5px;
     box-shadow: 0 0 50px rgba(255, 255, 255, 0.1);
     animation: zoomIn 0.3s ease;
+    transition: opacity 0.3s ease;
+    max-height: 80vh;
+    width: auto;
 }
 
 @keyframes zoomIn {
@@ -372,5 +394,30 @@
 }
 
 .zoom-close-btn:hover {
-    color: #D4AF37;
+    color: #ff4757;
+}
+
+.zoom-counter {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    z-index: 3010;
+}
+
+/* Animation ajout panier */
+@keyframes cartBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+.quick-add-btn.success {
+    background: #2ecc71 !important;
+    animation: cartBounce 0.5s ease;
 }

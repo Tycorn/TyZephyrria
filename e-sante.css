@@ -1,0 +1,202 @@
+/* ==========================================================================
+   STYLE SPÉCIFIQUE - PAGE E-SANTÉ
+   ========================================================================== */
+
+
+.page-title {
+    text-align: center;
+    color: #0c0091;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.e-sante-container {
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+}
+
+.e-sante-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.lead {
+    font-size: 1.4rem;
+    color: #0064C8;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.intro-box {
+    background: #f0f7ff;
+    padding: 20px;
+    border-radius: 20px;
+    border-left: 5px solid #0064C8;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+.experience-details {
+    margin-bottom: 60px;
+}
+
+.experience-details h3 {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    color: #0c0091;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.expertise-item {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.expertise-item:hover {
+    transform: translateY(-5px);
+}
+
+.expertise-item.featured {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 40px;
+    padding: 25px;
+    background: linear-gradient(to right, #ffffff, #f0f7ff);
+}
+
+
+.expertise-item .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.expertise-item h4 {
+    color: #0064C8;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-family: 'Cinzel', serif;
+}
+
+.expertise-item p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* --- Styles spécifiques à la case mise en avant (Interface) --- */
+.expertise-item.featured {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 40px;
+    padding: 25px;
+    background: linear-gradient(to right, #ffffff, #f0f7ff);
+}
+
+.expertise-item.featured .icon {
+    margin-bottom: 0;
+    font-size: 4.5rem;
+    flex-shrink: 0;
+}
+
+.featured-content {
+    flex-grow: 1;
+}
+
+.featured-content h4 {
+    margin-bottom: 15px;
+    text-align: center !important;
+    /* Force le centrage */
+    font-size: 1.4rem !important;
+    /* Force la taille */
+    color: #0064C8;
+}
+
+.featured-content p {
+    font-size: 1.1rem !important;
+    /* Force la taille */
+    line-height: 1.6;
+}
+
+.consulting-section {
+    background: radial-gradient(#0064c87c, #005ac8bc, #004aa5d8);
+    color: white;
+    padding: 50px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.consulting-content h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.consulting-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #0c0091;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.2rem;
+    }
+
+    .consulting-section {
+        padding: 30px 20px;
+    }
+
+    .expertise-item.featured {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+        gap: 20px;
+    }
+
+    .expertise-item.featured .icon {
+        font-size: 3rem;
+    }
+}
