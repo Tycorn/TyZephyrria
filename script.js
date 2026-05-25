@@ -100,19 +100,18 @@ const COMMON_TEMPLATES = {
                     </a>
                     <a href="https://www.instagram.com/tyzephyrria_creations?igsh=bDZmazk4aHJ3N3Iy" class="social-item">
                         <svg viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        <span>Créa</span>
+                        <span><strong>Créations</strong></span>
                     </a>
                     <a href="https://www.instagram.com/tycorn_pictures?igsh=MTJyY2t3Z21zNmkwYw==" class="social-item">
                         <svg viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        <span>Photo</span>
-                    </a>
+                        <span><strong>Photo</strong></span>
                     <a href="https://www.instagram.com/tyzephyrria_chant?igsh=MTgwZTh4aG1iaG41Yw==" class="social-item">
                         <svg viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        <span>Chant</span>
+                        <span><strong>Chant</strong></span>
                     </a>
                     <a href="https://www.instagram.com/braizhe_de_phoenix?igsh=MTE4M3hvNHozMnd1dg==" class="social-item">
                         <svg viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        <span>Braizhe de Phoenix</span>
+                        <span><strong>Braizhe de Phoenix</strong></span>
                     </a>
                     <a href="https://youtube.com" class="social-item">
                         <svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -131,33 +130,43 @@ const COMMON_TEMPLATES = {
                 <div class="icons-list">
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://tyzephyrria.fr" target="_blank" class="social-item" title="Partager sur Facebook">
                         <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <span>Facebook</span>
                     </a>
                     <a href="https://www.instagram.com/tyzephyrria_creations?igsh=bDZmazk4aHJ3N3Iy" target="_blank" class="social-item" title="Partager sur Instagram">
                         <svg viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        <span>Instagram</span>
                     </a>
                     <a href="https://wa.me/?text=Découvrez Ty Zephyrria : https://tyzephyrria.fr" target="_blank" class="social-item" title="Partager sur WhatsApp">
                         <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.412.001 12.049a11.82 11.82 0 001.611 6.008L0 24l6.132-1.61a11.805 11.805 0 005.912 1.586h.005c6.635 0 12.046-5.411 12.049-12.047a11.823 11.823 0 00-3.48-8.452"/></svg>
+                        <span>whatsapp</span>
                     </a>                                        
                     <a href="https://twitter.com/intent/tweet?url=https://tyzephyrria.fr&text=Découvrez Ty Zephyrria !" target="_blank" class="social-item" title="Partager sur X">
                         <svg viewBox="0 0 24 24" fill="#000000"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/></svg>
+                        <span>X<br>(ex-twitter)</span>
                     </a>
                     <a href="https://tiktok.com" target="_blank" class="social-item" title="Partager sur TikTok">
                         <svg viewBox="0 0 24 24" fill="#000000"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.01.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.89-.52-4.1-1.32-.09-.07-.11-.17-.11-.27V13.5c0 1.49-.18 3.01-.83 4.34-.63 1.33-1.7 2.49-3.05 3.11-1.32.65-2.91.88-4.38.73-1.46-.14-2.85-.74-3.95-1.74-1.1-1.02-1.83-2.45-2.07-3.93-.24-1.48-.02-3.04.64-4.42.66-1.37 1.83-2.52 3.24-3.11 1.34-.59 2.87-.73 4.3-.44v4.07c-.44-.05-.89-.04-1.33.02-.45.07-.88.22-1.26.47-.38.25-.68.6-.86 1.02-.19.42-.25.89-.16 1.34.09.44.33.84.66 1.15.33.31.75.52 1.21.6.45.07.92.01 1.34-.17.41-.19.75-.51.96-.92.21-.42.29-.89.29-1.36V.02z"/></svg>
+                        <span>tiktok</span>
                     </a>
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://tyzephyrria.fr" target="_blank" class="social-item" title="Partager sur LinkedIn">
                         <svg viewBox="0 0 24 24" fill="#0077B5"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        <span>linkedin</span>
                     </a>
                     <a href="https://www.threads.net/intent/post?text=Découvrez Ty Zephyrria : https://tyzephyrria.fr" target="_blank" class="social-item" title="Partager sur Threads">
-                        <svg viewBox="0 0 24 24" fill="#000000"><path d="M14.88 11.916c.066.012.135.013.203.003.543-.075.92-.124 1.343-.142.062-.003.111.047.114.11a30.8 30.8 0 0 1-.004 1.765c-.004.062-.055.11-.118.11-.476.002-.916.034-1.396.113-.06.01-.12.006-.178-.01a.34.34 0 0 1-.168-.13c-.033-.049-.044-.112-.03-.171.05-.205.132-.501.21-.861a.343.343 0 0 1 .224-.227ZM12.012 14.811c-.552 0-1.04-.131-1.425-.38-.344-.223-.522-.53-.522-.897 0-.616.48-1.01 1.258-1.01.267 0 .548.041.836.12.054.015.11.012.162-.007a.34.34 0 0 0 .188-.236c.074-.325.132-.618.172-.857.01-.06.003-.12-.02-.174a.34.34 0 0 0-.251-.186 2.3 2.3 0 0 0-.41-.036c-1.35 0-2.43 1-2.43 2.365 0 1.24 1.045 2.112 2.652 2.112 1.38 0 2.228-.62 2.228-1.12 0-.056-.027-.11-.073-.143a.242.242 0 0 0-.158-.04c-.161.017-.348.046-.532.06a.34.34 0 0 1-.366-.27c-.015-.054-.012-.11.008-.162l.142-.371a.342.342 0 0 1 .18-.184c.32-.143.684-.251 1.054-.31a.34.34 0 0 1 .37.22l.024.066c.02.054.023.113.01.17a2.22 2.22 0 0 1-.89 1.455c-.44.298-1.103.54-2.006.54ZM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0Zm0 18.918c-3.815 0-6.918-3.103-6.918-6.918S8.185 5.082 12 5.082s6.918 3.103 6.918 6.918-3.103 6.918-6.918 6.918Zm3.308-5.332a4.42 4.42 0 0 1-.952 2.36c-.66.822-1.558 1.238-2.668 1.238-2.186 0-3.664-1.332-3.664-3.513 0-2.164 1.41-3.64 3.514-3.64a4.1 4.1 0 0 1 .892.09.24.24 0 0 0 .27-.156c.07-.183.15-.433.22-.65a.243.243 0 0 0-.05-.24.24.24 0 0 0-.21-.08 6.4 6.4 0 0 0-.96-.075c-2.912 0-5.023 1.944-5.023 4.887 0 2.924 2.164 4.836 5.312 4.836 1.135 0 2.056-.252 2.738-.748a3.25 3.25 0 0 0 1.22-2.122.24.24 0 0 0-.07-.221.241.241 0 0 0-.232-.04c-.168.055-.38.102-.555.132a.24.24 0 0 1-.274-.21Z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="#000000"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg>
+                        <span>thread</span>
                     </a>
                     <a href="https://pinterest.com/pin/create/button/?url=https://tyzephyrria.fr&description=Découvrez Ty Zephyrria !" target="_blank" class="social-item" title="Partager sur Pinterest">
                         <svg viewBox="0 0 24 24" fill="#BD081C"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.965 1.406-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.162 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.607 0 11.985-5.365 11.985-11.987C24.02 5.367 18.633 0 12.017 0z"/></svg>
+                        <span>pinterest</span>
                     </a>
                     <a href="mailto:?subject=Découvrez Ty Zephyrria&body=Je vous invite à découvrir ce site : https://tyzephyrria.fr" class="social-item" title="Partager par Email">
                         <svg viewBox="0 0 24 24" fill="#777777"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span>mail</span>
                     </a>
                     <button class="social-item copy-link-btn" title="Copier le lien du site" onclick="copySiteLink()">
                         <svg viewBox="0 0 24 24" fill="#555555"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                        <span>copier le lien<br>du site</span>
                     </button>
                 </div>
             </div>
@@ -166,7 +175,7 @@ const COMMON_TEMPLATES = {
     preFooter: `
         <section class="pre-footer-section">
             <div class="image-container">
-                <img src="assets/0-accueil-valeurs-qui-suis-je/ty-zephyrria-officiel.jpg" alt="Visuel Ty Zephyrria">
+                <img src="assets/0-accueil-valeurs-qui-suis-je/ty-zephyrria-officiel.png" alt="Visuel Ty Zephyrria">
             </div>
         </section>
     `,
@@ -208,7 +217,7 @@ function injectCommonComponents() {
             // Si on est sur la page e-santé et qu'on injecte le footer, on ajoute la mention
             if (id === 'footer-placeholder' && window.location.pathname.includes('e-sante.html')) {
                 finalHtml = finalHtml.replace(
-                    'Auteur et Illustrations', 
+                    'Auteur et Illustrations',
                     'Auteur et Illustrations, Spécialiste Assistant Clinique'
                 );
             }
@@ -773,34 +782,72 @@ function initPhotoBoutique() {
     }
 
     const galleryData = {
-        'nature': [{ id: 'ph-nat-1', url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600', title: 'Forêt', price: '15 €', description: 'Une immersion paisible au cœur de la forêt bretonne.' }],
-        'animaux': [{ id: 'ph-ani-1', url: 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=600', title: 'Tortue', price: '20 €', description: 'Le temps s\'arrête pour cette tortue centenaire.' }],
-        'spectacles': [{ id: 'ph-spe-1', url: 'https://images.unsplash.com/photo-1514525253361-bee8718a300a?q=80&w=600', title: 'Scène', price: '25 €', description: 'L\'énergie brute d\'un concert sous les projecteurs.' }],
-        'macro': [{ id: 'ph-mac-1', url: 'https://images.unsplash.com/photo-1476101015682-330df3e81cb8?q=80&w=600', title: 'Fleur', price: '15 €', description: 'La beauté délicate de l\'infiniment petit.' }],
-        'urbain': [{ id: 'ph-urb-1', url: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=600', title: 'Ville', price: '18 €', description: 'Géométrie urbaine et jeux de lumières citadines.' }],
-        'nuit': [{ id: 'ph-nui-1', url: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600', title: 'Étoiles', price: '30 €', description: 'Le silence étoilé d\'une nuit sans nuages.' }],
-        'portrait': [{ id: 'ph-por-1', url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600', title: 'Regard', price: '22 €', description: 'L\'expression d\'une âme à travers un portrait.' }],
-        'noirblanc': [{ id: 'ph-nb-1', url: 'https://images.unsplash.com/photo-1502759683299-cdcc69741a7f?q=80&w=600', title: 'Contraste', price: '15 €', description: 'L\'élégance intemporelle du noir et blanc.' }],
-        'voyage': [{ id: 'ph-voy-1', url: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=600', title: 'Horizon', price: '20 €', description: 'L\'appel de l\'aventure vers de nouveaux horizons.' }],
-        'mer': [{ id: 'ph-mer-1', url: 'https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=600', title: 'Vagues', price: '18 €', description: 'La puissance de l\'océan capturée en un instant.' }],
-        'saisons': [{ id: 'ph-sai-1', url: 'https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?q=80&w=600', title: 'Automne', price: '15 €', description: 'Les couleurs flamboyantes de l\'automne.' }],
-        'insolite': [{ id: 'ph-ins-1', url: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=600', title: 'Angle', price: '25 €', description: 'Un regard différent sur les choses du quotidien.' }],
-        'sport': [
-            { id: 'ph-spo-1', url: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=600', title: 'Patinage Artistique', price: '20 €', description: 'La grâce et la technique sur la glace lors des JO de Milan Cortina 2026.' },
-            { id: 'ph-spo-2', url: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=600', title: 'Athlétisme', price: '15 €', description: 'Le dépassement de soi dans l\'effort intense.' }
+        'nature': [
+            { id: 'ph-nat-1', url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600', title: 'Forêt', price: '15 €', description: 'Une immersion paisible au cœur de la forêt bretonne.' }
         ],
-        'feux-lumiere': [
-            { id: 'ph-feu-1', url: 'https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?q=80&w=600', title: 'Bouquet Final', price: '25 €', description: 'L\'explosion de couleurs illuminant la nuit noire.' }
+        'mer': [
+            { id: 'ph-mer-1', url: 'https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=600', title: 'Vagues', price: '18 €', description: 'La puissance de l\'océan capturée en un instant.' }
         ],
-        'eau-cascades': [
-            { id: 'ph-eau-1', url: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=600', title: 'Chute d\'eau', price: '18 €', description: 'La force tranquille de l\'eau en mouvement.' }
+        'saisons': [
+            { id: 'ph-sai-1', url: 'https://images.unsplash.com/photo-1477414348463-c0eb7f1359b6?q=80&w=600', title: 'Automne', price: '15 €', description: 'Les couleurs flamboyantes de l\'automne.' }
+        ],
+        'fleurs': [
+            { id: 'ph-fle-1', url: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=600', title: 'Printemps', price: '18 €', description: 'L\'éveil de la nature au printemps.' }
+        ],
+
+        'animaux': [
+            { id: 'ph-ani-1', url: 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=600', title: 'Tortue', price: '20 €', description: 'Le temps s\'arrête pour cette tortue centenaire.' }
         ],
         'petits-animaux': [
             { id: 'ph-pan-1', url: 'https://images.unsplash.com/photo-1548767791-514d367c83be?q=80&w=600', title: 'Écureuil', price: '15 €', description: 'Un petit habitant des bois en pleine exploration.' }
         ],
         'insectes-papillons': [
             { id: 'ph-ins-2', url: 'https://images.unsplash.com/photo-1470114716159-e389f8712fad?q=80&w=600', title: 'Machaon', price: '20 €', description: 'La délicatesse d\'un papillon posé sur une fleur.' }
-        ]
+        ],
+        'oiseaux': [
+            { id: 'ph-ois-1', url: 'https://images.unsplash.com/photo-1444464666168-49d633b867ad?q=80&w=600', title: 'Petit Oiseau', price: '18 €', description: 'Le chant matinal d\'un oiseau sur sa branche.' }
+        ],
+
+        'eau-cascades': [
+            { id: 'ph-eau-1', url: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=600', title: 'Chute d\'eau', price: '18 €', description: 'La force tranquille de l\'eau en mouvement.' }
+        ],
+        'feux-lumiere': [
+            { id: 'ph-feu-1', url: 'https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?q=80&w=600', title: 'Bouquet Final', price: '25 €', description: 'L\'explosion de couleurs illuminant la nuit noire.' }
+        ],
+        'nuit': [
+            { id: 'ph-nui-1', url: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600', title: 'Étoiles', price: '30 €', description: 'Le silence étoilé d\'une nuit sans nuages.' }
+        ],
+        'voyage': [
+            { id: 'ph-voy-1', url: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=600', title: 'Horizon', price: '20 €', description: 'L\'appel de l\'aventure vers de nouveaux horizons.' }
+        ],
+
+        'macro': [
+            { id: 'ph-mac-1', url: 'https://images.unsplash.com/photo-1476101015682-330df3e81cb8?q=80&w=600', title: 'Fleur', price: '15 €', description: 'La beauté délicate de l\'infiniment petit.' }
+        ],
+        'spectacles': [
+            { id: 'ph-spe-1', url: 'https://images.unsplash.com/photo-1514525253361-bee8718a300a?q=80&w=600', title: 'Scène', price: '25 €', description: 'L\'énergie brute d\'un concert sous les projecteurs.' }
+        ],
+        'urbain': [
+            { id: 'ph-urb-1', url: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=600', title: 'Ville', price: '18 €', description: 'Géométrie urbaine et jeux de lumières citadines.' }
+        ],
+        'sport': [
+            { id: 'ph-spo-1', url: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=600', title: 'Patinage Artistique', price: '20 €', description: 'La grâce et la technique sur la glace lors des JO de Milan Cortina 2026.' },
+            { id: 'ph-spo-2', url: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=600', title: 'Athlétisme', price: '15 €', description: 'Le dépassement de soi dans l\'effort intense.' }
+        ],
+
+        'manuel': [
+            { id: 'ph-man-1', url: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=600', title: 'Travail Manuel', price: '18 €', description: 'Travail artisanales minutieux.' }
+        ],
+
+        'insolite': [
+            { id: 'ph-ins-1', url: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=600', title: 'Angle', price: '25 €', description: 'Un regard différent sur les choses du quotidien.' }
+        ],
+        'portrait': [
+            { id: 'ph-por-1', url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600', title: 'Regard', price: '22 €', description: 'L\'expression d\'une âme à travers un portrait.' }
+        ],
+        'noirblanc': [
+            { id: 'ph-nb-1', url: 'https://images.unsplash.com/photo-1502759683299-cdcc69741a7f?q=80&w=600', title: 'Contraste', price: '15 €', description: 'L\'élégance intemporelle du noir et blanc.' }
+        ],
     };
 
     if (themesGrid && galleryModal) {
@@ -1063,7 +1110,7 @@ function initCart() {
 
     document.addEventListener('click', (e) => { if (e.target.closest('.cart-icon')) toggleDrawer(); });
 
-    window.clearCart = function() {
+    window.clearCart = function () {
         if (confirm('Voulez-vous vraiment vider votre panier ?')) {
             localStorage.removeItem('tyZephyrriaCart');
             cart = [];

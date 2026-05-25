@@ -26,9 +26,20 @@
     /* Arrondi uniquement en bas */
     border-left: 5px solid #f9fc69;
     margin-top: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
 }
 
-/* Section titre principal */
+
+/* Styles spécifiques pour l'image de la section split */
+.split-image {
+    flex: 0 0 35%;
+    /* Un peu plus petit pour laisser de la place au texte */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 .title-box {
     background: linear-gradient(180deg, #fc7272 0%, #fed479 50%, #fffbb4 100%);
     /* #f9fc69 0%, #fdffa3 75%, #fbfae9 100% */
@@ -84,11 +95,6 @@
     /* Alinéa en début de paragraphe */
 }
 
-/* Styles spécifiques pour l'image de la section split */
-.split-image {
-    flex: 0 0 40%;
-    /* Un peu plus petit que 50% pour laisser de la place au texte */
-}
 
 /* Style du placeholder photo */
 .photo-placeholder {
