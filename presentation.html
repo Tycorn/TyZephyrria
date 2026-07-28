@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ty Zephyrria - Boutique</title>
+    <!-- Importation de polices artistiques et épurées -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Pinyon+Script&family=Quicksand:wght@300;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="presentation.css">
+</head>
+
+<body>
+
+    <div id="banner-placeholder"></div>
+    <div class="main-content">
+        <div id="nav-placeholder"></div>
+
+        <div id="home-page">
+            <section class="hero" id="main-hero">
+                <div class="hero-container">
+                    <div class="hero-image-wrapped">
+                        <img src="assets/0-accueil-valeurs-qui-suis-je/ty-zephyrria-officiel.png"
+                            alt="Bannière Ty Zephyrria">
+                    </div>
+                    <!-- Message d'erreur masqué par défaut -->
+                    <div class="error-message">Image non disponible</div>
+                    <div class="wind-container">
+                        <!-- Définitions des ressources pour le vent -->
+                        <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="windGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#ffffff; stop-opacity:0" />
+                                    <stop offset="45%" style="stop-color:#ffffff; stop-opacity:0.8" />
+                                    <stop offset="100%" style="stop-color:#888888; stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <!-- Les symboles de vent sont générés dynamiquement par script.js -->
+                    </div>
+
+                    <!-- SOUS-SECTION FEU ANIME -->
+                    <div class="spacer-below-hero">
+                        <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+                            <defs>
+                            </defs>
+                            <symbol id="multi-flame" viewBox="0 0 40 70">
+                                <path d="M 10 60 
+                                    C 10 60, 5 50, 5 43
+                                    C 5.5 43, 2 37, 9 13
+                                    C 7 15, 5 30, 11 45
+                                    C 11 45, 9 35, 14.5 26 
+                                    C 14.5 26, 21 10, 17 0 
+                                    C 17 0, 22.5 10, 22 26
+                                    C 22 26, 18 32, 20 40
+                                    C 20 40, 26 34, 25 28
+                                    C 25 28, 24 25, 27.5 16
+                                    C 27.5 16, 29 10, 28 5
+                                    C 28 5, 32 12, 30 20
+                                    C 30 20, 28 30, 34 37
+                                    C 34 37, 35 50, 35 60
+                                    A 12 10 0 0 1 10 60
+                                    Z" />
+                            </symbol>
+                        </svg>
+
+                        <div class="fire-base"></div>
+
+                        <div class="fire-container">
+                            <!-- Les flammes sont générées dynamiquement par script.js pour simplifier le HTML -->
+                            <div class="fire-layer layer-back"></div>
+                            <div class="fire-layer layer-mid"></div>
+                            <div class="fire-layer layer-front"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <main class="artistic-frame">
+                <div class="wave-container">
+                    <!-- Viewbox ajustée pour que le haut soit à 0 -->
+                    <svg width="100%" viewBox="0 0 1000 130" style="overflow: visible;"
+                        preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="dropletGradient" cx="50%" cy="50%" r="50%" fx="35%" fy="35%">
+                                <stop offset="0%" style="stop-color:#a5ccff" />
+                                <stop offset="100%" style="stop-color:var(--ocean-blue)" />
+                            </radialGradient>
+                            <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:var(--ocean-deep);stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:var(--ocean-blue);stop-opacity:0" />
+                            </linearGradient>
+                            <!-- Symbole de la goutte (Boîte de 50x60) -->
+                            <symbol id="real-droplet" viewBox="0 0 50 60">
+                                <!-- On groupe les éléments pour leur appliquer une rotation anti-horaire (-10 degrés autour du centre 25,30) -->
+                                <g transform="rotate(-5 25 30)">
+                                    <path d="M18 0 C 23 12, 28 18, 29 26 A 6 6 0 0 1 2 28 C 2 13, 13 17, 18 0 Z"
+                                        fill="url(#dropletGradient)" />
+                                    <ellipse class="droplet-highlight" cx="11" cy="22" rx="2.5" ry="4"
+                                        transform="rotate(19 7 16)" />
+                                </g>
+                            </symbol>
+                        </defs>
+
+                        <!-- Dégradé remonté tout en haut (y=0) -->
+                        <path id="wave-fill"
+                            d="M0 0 Q 50 15, 100 0 T 200 0 T 300 0 T 400 0 T 500 0 T 600 0 T 700 0 T 800 0 T 900 0 T 1000 0 L 1000 100 Q 950 115, 900 100 T 800 100 T 700 100 T 600 100 T 500 100 T 400 100 T 300 100 T 200 100 T 100 100 T 0 100 Z"
+                            fill="url(#waveGradient)" />
+
+                        <!-- Lignes de vagues remontées (y=0, 20, 40) -->
+                        <path id="wave-line-1"
+                            d="M0 0 Q 25 15, 50 0 T 100 0 T 150 0 T 200 0 T 250 0 T 300 0 T 350 0 T 400 0 T 450 0 T 500 0 T 550 0 T 600 0 T 650 0 T 700 0 T 750 0 T 800 0 T 850 0 T 900 0 T 950 0 T 1000 0"
+                            stroke="var(--ocean-deep)" stroke-width="1.5" fill="none" opacity="0.2" />
+                        <path id="wave-line-2"
+                            d="M0 20 Q 25 35, 50 20 T 100 20 T 150 20 T 200 20 T 250 20 T 300 20 T 350 20 T 400 20 T 450 20 T 500 20 T 550 20 T 600 20 T 650 20 T 700 20 T 750 20 T 800 20 T 850 20 T 900 20 T 950 20 T 1000 20"
+                            stroke="var(--ocean-deep)" stroke-width="2" fill="none" opacity="0.4" />
+                        <path id="wave-line-3"
+                            d="M0 40 Q 25 55, 50 40 T 100 40 T 150 40 T 200 40 T 250 40 T 300 40 T 350 40 T 400 40 T 450 40 T 500 40 T 550 40 T 600 40 T 650 40 T 700 40 T 750 40 T 800 40 T 850 40 T 900 40 T 950 40 T 1000 40"
+                            stroke="var(--ocean-deep)" stroke-width="2.5" fill="none" opacity="0.6" />
+
+                        <!-- Les gouttes sont générées dynamiquement par script.js -->
+                        <g id="droplets-collection"></g>
+                    </svg>
+                </div>
+                <div class="content-section">
+                    <div class="intro-text">
+                        <p><strong>TY ZEPHYRRIA</strong> est née de la rencontre entre la curiosité et
+                            l'inspiration, portée par un souffle de créativité permanent.</p>
+                        <p><strong>Vision Artistique :</strong> Des bijoux fantaisies façonnés à la main, des gravures
+                            délicates et des illustrations qui capturent l'instant.</p>
+                        <p><strong>Vision Cérébrale :</strong> Un regard de photographe affûté par 15 ans de pratique et
+                            le
+                            goût du partage à travers l'auto-édition.</p>
+                        <p><strong>Vision Fonctionnelle :</strong> Un accompagnement graphique et informatique sur
+                            mesure
+                            pour donner vie à votre identité visuelle et logistique.</p>
+                        <br>
+                        <p><strong>"Ne rêve pas ta Vie, vis tes rêves"</strong>...(A. de St Exupéry)<br>Laissez place à
+                            la
+                            candeur, l'émerveillement, les rêveries et venez découvrir mon univers sous ses multiples
+                            facettes.</p>
+                    </div>
+                </div>
+
+                <!-- Illustration végétale basse intégrée dans le cadre -->
+                <div class="foliage-bottom-container">
+                    <svg width="100%" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMax slice"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <symbol id="long-leaf" viewBox="0 0 15 45">
+                                <path
+                                    d="M7.5 45 C 7.5 45, 0 30, 0 15 C 0 5, 7.5 0, 7.5 0 C 7.5 0, 15 5, 15 15 C 15 30, 7.5 45, 7.5 45" />
+                            </symbol>
+                        </defs>
+
+                        <!-- 5 branchages entrelacés -->
+                        <path class="branch-path" d="M-10 100 Q 150 60, 350 90 T 700 70 T 1010 100" stroke-width="4" />
+                        <path class="branch-path" d="M20 115 Q 250 50, 500 100 T 980 60" stroke-width="3" />
+                        <path class="branch-path" d="M300 110 Q 450 80, 600 105 T 1030 90" stroke-width="2.5" />
+                        <path class="branch-path" d="M-50 80 Q 100 110, 250 85 T 600 95" stroke-width="3"
+                            opacity="0.6" />
+                        <path class="branch-path" d="M650 115 Q 800 70, 950 110" stroke-width="2" opacity="0.7" />
+
+                        <!-- 30 feuilles élancées orientées différemment générées par script.js -->
+                        <g id="foliage-group"></g>
+                    </svg>
+                </div>
+            </main>
+
+            <!-- ACCUEIL -->
+            <div class="grid-container">
+                <div class="card">
+                    <div class="card-wrapped">
+                        <img src="assets/0-accueil-valeurs-qui-suis-je/boutique-creations.png"
+                            alt="[Image de Créations artisanales]">
+                    </div>
+                    <div class="card-info">Créations Artisanales</div>
+                </div>
+                <div class="card">
+                    <div class="card-wrapped">
+                        <img src="assets/0-accueil-valeurs-qui-suis-je/boutique-photo.png"
+                            alt="[Image de Photographie]">
+                    </div>
+                    <div class="card-info">Photographie</div>
+                </div>
+                <div class="card">
+                    <div class="card-wrapped">
+                        <img src="assets/0-accueil-valeurs-qui-suis-je/boutique-graphisme.png"
+                            alt="[Image de Graphisme]">
+                    </div>
+                    <div class="card-info">Graphisme</div>
+                </div>
+                <div class="card">
+                    <div class="card-wrapped">
+                        <img src="assets/0-accueil-valeurs-qui-suis-je/boutique-auteur.png" alt="[Image de Livre]">
+                    </div>
+                    <div class="card-info">Auto-édition</div>
+                </div>
+                <div class="card">
+                    <a href="e-sante.html" style="text-decoration: none; color: inherit;">
+                        <div class="card-wrapped">
+                            <img src="assets/0-accueil-valeurs-qui-suis-je/specialiste-d-application-clinique.png"
+                                alt="[Image de Tablette et Santé]">
+                        </div>
+                        <div class="card-info">Spécialiste Assistant Clinique</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECTION POURQUOI TY ZEPHYRRIA -->
+            <section class="why-section">
+                <div class="why-container">
+                    <div class="why-image" title="Fondements de la micro-entreprise"></div>
+                    <div class="why-text">
+                        <h2>Pourquoi Ty Zephyrria ?</h2>
+                        <p>"Ne rêve pas ta Vie, vis tes rêves!"</p>
+                        <p>Passionnée et curieuse dans un certain nombre de domaines, notamment celui de la création,
+                            j'ai
+                            fondé <strong>Ty Zephyrria</strong> pour réunir mes différentes facettes artistiques et
+                            autres
+                            potentiels sous une même <strong>énergie</strong>.</p>
+                        <p>Fascinée et inspirée par le monde animal et la nature, il m'était assez évident d'en faire
+                            mon
+                            fil conducteur avec les 4 éléments :</p>
+                        <ul>
+                            <li>Le <strong>feu</strong> pour l'ardeur, la curiosité et la passion artistique.</li>
+                            <li>L'<strong>air</strong> pour l'intuition et l'inspiration de la liberté cérébrale.</li>
+                            <li>La <strong>terre</strong> pour l'enracinement logique, la cohérence et la fonctionnalité
+                                dans un environnement concret.</li>
+                            <li>L'<strong>eau</strong> pour la fluidité, la cohésion et la bienveillance de l'altruisme.
+                            </li>
+                        </ul><br>
+                        <p>Mon parcours de 15 ans dans l'image me permet aujourd'hui de vous accompagner avec une vision
+                            globale, qu'il s'agisse de créer un bijou qui vous ressemble ou de construire votre propre
+                            identité visuelle personnelle ou professionnelle.</p>
+                        <p>Le tout dans une <strong>énergie vivante</strong> authentique et en perpétuel émerveillement,
+                            telle une Divergeante ou un Caméléon (^^ pardon, j'adore ce film et cette série, c'était
+                            trop
+                            tentant...).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION QUI SUIS-JE -->
+            <section class="about-section">
+                <div class="about-container">
+                    <div class="about-image" title="Portrait de l'artisan"></div>
+                    <div class="about-text">
+                        <h2>Qui suis-je ?</h2>
+                        <p>Passionnée et curieuse dans un certain nombre de domaines, notamment celui de la création,
+                            j'ai
+                            fondé <strong>Ty Zephyrria</strong> pour réunir mes différentes facettes artistiques et
+                            autres
+                            potentiels sous une même <strong>énergie vivante: la nature et ses 4 éléments</strong>.</p>
+                        <p>C'est pourquoi début décembre 2025 j'ai eu l'envie soudaine de transformer cette énergie par
+                            la
+                            créativite, ou de la canaliser dans une micro-entreprise.</p>
+                        <p>"Ty Zephyrria" est en réalité un acronyme qui me représente :</p>
+                        <ul>
+                            <li><strong>T</strong> = Tycorn, mon pseudo instagram photo depuis quelques années
+                                maintenant.
+                            </li>
+                            <li><strong>Y</strong> = Yech'mat.</li>
+                            <li><strong>Z</strong> = Zèbre, représentant les animaux, la nature, la Terre.</li>
+                            <li><strong>E</strong> = Engagée dans divers projets humanitaire ou de solidarité.</li>
+                            <li><strong>P</strong> = Phoenix, symbole du feu, de la renaissance, des vies multiples et
+                                surtout le nom de mon groupe de guitare-voix "Braizhe de Phoenix" que je vous invite à
+                                visiter sur instagram.</li>
+                            <li><strong>H</strong> = Humanité...croyons-y encore!</li>
+                            <li><strong>Y</strong> = Yin-Yang, reflet de l'équilibre, symbole de la Vie, de l'énergie
+                                vivante, fondement de Ty Zephyrria.</li>
+                            <li><strong>R</strong> = Rêveuse...comme un enfant</li>
+                            <li><strong>R</strong> = Respect...tout le monde le mérite et le doit à son prochain.</li>
+                            <li><strong>I</strong> = Indomptable comme les zèbres! ^^</li>
+                            <li><strong>A</strong> = Alyzée (rappelant le Zéphyre, vent maritime) c'était le nom du
+                                voilier
+                                sur lequel j'ai fait mes premiers pas vers le large, l'aventure, la liberté dans les
+                                voiles
+                                sur l'immensité marine, conquérante de...la baie où j'allais en vacances! Mais cétait
+                                déjà
+                                dingue!!)</li>
+                        </ul>
+                        <br>
+                        <p>Etant petite justement, j'étais de nature très vive, curieuse et dynamique, pleine
+                            d'envie de découverte et bavarde. Tout cela ne m'a jamais quitté. Mais pourquoi garder
+                            toutes cette énergie confinée ?</p>
+                        <p>Pour tenter de m'expliquer cela, je pensais avec toute la naïveté d'un enfant que j'étais
+                            ainsi pour compenser le handicap mental de ma grande soeur qui a de fait des difficultés
+                            à s'exprimer...ou peut-être est-ce elle qui a fait qui je suis aujourd'hui ? Qui
+                            sait...?</p>
+                        <p>..."Qui garde son âme d'enfant ne vieillit jamais"... Laissez-vous aussi place à la
+                            candeur, l'émerveillement, les rêveries et la découverte.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div id="social-placeholder"></div>
+        </div>
+    </div>
+
+    <div id="pre-footer-placeholder"></div>
+    <div id="back-to-top-placeholder"></div>
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

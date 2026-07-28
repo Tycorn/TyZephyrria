@@ -27,6 +27,7 @@
                 <div class="photo-nav-buttons">
                     <button class="photo-nav-btn active" id="btn-photos">Photographies</button>
                     <button class="photo-nav-btn" id="btn-presta">Prestations Photos</button>
+                    <button class="photo-nav-btn" id="btn-favoris" style="color: #ff4757; font-weight: bold;">❤️ Mes Favoris</button>
                 </div>
 
                 <div class="photo-intro-text">
@@ -52,6 +53,7 @@
 
             <!-- Grille de Thèmes (Portfolio principal) -->
             <div class="themes-grid" id="themesGrid">
+                <div class="theme-card" data-theme="favoris" style="display: none;"></div>
                 <div class="theme-card" data-theme="nature">
                     <div class="theme-image"><img
                             src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600&auto=format&fit=crop"
@@ -85,14 +87,14 @@
                     </div>
                 </div>
 
-                <div class="theme-card" data-theme="animaux">
+                <a href="?cat=animaux" class="theme-card" data-theme="animaux" style="text-decoration: none; color: inherit; display: block;">
                     <div class="theme-image"><img
                             src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?q=80&w=600&auto=format&fit=crop"
                             alt="Animaux"></div>
                     <div class="theme-info">
                         <h3>Monde Animal</h3>
                     </div>
-                </div>
+                </a>
                 <div class="theme-card" data-theme="petits-animaux">
                     <div class="theme-image"><img
                             src="https://images.unsplash.com/photo-1548767791-514d367c83be?q=80&w=600&auto=format&fit=crop"
@@ -223,7 +225,7 @@
                     <div class="theme-info">
                         <h3>Prestations Photographie</h3>
                         <p
-                            style="font-family: 'Quicksand', sans-serif; font-size: 0.9rem; color: #555; margin-top: 10px;">
+                            style="font-family: 'Quicksand', sans-serif; font-size: 0.8rem; font-style: italic; color: #555; margin-top: 10px;">
                             Découvrez mes services pour vos événements et spectacles.
                         </p>
                     </div>
@@ -294,7 +296,18 @@
         <div id="zoomPrev" class="zoom-nav-btn">&lsaquo;</div>
         <div class="zoom-content-wrapper">
             <img src="" id="zoomImg" alt="Zoom">
-            <div id="zoomDescription" class="zoom-description"></div>
+            <div class="zoom-info-bar" style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 800px; margin-top: 20px; gap: 20px;">
+                <div id="zoomDescription" class="zoom-description" style="margin-top: 0; text-align: left; flex: 1;"></div>
+                <div class="zoom-actions" style="display: flex; gap: 15px; align-items: center; flex-shrink: 0;">
+                    <button class="like-button" id="zoomLikeBtn" title="J'aime" style="position: static; transform: none; width: 45px; height: 45px;">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
+                        <span class="like-count" style="margin-left: 5px; font-size: 0.9rem;">0</span>
+                    </button>
+                    <button class="quick-add-btn" id="zoomCartBtn" title="Ajout rapide au panier" style="position: static; transform: none; width: 45px; height: 45px; opacity: 1;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    </button>
+                </div>
+            </div>
         </div>
         <div id="zoomNext" class="zoom-nav-btn">&rsaquo;</div>
         <div id="zoomCounter" class="zoom-counter"></div>

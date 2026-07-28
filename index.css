@@ -65,7 +65,12 @@
     color: white;
     /* Mention en blanc */
     font-family: 'Dancing Script', cursive;
-    font-size: 2.8rem;
+    font-size: clamp(1.2rem, 3.5vw, 2.8rem);
+    line-height: 1.1;
+    width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+    word-break: break-word;
     font-weight: normal;
     text-align: center;
     /* Contour de lettres en noir (Outline) */
@@ -82,8 +87,96 @@
     padding: 5px;
     position: relative;
     border-radius: 15px;
-    background: repeating-linear-gradient(45deg, #000, #000 10px, #fff 10px, #fff 20px);
+    background: linear-gradient(135deg, 
+        #000 0%, #000 1%, 
+        #fff 1%, #fff 2.5%, 
+        #000 2.5%, #000 4%, 
+        #fff 4%, #fff 6%, 
+        #000 6%, #000 7.5%, 
+        #fff 7.5%, #fff 10%, 
+        #000 10%, #000 12%,
+        #fff 12%, #fff 13.5%,
+        #000 13.5%, #000 15%,
+        #fff 15%, #fff 17%,
+        #000 17%, #000 18.5%,
+        #fff 18.5%, #fff 20%,
+        #000 20%, #000 22%,
+        #fff 22%, #fff 24%,
+        #000 24%, #000 25.5%,
+        #fff 25.5%, #fff 28%,
+        #000 28%, #000 30%,
+        #fff 30%, #fff 32%,
+        #000 32%, #000 33.5%,
+        #fff 33.5%, #fff 35%,
+        #000 35%, #000 37%,
+        #fff 37%, #fff 39%,
+        #000 39%, #000 41%,
+        #fff 41%, #fff 43.5%,
+        #000 43.5%, #000 45%,
+        #fff 45%, #fff 47%,
+        #000 47%, #000 49.5%,
+        #fff 49.5%, #fff 52%,
+        #000 52%, #000 54%,
+        #fff 54%, #fff 55.5%,
+        #000 55.5%, #000 57%,
+        #fff 57%, #fff 60%,
+        #000 60%, #000 62%,
+        #fff 62%, #fff 64.5%,
+        #000 64.5%, #000 66%,
+        #fff 66%, #fff 68%,
+        #000 68%, #000 70%,
+        #fff 70%, #fff 72.5%,
+        #000 72.5%, #000 74%,
+        #fff 74%, #fff 77%,
+        #000 77%, #000 79%,
+        #fff 79%, #fff 81.5%,
+        #000 81.5%, #000 83%,
+        #fff 83%, #fff 85%,
+        #000 85%, #000 87%,
+        #fff 87%, #fff 89%,
+        #000 89%, #000 91.5%,
+        #fff 91.5%, #fff 94%,
+        #000 94%, #000 96%,
+        #fff 96%, #fff 98%,
+        #000 98%, #000 100%
+    );
     height: fit-content;
+}
+
+.zebra-head, .zebra-tail, .zebra-hind-legs, .zebra-front-legs {
+    position: absolute;
+    z-index: 5;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.zebra-head {
+    top: -50px;
+    right: -60px;
+    width: 120px;
+    transform: scaleX(-1) rotate(-15deg);
+}
+
+.zebra-tail {
+    top: -30px;
+    left: -60px;
+    width: 80px;
+    transform: rotate(-10deg);
+}
+
+.zebra-hind-legs {
+    bottom: -60px;
+    left: -20px;
+    width: 100px;
+    transform: scaleX(-1);
+    clip-path: inset(40% 0 0 0);
+}
+
+.zebra-front-legs {
+    bottom: -60px;
+    right: -20px;
+    width: 100px;
+    transform: scaleX(-1);
 }
 
 .central-content {
@@ -200,6 +293,10 @@
         max-width: 180px;
     }
 
+    .box span {
+        font-size: 1.8rem;
+    }
+
     .central-text h2 {
         font-size: 1.4rem;
     }
@@ -221,4 +318,100 @@
         font-size: 0.75rem;
         line-height: 1.3;
     }
+
+    .box span {
+        font-size: 1.4rem;
+    }
+
+/* ==========================================================================
+   POPUP DE NEWS (MODAL)
+   ========================================================================== */
+
+/* Voile gris animé comme de l'air pour la modale news spécifiquement */
+#newsModal {
+    background: rgba(220, 225, 230, 0.5) !important;
+    backdrop-filter: blur(5px);
+    animation: airBreathe 4s infinite alternate ease-in-out;
+}
+
+@keyframes airBreathe {
+    0% { background: rgba(220, 225, 230, 0.4); }
+    100% { background: rgba(190, 200, 210, 0.6); }
+}
+
+@keyframes waveBorder {
+    0% { border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%; }
+    100% { border-radius: 60% 40% 30% 70% / 40% 70% 30% 60%; }
+}
+
+.news-modal-container {
+    background: #fdfaf6; /* Beige vintage clair */
+    width: 85%;
+    max-width: 350px; /* Plus petit par rapport au voile */
+    padding: 35px 25px;
+    border: 3px solid #0064C8; /* Contour bleu vague */
+    box-shadow: 0 10px 30px rgba(0, 100, 200, 0.15);
+    position: relative;
+    text-align: center;
+    margin: auto; /* Centrage dans le flex du modal */
+    
+    /* Forme de vague animée (blob) */
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+    animation: waveBorder 5s ease-in-out infinite alternate;
+    
+    /* Animation de zoom d'entrée (plus rapide et prononcée que le zoom classique) */
+    transform: scale(0.5);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s;
+}
+
+#newsModal.active .news-modal-container {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.news-close {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border: 2px solid #0064C8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    transition: all 0.2s ease;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.news-close:hover {
+    background: #ff4757;
+    color: white;
+    border-color: #ff4757;
+    transform: rotate(90deg) scale(1.1);
+}
+
+.news-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #0064C8;
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #0064C8;
+    display: inline-block;
+}
+
+.news-text {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 10px;
 }

@@ -46,13 +46,27 @@ body {
 .cart-icon {
     position: absolute;
     right: 20px;
-    font-size: 1.5rem;
     cursor: pointer;
     transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: #2e4a3c;
+    fill: none;
+    transition: stroke 0.2s ease;
 }
 
 .cart-icon:hover {
     transform: scale(1.1);
+}
+
+.cart-icon:hover svg {
+    stroke: #0064C8;
 }
 
 .cart-badge {
@@ -137,9 +151,9 @@ nav {
 
 .row-main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 0;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
@@ -213,6 +227,24 @@ nav {
     background-color: #f0f7ff;
 }
 
+.is-logo-btn {
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    height: 42px !important; /* Adjusted to perfectly match other buttons */
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 0 !important; /* Remove the 140px min-width so the border wraps the logo tightly */
+    transform: translateY(3px); /* Shift down to align with other buttons */
+}
+
+.is-logo-btn .home-icon-logo {
+    height: 100% !important;
+    width: auto !important;
+    object-fit: contain;
+    border-radius: 3px;
+}
+
 .two-lines {
     max-width: 150px;
     line-height: 1.1;
@@ -228,14 +260,25 @@ nav {
 .dropdown-content {
     display: none;
     position: absolute;
+    top: 100%;
     background-color: #ffffff;
     min-width: 200px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
-    z-index: 100;
+    z-index: 200;
     border: 1px solid #ddd;
     margin-top: 2px;
     padding: 0;
     list-style: none;
+}
+
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
 }
 
 .dropdown-content li {
@@ -279,7 +322,11 @@ nav {
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 15px;
 }
 
 .social-line {
@@ -287,7 +334,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     flex-wrap: wrap;
     text-align: center;
 }
@@ -296,9 +343,42 @@ nav {
     margin-bottom: 0;
 }
 
+.social-trigger {
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 1.5px dashed transparent;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.social-trigger:hover {
+    transform: scale(1.05);
+    background-color: #f0f7ff;
+    border-color: #afffd7;
+}
+
+.social-trigger strong {
+    font-size: 1.25rem;
+    color: #2e4a3c;
+    transition: color 0.2s ease;
+}
+
+.social-trigger:hover strong {
+    color: #0064C8;
+}
+
+.social-trigger:hover .arrow-svg {
+    transform: translateX(6px);
+}
+
 .arrow-svg {
     width: 50px;
     height: auto;
+    transition: transform 0.2s ease;
 }
 
 .icons-list {
@@ -313,16 +393,55 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
     text-decoration: none;
     color: #333;
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    min-width: 80px;
+}
+
+.social-item:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
 }
 
 .social-item svg {
     width: 32px;
     height: 32px;
+}
+
+/* Modales spécifiques aux réseaux sociaux */
+.social-modal-container {
+    max-width: 480px;
+    width: 90%;
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.social-modal-content {
+    text-align: center;
+    width: 100%;
+}
+
+.social-modal-content h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: #2e4a3c;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.social-modal-content .icons-list {
+    display: flex;
+    gap: 25px 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 /* ==========================================================================
@@ -402,38 +521,17 @@ footer p {
     .row-main {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 3px;
+        justify-content: center;
+        gap: 8px;
     }
 
     .menu-center-buttons {
-        flex: 0 0 100%;
-        order: -1;
+        flex: 0 1 auto;
         display: flex;
         justify-content: center;
-        flex-wrap: nowrap;
-        gap: 1px;
-        margin-bottom: 20px;
-    }
-
-    .menu-left {
-        order: 1;
-        flex: 1;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .menu-accueil {
-        order: 2;
-        flex: 1;
-        margin-top: 0;
-    }
-
-    .menu-right {
-        order: 3;
-        flex: 1;
-        align-items: flex-end;
-        text-align: right;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 0;
     }
 
     .nav-item a {
@@ -442,15 +540,31 @@ footer p {
         white-space: nowrap;
     }
 
-    .menu-side a,
-    .menu-accueil a {
-        font-size: 13px;
-        padding: 4px 10px;
-    }
-
     footer {
         padding: 30px 20px;
         font-size: 0.9rem;
+    }
+
+    .social-container {
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .social-line {
+        gap: 8px;
+        margin-bottom: 5px;
+    }
+
+    .social-trigger {
+        padding: 8px 16px;
+    }
+
+    .social-trigger strong {
+        font-size: 1.1rem;
+    }
+
+    .arrow-svg {
+        width: 35px;
     }
 }
 
@@ -459,7 +573,7 @@ footer p {
     .menu-center-buttons {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 1px;
+        gap: 8px;
     }
 
     .menu-center-buttons .nav-item {
@@ -481,23 +595,19 @@ footer p {
         padding: 6px 12px;
     }
 
-    .menu-side,
-    .menu-accueil {
-        min-width: 0;
-        flex: 1;
-    }
-
-    .menu-side a,
-    .menu-accueil a {
-        font-size: 13px !important;
-        padding: 4px 2px !important;
-        white-space: normal;
-        line-height: 1.2;
-    }
-
     .menu-center-buttons .nav-item a {
         font-size: 14px !important;
         padding: 8px 10px !important;
+    }
+
+    .is-logo-btn {
+        height: 40px !important; /* Match mobile height */
+        transform: none;
+        overflow: hidden !important; /* For the zoomed logo */
+    }
+
+    .is-logo-btn .home-icon-logo {
+        transform: scale(1.3); /* Enlarge logo on mobile only */
     }
 
     .social-line {
@@ -569,13 +679,13 @@ footer p {
    ========================================================================== */
 .like-button {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 8px;
+    left: 8px;
     background: rgba(255, 255, 255, 0.85);
     border: none;
-    width: 35px;
+    width: auto;
     height: 35px;
-    border-radius: 50%;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -583,7 +693,7 @@ footer p {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 0;
+    padding: 0 10px;
     backdrop-filter: blur(4px);
 }
 
@@ -688,6 +798,7 @@ footer p {
     align-items: center;
     justify-content: center;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .modal.active {
@@ -715,17 +826,17 @@ footer p {
 
 .modal-close {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
     background: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 10;
+    z-index: 100; /* Ensure it is above modal-content */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-size: 24px;
     color: #333;
@@ -739,11 +850,12 @@ footer p {
 }
 
 .modal-image {
-    flex: 1.2;
+    flex: 1.5;
     background: #f8f8f8;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 0;
 }
 
 .modal-image img {
@@ -754,7 +866,7 @@ footer p {
 
 .modal-content {
     flex: 1;
-    padding: 40px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -767,13 +879,45 @@ footer p {
     margin-bottom: 5px;
 }
 
+.crea-modal-like {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transform: none;
+    width: auto;
+    padding: 5px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background: white;
+    z-index: 150;
+}
+@media (max-width: 768px) {
+    .crea-modal-like {
+        left: 25px;
+    }
+}
+
 .modal-category {
-    color: #0064C8;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #555;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
+    z-index: 150;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .modal-description {
@@ -883,27 +1027,42 @@ footer p {
     .modal-container {
         flex-direction: column;
         width: 95%;
-        max-height: 95vh;
+        max-height: 90vh;
     }
 
     .modal-image {
-        flex: 0 0 40%;
-        max-height: 40%;
+        flex: 1;
+        min-height: 0;
+        max-height: none;
     }
 
     .modal-content {
-        padding: 25px;
-        flex: 1;
-        overflow-y: auto;
+        padding: 15px 20px;
+        flex: none;
+        overflow-y: visible;
     }
 
     .modal-title {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        margin-top: 15px !important;
+        margin-bottom: 5px;
+    }
+    
+    .modal-description {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        line-height: 1.4;
     }
 
     .modal-price {
-        font-size: 1.4rem;
-        margin-bottom: 20px;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        text-align: right;
+    }
+
+    .modal-add-to-cart {
+        padding: 10px 15px;
+        font-size: 1rem;
     }
 }
 

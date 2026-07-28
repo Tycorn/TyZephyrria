@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique Créations - Ty Zephyrria</title>
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="boutique-creations.css">
+    <link rel="stylesheet" href="common.css?v=2">
+    <link rel="stylesheet" href="boutique-creations.css?v=2">
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Dancing+Script:wght@600&display=swap"
         rel="stylesheet">
 </head>
@@ -28,18 +28,21 @@
                 <button class="filter-btn" data-filter="point-de-croix">Point de croix</button>
                 <button class="filter-btn" data-filter="gravure">Gravures diverses</button>
                 <button class="filter-btn" data-filter="bois">Travail sur bois</button>
+                <button class="filter-btn" data-filter="favoris" style="color: #ff4757; font-weight: bold;">❤️ Mes Favoris</button>
             </div>
 
             <!-- Message d'information sur le caractère unique des articles -->
             <div class="shop-intro-text">
-                <p>Chaque article proposé dans cette boutique est une <strong>pièce unique</strong>, entièrement faite ou personnalisée <strong>à la main</strong>. Les finitions peuvent légèrement varier d'une création à l'autre, ce qui en fait tout son charme et son authenticité.</p>
+                <p>Chaque article proposé dans cette boutique est une <strong>pièce unique</strong>, entièrement faite
+                    ou personnalisée <strong>à la main</strong>. Les finitions peuvent légèrement varier d'une création
+                    à l'autre, ce qui en fait tout son charme et son authenticité.</p>
             </div>
 
 
             <!-- Grille de Produits -->
             <div class="product-grid" id="productGrid">
                 <!-- Bijoux -->
-                <div class="product-card" data-category="bijoux">
+                <div class="product-card" data-category="bijoux" data-images="['https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=400&auto=format&fit=crop', 'https://images.unsplash.com/photo-1599643478514-4a8848d7c92b?q=80&w=400&auto=format&fit=crop', 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=400&auto=format&fit=crop']">
                     <div class="product-image">
                         <button class="like-button" data-item-id="crea-bijoux-amethyste" title="J'aime">
                             <svg viewBox="0 0 24 24">
@@ -49,7 +52,7 @@
                         </button>
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
                         <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=400&auto=format&fit=crop"
@@ -63,7 +66,7 @@
                     </div>
                 </div>
 
-                <div class="product-card" data-category="bijoux">
+                <div class="product-card" data-category="bijoux" data-images="['https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop', 'https://images.unsplash.com/photo-1599643478514-4a8848d7c92b?q=80&w=400&auto=format&fit=crop', 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=400&auto=format&fit=crop']">
                     <div class="product-image">
                         <button class="like-button" data-item-id="crea-bijoux-plumes-1" title="J'aime">
                             <svg viewBox="0 0 24 24">
@@ -73,7 +76,7 @@
                         </button>
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
                         <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
@@ -97,7 +100,7 @@
                         </button>
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
                         <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
@@ -121,7 +124,7 @@
                         </button>
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
                         <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
@@ -145,7 +148,7 @@
                         </button>
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
                         <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
@@ -170,7 +173,78 @@
                         </button>
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/" alt="Broderie">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tableau "Vagues de Bretagne"</h3>
+                        <p class="product-price">45,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="point-de-croix">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-pt-croix-vagues" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1517420812313-8054047e3350?q=80&w=400&auto=format&fit=crop"
+                            alt="Broderie">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tableau "Vagues de Bretagne"</h3>
+                        <p class="product-price">45,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="point-de-croix">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-pt-croix-vagues" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1517420812313-8054047e3350?q=80&w=400&auto=format&fit=crop"
+                            alt="Broderie">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tableau "Vagues de Bretagne"</h3>
+                        <p class="product-price">45,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="point-de-croix">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-pt-croix-vagues" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
                         <img src="https://images.unsplash.com/photo-1517420812313-8054047e3350?q=80&w=400&auto=format&fit=crop"
@@ -195,7 +269,7 @@
                         </button>
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
                         <img src="https://images.unsplash.com/photo-1589987607627-616cab5c2665?q=80&w=400&auto=format&fit=crop"
@@ -219,7 +293,7 @@
                         </button>
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
                         <img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?q=80&w=400&auto=format&fit=crop"
@@ -244,7 +318,7 @@
                         </button>
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
                         <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?q=80&w=400&auto=format&fit=crop"
@@ -268,7 +342,7 @@
                         </button>
                         <button class="quick-add-btn" title="Ajout rapide au panier">
                             <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor"/>
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
                         <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=400&auto=format&fit=crop"
@@ -287,25 +361,29 @@
                 <h2 class="section-title">Portfolio Créations Artisanales</h2>
                 <div class="portfolio-grid">
                     <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=600" alt="Atelier Bijoux">
+                        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=600"
+                            alt="Atelier Bijoux">
                         <div class="portfolio-overlay">
                             <span>Conception de bijoux fantaisies à l'atelier</span>
                         </div>
                     </div>
                     <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=600" alt="Point de croix">
+                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=600"
+                            alt="Point de croix">
                         <div class="portfolio-overlay">
                             <span>Détails de broderie et point de croix personnalisés</span>
                         </div>
                     </div>
                     <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1504221507732-5246c045949b?q=80&w=600" alt="Gravure sur verre">
+                        <img src="https://images.unsplash.com/photo-1504221507732-5246c045949b?q=80&w=600"
+                            alt="Gravure sur verre">
                         <div class="portfolio-overlay">
                             <span>Travail minutieux de gravure sur verre et pierre</span>
                         </div>
                     </div>
                     <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=600" alt="Travail sur bois">
+                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=600"
+                            alt="Travail sur bois">
                         <div class="portfolio-overlay">
                             <span>Façonnage et finition d'objets en bois massif</span>
                         </div>
@@ -321,7 +399,7 @@
     <div id="back-to-top-placeholder"></div>
     <div id="footer-placeholder"></div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 
 </html>

@@ -66,6 +66,63 @@
     box-shadow: 0 4px 15px rgba(0, 100, 200, 0.3);
 }
 
+/* --- Couleurs personnalisées des boutons de filtres --- */
+.filter-btn[data-filter="bijoux"] {
+    color: #a63c56;
+    border-color: #a63c56;
+}
+.filter-btn[data-filter="bijoux"]:hover {
+    background: rgba(255, 223, 230, 0.9);
+}
+.filter-btn[data-filter="bijoux"].active {
+    background: #a63c56;
+    border-color: #a63c56;
+    color: white;
+    box-shadow: 0 4px 15px rgba(166, 60, 86, 0.3);
+}
+
+.filter-btn[data-filter="point-de-croix"] {
+    color: #2e7d56;
+    border-color: #2e7d56;
+}
+.filter-btn[data-filter="point-de-croix"]:hover {
+    background: rgba(223, 245, 232, 0.9);
+}
+.filter-btn[data-filter="point-de-croix"].active {
+    background: #2e7d56;
+    border-color: #2e7d56;
+    color: white;
+    box-shadow: 0 4px 15px rgba(46, 125, 86, 0.3);
+}
+
+.filter-btn[data-filter="gravure"] {
+    color: #3a5998;
+    border-color: #3a5998;
+}
+.filter-btn[data-filter="gravure"]:hover {
+    background: rgba(225, 235, 255, 0.9);
+}
+.filter-btn[data-filter="gravure"].active {
+    background: #3a5998;
+    border-color: #3a5998;
+    color: white;
+    box-shadow: 0 4px 15px rgba(58, 89, 152, 0.3);
+}
+
+.filter-btn[data-filter="bois"] {
+    color: #9c5c28;
+    border-color: #9c5c28;
+}
+.filter-btn[data-filter="bois"]:hover {
+    background: rgba(255, 237, 219, 0.9);
+}
+.filter-btn[data-filter="bois"].active {
+    background: #9c5c28;
+    border-color: #9c5c28;
+    color: white;
+    box-shadow: 0 4px 15px rgba(156, 92, 40, 0.3);
+}
+
 /* --- Grille de Produits --- */
 .product-grid {
     display: grid;
@@ -123,13 +180,38 @@
     top: 15px;
     right: 15px;
     background: rgba(255, 255, 255, 0.9);
-    color: #0c0091;
+    color: #555;
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 100, 200, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Couleurs spécifiques par catégorie */
+.product-card[data-category="bijoux"] .product-tag {
+    background: rgba(255, 223, 230, 0.9);
+    color: #a63c56;
+    border-color: rgba(166, 60, 86, 0.2);
+}
+
+.product-card[data-category="point-de-croix"] .product-tag {
+    background: rgba(223, 245, 232, 0.9);
+    color: #2e7d56;
+    border-color: rgba(46, 125, 86, 0.2);
+}
+
+.product-card[data-category="gravure"] .product-tag {
+    background: rgba(225, 235, 255, 0.9);
+    color: #3a5998;
+    border-color: rgba(58, 89, 152, 0.2);
+}
+
+.product-card[data-category="bois"] .product-tag {
+    background: rgba(255, 237, 219, 0.9);
+    color: #9c5c28;
+    border-color: rgba(156, 92, 40, 0.2);
 }
 
 /* Infos produit */
@@ -266,3 +348,79 @@
         padding: 0 15px;
     }
 }
+
+/* --- Flèches de carrousel modale créations --- */
+#productModal .modal-container {
+    max-width: 1400px !important;
+    width: 95% !important;
+    max-height: 95vh !important;
+}
+#productModal .modal-image {
+    flex: 3 !important; /* Image takes 3/4 of the width */
+}
+#productModal .modal-content {
+    flex: 1 !important;
+    padding: 20px !important;
+}
+
+.crea-modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem !important; /* slightly larger arrows */
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    padding: 8px 12px !important;
+    z-index: 10;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+.crea-modal-arrow:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+.crea-modal-arrow.prev { left: 10px !important; }
+.crea-modal-arrow.next { right: 10px !important; }
+
+/* --- Style du tag catégorie dans la modale --- */
+#productModal .modal-category {
+    position: absolute;
+    top: 15px; /* align with the like button */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: #555;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 150;
+}
+
+#productModal[data-category="bijoux"] .modal-category {
+    background: rgba(255, 223, 230, 0.9);
+    color: #a63c56;
+    border-color: rgba(166, 60, 86, 0.2);
+}
+
+#productModal[data-category="point-de-croix"] .modal-category {
+    background: rgba(223, 245, 232, 0.9);
+    color: #2e7d56;
+    border-color: rgba(46, 125, 86, 0.2);
+}
+
+#productModal[data-category="gravure"] .modal-category {
+    background: rgba(225, 235, 255, 0.9);
+    color: #3a5998;
+    border-color: rgba(58, 89, 152, 0.2);
+}
+
+#productModal[data-category="bois"] .modal-category {
+    background: rgba(255, 237, 219, 0.9);
+    color: #9c5c28;
+    border-color: rgba(156, 92, 40, 0.2);
+}
+.modal-image { position: relative; }
