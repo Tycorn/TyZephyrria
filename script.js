@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
     initKeyboardNavigation();
     initSocialModals();
-    
+
     // Initialiser la News (uniquement page d'accueil)
     const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
     if (isHomePage && typeof initNewsModal === 'function') {
@@ -753,7 +753,7 @@ function initLikes() {
     document.querySelectorAll('.like-button').forEach(btn => {
         const itemId = btn.getAttribute('data-item-id');
         if (!itemId) return;
-        
+
         let baseLikes = getBaseLikes(itemId);
         let isLiked = savedLikes.includes(itemId);
         if (isLiked) btn.classList.add('active');
@@ -805,11 +805,11 @@ function initModal() {
     if (modal) {
         modal.remove(); // Force recreation to apply new HTML structure
     }
-    
+
     modal = document.createElement('div');
     modal.id = 'productModal';
     modal.className = 'modal';
-        modal.innerHTML = `
+    modal.innerHTML = `
             <div class="modal-container">
                 <button class="like-button crea-modal-like" id="creaModalLikeBtn" title="J'aime">
                     <svg viewBox="0 0 24 24" style="width:18px;height:18px; flex-shrink: 0;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
@@ -831,7 +831,7 @@ function initModal() {
                     </div>
                 </div>
             </div>`;
-        document.body.appendChild(modal);
+    document.body.appendChild(modal);
 
     const closeBtn = modal.querySelector('.modal-close');
     const modalImg = modal.querySelector('#creaModalImg');
@@ -861,7 +861,7 @@ function initModal() {
 
     function openModal(data) {
         currentItem = data;
-        
+
         if (data.images && data.images.length > 0) {
             currentImages = data.images.map(url => url.replace('&w=400', '&w=1200'));
         } else {
@@ -869,26 +869,26 @@ function initModal() {
         }
         currentImageIndex = 0;
         updateModalImageDisplay();
-        
+
         modalTitle.textContent = data.title;
         modalPrice.textContent = data.price || "";
         modalCat.textContent = data.category || "";
         modal.setAttribute('data-category', data.categoryId || "");
         modalDesc.textContent = data.description || "Cette pièce unique est le fruit d'un travail artisanal minutieux...";
-        
+
         const likeBtn = modal.querySelector('#creaModalLikeBtn');
         if (likeBtn && data.id) {
             likeBtn.setAttribute('data-item-id', data.id);
             const savedLikes = JSON.parse(localStorage.getItem('tyZephyrriaLikes')) || [];
             const isLiked = savedLikes.includes(String(data.id));
             let baseLikes = (Array.from(String(data.id)).reduce((acc, char) => acc + char.charCodeAt(0), 0) % 40) + 12;
-            
+
             if (isLiked) {
                 likeBtn.classList.add('active');
             } else {
                 likeBtn.classList.remove('active');
             }
-            
+
             const countSpan = likeBtn.querySelector('.like-count');
             if (countSpan) {
                 countSpan.textContent = isLiked ? baseLikes + 1 : baseLikes;
@@ -1001,7 +1001,7 @@ function initModal() {
                 if (dataImages) {
                     images = JSON.parse(dataImages.replace(/'/g, '"'));
                 }
-            } catch(err) {
+            } catch (err) {
                 console.error("Error parsing data-images", err);
             }
 
@@ -1145,16 +1145,16 @@ function initPhotoBoutique() {
         themesGrid.addEventListener('click', (e) => {
             const card = e.target.closest('.theme-card');
             if (!card) return;
-            
+
             if (card.tagName.toLowerCase() === 'a') {
                 e.preventDefault();
                 history.pushState(null, '', card.getAttribute('href'));
             } else {
                 history.pushState(null, '', '?cat=' + card.dataset.theme);
             }
-            
+
             const theme = card.dataset.theme;
-            
+
             let data = [];
             let titleText = '';
 
@@ -1260,7 +1260,7 @@ function initPhotoBoutique() {
                     let baseLikes = (Array.from(itemId).reduce((acc, char) => acc + char.charCodeAt(0), 0) % 40) + 12;
                     if (isLiked) zoomLikeBtn.classList.add('active');
                     else zoomLikeBtn.classList.remove('active');
-                    
+
                     let countSpan = zoomLikeBtn.querySelector('.like-count');
                     if (countSpan) countSpan.textContent = isLiked ? baseLikes + 1 : baseLikes;
                 }
@@ -1634,6 +1634,10 @@ window.initCheckout = function () {
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value || "Non précisé";
             const address = document.getElementById('address').value;
+            const messageInput = document.getElementById('message');
+            const message = messageInput ? messageInput.value : "";
+            const fullAddressInfo = message ? `${address}\n\nMessage additionnel :\n${message}` : address;
+            
             const sendCopy = document.getElementById('sendCopy').checked;
 
             // Construction du récapitulatif pour l'email (Texte et HTML)
@@ -1673,7 +1677,7 @@ window.initCheckout = function () {
                 user_name: firstName + " " + lastName,
                 user_email: email,
                 user_phone: phone,
-                user_address: address,
+                user_address: fullAddressInfo,
                 cart_details: itemsDetails, // Gardé pour la compatibilité
                 cart_html: itemsHtml,       // Nouvelle variable avec les photos
                 total_amount: formattedTotal,
@@ -1806,6 +1810,41 @@ function initNewsModal() {
     newsModal.className = 'modal';
     newsModal.innerHTML = `
         <div class="news-modal-container">
+            <!-- Cadre de vagulettes en art linéaire -->
+            <svg class="news-wave-frame" width="100%" height="100%" style="position:absolute; top:0; left:0; pointer-events:none; border-radius:8px; overflow:hidden;">
+                <defs>
+                    <pattern id="wave-x" width="30" height="15" patternUnits="userSpaceOnUse">
+                        <path d="M0,7.5 Q7.5,0 15,7.5 T30,7.5" fill="none" stroke="#0064C8" stroke-width="1.5"/>
+                    </pattern>
+                    <pattern id="wave-y" width="15" height="30" patternUnits="userSpaceOnUse">
+                        <path d="M7.5,0 Q0,7.5 7.5,15 T7.5,30" fill="none" stroke="#0064C8" stroke-width="1.5"/>
+                    </pattern>
+                </defs>
+                <!-- Multiples vagulettes (3 lignes) HAUT -->
+                <rect x="0" y="0" width="100%" height="15" fill="url(#wave-x)" />
+                <rect x="0" y="4" width="100%" height="15" fill="url(#wave-x)" opacity="0.6" />
+                <rect x="0" y="8" width="100%" height="15" fill="url(#wave-x)" opacity="0.3" />
+
+                <!-- BAS -->
+                <rect x="0" y="calc(100% - 15px)" width="100%" height="15" fill="url(#wave-x)" />
+                <rect x="0" y="calc(100% - 19px)" width="100%" height="15" fill="url(#wave-x)" opacity="0.6" />
+                <rect x="0" y="calc(100% - 23px)" width="100%" height="15" fill="url(#wave-x)" opacity="0.3" />
+
+                <!-- GAUCHE -->
+                <rect x="0" y="0" width="15" height="100%" fill="url(#wave-y)" />
+                <rect x="4" y="0" width="15" height="100%" fill="url(#wave-y)" opacity="0.6" />
+                <rect x="8" y="0" width="15" height="100%" fill="url(#wave-y)" opacity="0.3" />
+
+                <!-- DROITE -->
+                <rect x="calc(100% - 15px)" y="0" width="15" height="100%" fill="url(#wave-y)" />
+                <rect x="calc(100% - 19px)" y="0" width="15" height="100%" fill="url(#wave-y)" opacity="0.6" />
+                <rect x="calc(100% - 23px)" y="0" width="15" height="100%" fill="url(#wave-y)" opacity="0.3" />
+            </svg>
+
+            <div class="star-deco star-tl">✨</div>
+            <div class="star-deco star-tr">✨</div>
+            <div class="star-deco star-bl">✨</div>
+            <div class="star-deco star-br">✨</div>
             <div class="modal-close news-close">&times;</div>
             <div class="news-content">
                 <h2 class="news-title">${SITE_NEWS_TITLE}</h2>
@@ -1837,3 +1876,36 @@ function initNewsModal() {
         newsModal.classList.add('active');
     }, 1500);
 }
+
+/* ==========================================================================
+   CADRE ZEBRÉ ALÉATOIRE
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', () => {
+    const frame = document.querySelector('.central-frame');
+    if (frame) {
+        let css = "linear-gradient(135deg, \n";
+        let currentPos = 0;
+        let isBlack = true;
+        
+        while (currentPos < 100) {
+            // Épaisseur aléatoire entre 0.3% et 1.5%
+            let thickness = (Math.random() * 1.2 + 0.3); 
+            let nextPos = currentPos + thickness;
+            if (nextPos > 100) nextPos = 100;
+            
+            let color = isBlack ? '#000' : '#fff';
+            css += `    ${color} ${currentPos.toFixed(1)}%, ${color} ${nextPos.toFixed(1)}%`;
+            
+            currentPos = nextPos;
+            isBlack = !isBlack;
+            
+            if (currentPos < 100) {
+                css += ", \n";
+            } else {
+                css += "\n)";
+            }
+        }
+        
+        frame.style.background = css;
+    }
+});

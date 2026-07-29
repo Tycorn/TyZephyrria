@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    overflow-x: hidden; /* Empêche le défilement horizontal causé par des éléments positionnés en absolu (ex: le zèbre) */
     background-color: #f4f7f6;
     color: #333;
 }
@@ -598,6 +599,12 @@ footer p {
     .menu-center-buttons .nav-item a {
         font-size: 14px !important;
         padding: 8px 10px !important;
+    }
+
+    /* Le bouton d'accueil (petite maison) doit rester petit/carré sur portable */
+    .menu-center-buttons .home-btn a {
+        min-width: 0 !important;
+        margin-right: 58px; /* Le décale encore plus vers la gauche pour l'aligner au centre du bouton en dessous */
     }
 
     .is-logo-btn {
@@ -1619,4 +1626,115 @@ footer p {
         max-height: 90vh;
         overflow-y: auto;
     }
+}
+
+/* ==========================================================================
+   POPUP DE NEWS (MODAL)
+   ========================================================================== */
+
+/* Voile gris très pale et transparent */
+#newsModal {
+    background: rgba(150, 160, 170, 0.5) !important; /* Gris moyen/clair et transparent */
+    backdrop-filter: blur(4px); /* Floute le texte de la page derrière */
+    animation: none; /* Removed breathing animation to keep it clean */
+}
+
+.news-modal-container {
+    background: #fdfaf6; /* Beige vintage très clair */
+    width: 85%;
+    max-width: 420px; 
+    padding: 40px 30px;
+    border-radius: 8px; /* Cadre rectangulaire */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+    margin: auto; /* Centrage dans le flex du modal */
+    
+    /* Animation de zoom d'entrée */
+    transform: scale(0.5);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s;
+}
+
+@keyframes floatNews {
+    0% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1) translateY(-8px); }
+    100% { transform: scale(1) translateY(0); }
+}
+
+#newsModal.active .news-modal-container {
+    transform: scale(1);
+    opacity: 1;
+    animation: floatNews 4s ease-in-out infinite;
+    animation-delay: 0.5s; /* Démarre après l'animation de zoom */
+}
+
+/* Etoiles décoratives aux coins */
+.star-deco {
+    position: absolute;
+    font-size: 24px;
+    color: #d4af37; /* Doré */
+    animation: twinkle 2s infinite alternate;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes twinkle {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 1; }
+}
+
+.star-tl { top: 6px; left: 8px; }
+.star-tr { top: 6px; right: 8px; }
+.star-bl { bottom: 6px; left: 8px; }
+.star-br { bottom: 6px; right: 8px; }
+
+.news-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border: 2px solid #0064C8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    transition: all 0.2s ease;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.news-close:hover {
+    background: #ff4757;
+    color: white;
+    border-color: #ff4757;
+    transform: rotate(90deg) scale(1.1);
+}
+
+.news-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #0064C8;
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #0064C8;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+
+.news-text {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0 10px;
+    position: relative;
+    z-index: 2;
 }
