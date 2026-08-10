@@ -1,0 +1,437 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos Oiseaux du Monde - Ty Zephyrria</title>
+    <link rel="stylesheet" href="common.css?v=28">
+    <link rel="stylesheet" href="boutique-photos.css?v=28">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Dancing+Script:wght@400;600;700&family=MV+Boli&family=Pinyon+Script&family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="top">
+    <!-- Le script generera la page complete ! -->
+    <script src="script.js?v=30"></script>
+    <script>
+        const THEME_DATA = {
+            "title": "Photos Oiseaux du Monde",
+            "intro": "Pris en plein vol ou majestueusement perchés. Un festival de plumes et de becs, pour un moment de\n                        poésie, sans le risque de fientes intempestives.",
+            "photos": [
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-1",
+                    "alt": "Escapade en Camargue: Aigrette posée dans l\u0027eau",
+                    "desc": "Escapade en Camargue: Une aigrette se pose le temps d\u0027un instant, les pattes dans l\u0027eau",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/aigrette.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-2",
+                    "alt": "Escapade en Camargue: Aigrette qui s\u0027ébroue dans l\u0027eau",
+                    "desc": "Escapade en Camargue: Aigrette qui s\u0027ébroue dans l\u0027eau",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/aigrette-ebourriffee-dans-eau.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-3",
+                    "alt": "Escapade en Camargue: Aigrette en plein vol.",
+                    "desc": "Escapade en Camargue: Aigrette en plein vol.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/aigrette-en-vol.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-4",
+                    "alt": "Escapade en Camargue: Aigrette dans l'eau.",
+                    "desc": "Escapade en Camargue: Aigrette en bord d'eau.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/aigrette-semi-cachee.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-5",
+                    "alt": "Escapade en Camargue: Echasse blanche dans l'eau.",
+                    "desc": "Escapade en Camargue: Echasse blanche dans l'eau.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/echasse-blanche.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-6",
+                    "alt": "Escapade en Camargue: Avocette dans l'eau.",
+                    "desc": "Escapade en Camargue: Avocette dans l'eau.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/avocette-dans-coin.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-7",
+                    "alt": "Escapade en Camargue: Avocette avec effet miroir.",
+                    "desc": "Escapade en Camargue: Avocette avec effet miroir.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/avocette-miroir.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-8",
+                    "alt": "Escapade en Camargue: Avocette en cours de peche.",
+                    "desc": "Escapade en Camargue: Avocette en cours de peche.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/avocette-peche.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-9",
+                    "alt": "Escapade en Camargue: Multiples flamands roses dans le bassin.",
+                    "desc": "Escapade en Camargue: Multiples flamands roses dans le bassin.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/bassin-de-flamands-roses.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-10",
+                    "alt": "Escapade en Camargue: Cypres et flamands roses.",
+                    "desc": "Escapade en Camargue: Cypres et flamands roses.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/cypres-et-flamands-roses.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-11",
+                    "alt": "Escapade en Camargue: Flamands roses dans l'eau.",
+                    "desc": "Escapade en Camargue: Flamands roses dans l'eau.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-eau.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-12",
+                    "alt": "Escapade en Camargue: Flamand rose en vol.",
+                    "desc": "Escapade en Camargue: Flamand rose en vol.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-en-vol.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-13",
+                    "alt": "Escapade en Camargue: Flamand rose en vol.",
+                    "desc": "Escapade en Camargue: Flamand rose en vol.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-en-vol-2.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-14",
+                    "alt": "Escapade en Camargue: Flamand rose en vol en gros plan.",
+                    "desc": "Escapade en Camargue: Flamand rose en vol.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-en-vol-gros-plan.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-15",
+                    "alt": "Escapade en Camargue: Flamand rose se grattant.",
+                    "desc": "Escapade en Camargue: Flamand rose se grattant.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-grattant.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-16",
+                    "alt": "Escapade en Camargue: Flamand rose et avocette en cours de pêche.",
+                    "desc": "Escapade en Camargue: Flamand rose et avocette en cours de pêche.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-et-avocette-peche-2.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-17",
+                    "alt": "Escapade en Camargue: Flamand rose pêchant en couple.",
+                    "desc": "Escapade en Camargue: Flamand rose pêchant en couple.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-peche-a-2.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-18",
+                    "alt": "Escapade en Camargue: Flamand rose pêchant, bec caché dans l'eau.",
+                    "desc": "Escapade en Camargue: Flamand rose pêchant, bec caché dans l'eau.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-peche-bec-cache.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-19",
+                    "alt": "Escapade en Camargue: Flamand rose pêchant.",
+                    "desc": "Escapade en Camargue: Flamand rose pêchant.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-peche-bec-vaseux.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-20",
+                    "alt": "Escapade en Camargue: Flamand rose pêchant.",
+                    "desc": "Escapade en Camargue: Flamand rose pêchant.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-peche-bec-vaseux-2.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-21",
+                    "alt": "Escapade en Camargue: Flamand rose pêchant avec une avocette.",
+                    "desc": "Escapade en Camargue: Flamand rose pêchant avec une avocette.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-peche-bec-vaseux-avocette.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-22",
+                    "alt": "Escapade en Camargue: Flamand rose dans l'eau, patte dans l'eau.",
+                    "desc": "Escapade en Camargue: Flamand rose dans l'ea   u, patte dans l'eau.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-peche-bec-vaseux-leve-patte.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-23",
+                    "alt": "Escapade en Camargue: Flamand rose pêchant accompagné d'un flamand endormi.",
+                    "desc": "Escapade en Camargue: Flamand rose pêchant accompagné d'un flamand endormi.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-peche-et-sieste.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-24",
+                    "alt": "Escapade en Camargue: Flamand rose pêchant (format carré).",
+                    "desc": "Escapade en Camargue: Flamand rose pêchant (format carré).",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-peche-carre.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-25",
+                    "alt": "Escapade en Camargue: Flamand rose se reposant.",
+                    "desc": "Escapade en Camargue: Flamand rose se reposant.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-sieste-solo.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-26",
+                    "alt": "Escapade en Camargue: Portrait d'un flamand rose.",
+                    "desc": "Escapade en Camargue: Portrait d'un flamand rose.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-portrait.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-27",
+                    "alt": "Escapade en Camargue: Portrait d'un flamand rose.",
+                    "desc": "Escapade en Camargue: Portrait d'un flamand rose.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-portrait-large.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-28",
+                    "alt": "Escapade en Camargue: Flamand rose se grattant.",
+                    "desc": "Escapade en Camargue: Flamand rose se grattant.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-se-gratte.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-28",
+                    "alt": "Escapade en Camargue: Flamand rose en toilette.",
+                    "desc": "Escapade en Camargue: Flamand rose en toilette.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamand-rose-toilette.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-29",
+                    "alt": "Escapade en Camargue: Flamands roses en sieste commune.",
+                    "desc": "Escapade en Camargue: Flamands roses en sieste commune.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamands-roses-cache-tete.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-30",
+                    "alt": "Escapade en Camargue: Flamand rose en sieste.",
+                    "desc": "Escapade en Camargue: Flamand rose en sieste.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamands-roses-cache-tete-3.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-31",
+                    "alt": "Escapade en Camargue: Flamands roses en sieste.",
+                    "desc": "Escapade en Camargue: Flamands roses en sieste.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamands-roses-cache-tete-4-2.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-32",
+                    "alt": "Escapade en Camargue: Flamands roses en groupe.",
+                    "desc": "Escapade en Camargue: Flamands roses en groupe.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamands-roses-en-amas.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-33",
+                    "alt": "Escapade en Camargue: Flamands roses pêchant dans l'eau.",
+                    "desc": "Escapade en Camargue: Flamands roses pêchant dans l'eau.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamands-roses-pechant-vase.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-34",
+                    "alt": "Escapade en Camargue: Flamands roses en sieste en couple.",
+                    "desc": "Escapade en Camargue: Flamands roses en sieste en couple.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamands-roses-sieste.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-35",
+                    "alt": "Escapade en Camargue: Flamands roses en sieste en couple.",
+                    "desc": "Escapade en Camargue: Flamands roses en sieste en couple.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamands-roses-sieste-a-2.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-36",
+                    "alt": "Escapade en Camargue: Flamands roses en sieste en couple.",
+                    "desc": "Escapade en Camargue: Flamands roses en sieste en couple.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/flamands-roses-sieste-zoom-2.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-37",
+                    "alt": "Escapade en Camargue: Héron apportant une brindille pour son nid.",
+                    "desc": "Escapade en Camargue: Héron apportant une brindille pour son nid.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/heron-apporte-brindille.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-38",
+                    "alt": "Escapade en Camargue: Héron en couple contribuant à l'élaboration de leur nid.",
+                    "desc": "Escapade en Camargue: Héron en couple contribuant à l'élaboration de leur nid.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/heron-apporte-brindille-bisou.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-39",
+                    "alt": "Escapade en Camargue: Héron en plein atterrissage sur une branche.",
+                    "desc": "Escapade en Camargue: Héron en plein atterrissage sur une branche.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/heron-atterrissant-branches.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-40",
+                    "alt": "Escapade en Camargue: Héron atterrissant sur une branche.",
+                    "desc": "Escapade en Camargue: Héron atterrissant sur une branche.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/heron-atterrissant-branches-2.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-41",
+                    "alt": "Escapade en Camargue: Héron atterrissant sur une branche.",
+                    "desc": "Escapade en Camargue: Héron atterrissant sur une branche.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/heron-atterrissant-branches-3.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-42",
+                    "alt": "Escapade en Camargue: Héron dans les branchages.",
+                    "desc": "Escapade en Camargue: Héron dans les branchages.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/heron-dans-branchages.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-43",
+                    "alt": "Escapade en Camargue: Héron dans les branchages.",
+                    "desc": "Escapade en Camargue: Héron dans les branchages.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/heron-dans-branchages-2.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-44",
+                    "alt": "Escapade en Camargue: Héron en vol.",
+                    "desc": "Escapade en Camargue: Héron en vol.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/heron-en-vol.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-45",
+                    "alt": "Escapade en Camargue: Héron en vol.",
+                    "desc": "Escapade en Camargue: Héron en vol.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/heron-en-vol-2.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-46",
+                    "alt": "Escapade en Camargue: Héron en vol.",
+                    "desc": "Escapade en Camargue: Héron en vol.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/heron-en-vol-high-key.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-47",
+                    "alt": "Escapade en Camargue: Ibis noir et autres oiseaux dans les branches.",
+                    "desc": "Escapade en Camargue: Ibis noir et autres oiseaux dans les branches.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/ibis-et-compagnie-branches.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-48",
+                    "alt": "Escapade en Camargue: Ibis noir en vol.",
+                    "desc": "Escapade en Camargue: Ibis noir en vol.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/ibis-silhouette-en-vol.jpg"
+                },
+                {
+                    "title": "Escapade en Camargue",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-49",
+                    "alt": "Escapade en Camargue: Flamands roses dans un bassin avec fond de cyprès.",
+                    "desc": "Escapade en Camargue: Flamands roses dans un bassin avec fond de cyprès.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/un-cypres-et-flamands-roses.jpg"
+                }/*,
+                {
+                    "title": "",
+                    "price": "50 €",
+                    "id": "ph-oiseaux-50",
+                    "alt": "Escapade en Camargue: Ibis et autres oiseaux dans les branches.",
+                    "desc": "Escapade en Camargue: Ibis et autres oiseaux dans les branches.",
+                    "src": "assets/2-boutique-photographie/oiseaux/camargue/ibis-et-compagnie-branches-4.jpg"
+                },*/
+            ]
+        };
+        renderPhotoThemePage(THEME_DATA);
+    </script>
+</body>
+
+</html>

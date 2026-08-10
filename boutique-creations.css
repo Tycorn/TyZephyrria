@@ -161,12 +161,13 @@
     position: relative;
     height: 250px;
     overflow: hidden;
+    background-color: #f8f8f8;
 }
 
 .product-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.6s ease;
 }
 
@@ -212,6 +213,12 @@
     background: rgba(255, 237, 219, 0.9);
     color: #9c5c28;
     border-color: rgba(156, 92, 40, 0.2);
+}
+
+.product-card[data-category="autres"] .product-tag {
+    background: rgba(230, 223, 255, 0.9);
+    color: #603ca6;
+    border-color: rgba(96, 60, 166, 0.2);
 }
 
 /* Infos produit */
@@ -271,6 +278,42 @@
     border-top: 2px solid rgba(0, 100, 200, 0.1);
 }
 
+.portfolio-category-title {
+    text-align: center;
+    color: #0c0091;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    width: 100%;
+}
+.portfolio-category-title::after {
+    content: '';
+    width: 200px;
+    height: 2px;
+    min-height: 2px;
+    flex-shrink: 0;
+    background-color: #FDD900;
+    margin-top: 8px;
+}
+
+.portfolio-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .section-title {
     text-align: center;
     color: #0c0091;
@@ -296,12 +339,13 @@
     height: 300px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    background-color: #f8f8f8;
 }
 
 .portfolio-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
@@ -353,7 +397,8 @@
 #productModal .modal-container {
     max-width: 1400px !important;
     width: 95% !important;
-    max-height: 95vh !important;
+    height: 90vh !important;
+    max-height: 90vh !important;
 }
 #productModal .modal-image {
     flex: 3 !important; /* Image takes 3/4 of the width */
@@ -424,3 +469,25 @@
     border-color: rgba(156, 92, 40, 0.2);
 }
 .modal-image { position: relative; }
+
+/* --- Adaptations pour écrans de portables (Mobile) --- */
+@media (max-width: 768px) {
+    .product-info h3 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .product-price {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .add-to-cart {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .product-info {
+        padding: 12px;
+    }
+}

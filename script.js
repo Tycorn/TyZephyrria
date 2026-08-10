@@ -8,6 +8,92 @@
 const SITE_NEWS_TITLE = "News de la semaine ✨";
 const SITE_NEWS_TEXT = "Découvrez mes toutes dernières créations artisanales fraîchement ajoutées en boutique !";
 
+
+// ==========================================================================
+// RENDU DYNAMIQUE DES PAGES DE THEMES PHOTOS
+// ==========================================================================
+window.renderPhotoThemePage = function (data) {
+    document.body.innerHTML = `
+    <div id="banner-placeholder"></div>
+    <div class="main-content">
+        <div id="nav-placeholder"></div>
+        <main class="container">
+            <section class="photo-hero">
+                <h2 class="page-title">${data.title}</h2>
+                <div class="retour-themes-container">
+                    <a href="boutique-photos.html#themesGrid" class="btn-retour-themes">&larr; Retour thèmes photos</a>
+                </div>
+                <div class="photo-intro-text">
+                    <p>${data.intro}</p>
+                </div>
+            </section>
+            <div class="modal-photo-grid" id="modalPhotoGrid">
+                ${data.photos.map(p => `
+                <div class="modal-photo-item product-image">
+                    <button class="like-button" data-item-id="${p.id}" title="J'aime">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                        <span class="like-count" style="margin-left: 5px; font-size: 0.9rem;">0</span>
+                    </button>
+                    <img src="${p.src}" alt="${p.alt}" class="zoomable-img" loading="lazy" data-description="${p.desc}" data-item-id="${p.id}" data-price="${p.price}">
+                    <div class="photo-info-overlay" style="box-sizing: border-box; padding: 10px; text-align: center; background: #fff; position: static; width: 100%; font-size: 0.8rem; font-style: italic; display: flex; flex-direction: column; gap: 3px;">
+                        <strong style="line-height: 1.2;">${p.title || p.alt}</strong>
+                        <div style="line-height: 1.2;"><span class="photo-price">${p.price}</span> - <span class="tirage-mention">Tirage : 30x40cm</span></div>
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 2px;">
+                            <a href="contact.html?sujet=devis-photo" class="btn-devis-small" style="display: inline-block; background: #2e4a3c; color: white; padding: 4px 10px; border-radius: 4px; text-decoration: none; font-style: normal; font-size: 0.75rem; font-weight: bold; transition: background 0.3s;" onmouseover="this.style.background='#1e3328'" onmouseout="this.style.background='#2e4a3c'" title="Demander un devis pour un tirage particulier">Demander un devis</a>
+                            <button class="quick-add-btn" title="Ajout rapide au panier" style="position: static; opacity: 1; transform: none; width: 28px; height: 28px; background: rgba(0, 100, 200, 0.1); border: 1px solid #0064C8; display: flex; align-items: center; justify-content: center; padding: 0; border-radius: 50%;" onmouseover="this.style.background='#0064C8'; this.querySelector('svg').style.stroke='white'" onmouseout="this.style.background='rgba(0, 100, 200, 0.1)'; this.querySelector('svg').style.stroke='#0064C8'">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#0064C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; transition: stroke 0.3s;">
+                                    <circle cx="9" cy="21" r="1" />
+                                    <circle cx="20" cy="21" r="1" />
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `).join('')}
+            </div>
+        </main>
+        <div id="social-placeholder"></div>
+    </div>
+    <div id="pre-footer-placeholder"></div>
+    <div id="back-to-top-placeholder"></div>
+    <div id="footer-placeholder"></div>
+
+    <!-- ZOOM POPUP -->
+    <div id="zoomPopup" class="zoom-popup">
+        <div id="zoomClose" class="zoom-close-btn">&times;</div>
+        <div id="zoomPrev" class="zoom-nav-btn">&lsaquo;</div>
+        <div class="zoom-content-wrapper">
+            <img src="" id="zoomImg" alt="Zoom">
+            <div class="zoom-info-bar" style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 800px; margin-top: 20px; gap: 20px;">
+                <div id="zoomDescription" class="zoom-description" style="margin-top: 0; text-align: left; flex: 1;">
+                </div>
+                <div class="zoom-actions" style="display: flex; gap: 15px; align-items: center; flex-shrink: 0;">
+                    <a href="contact.html?sujet=devis-photo" id="zoomDevisBtn" class="btn-devis-zoom" title="Demander un devis pour un tirage particulier" style="display: flex; align-items: center; justify-content: center; height: 45px; padding: 0 15px; background: #2e4a3c; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9rem; transition: background 0.3s;" onmouseover="this.style.background='#1e3328'" onmouseout="this.style.background='#2e4a3c'">Devis tirage</a>
+                    <button class="like-button" id="zoomLikeBtn" title="J'aime" style="position: static; transform: none; width: auto; min-width: 55px; height: 45px; padding: 0 10px;">
+                        <svg viewBox="0 0 24 24" style="width: 22px; height: 22px;">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                        <span class="like-count" style="margin-left: 6px; font-size: 1rem; font-weight: bold;">0</span>
+                    </button>
+                    <button class="quick-add-btn" id="zoomCartBtn" title="Ajout rapide au panier" style="position: static; transform: none; width: 45px; height: 45px; opacity: 1;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="zoomNext" class="zoom-nav-btn">&rsaquo;</div>
+        <div id="zoomCounter" class="zoom-counter"></div>
+    </div>
+    `;
+};
+
 /* ==========================================================================
    COMPOSANTS COMMUNS (HEADER, SOCIAL, FOOTER)
    ========================================================================== */
@@ -49,14 +135,15 @@ const COMMON_TEMPLATES = {
                                 <li><a href="boutique-creations.html?cat=point-de-croix">Point de croix</a></li>
                                 <li><a href="boutique-creations.html?cat=gravure">Gravures diverses</a></li>
                                 <li><a href="boutique-creations.html?cat=bois">Travail sur bois</a></li>
+                                <li><a href="boutique-creations.html?cat=autres">Autres divers</a></li>
                                 <li><a href="boutique-creations.html?cat=favoris" style="color: #ff4757; font-weight: bold;">❤️ Mes Favoris</a></li>
                             </ul>
                         </li>
                         <li class="nav-item btn-bordered dropdown">
-                            <a href="boutique-photo.html">Photographie</a>
+                            <a href="boutique-photos.html">Photographie</a>
                             <ul class="dropdown-content">
-                                <li><a href="boutique-photo.html">Toutes les photos</a></li>
-                                <li><a href="boutique-photo.html?cat=favoris" style="color: #ff4757; font-weight: bold;">❤️ Mes Favoris</a></li>
+                                <li><a href="boutique-photos.html">Toutes les photos</a></li>
+                                <li><a href="boutique-photos.html?cat=favoris" style="color: #ff4757; font-weight: bold;">❤️ Mes Favoris</a></li>
                             </ul>
                         </li>
                         <li class="nav-item btn-bordered dropdown">
@@ -228,10 +315,12 @@ const COMMON_TEMPLATES = {
         </section>
     `,
     backToTop: `
-        <div class="back-to-top-row">
-            <a href="#top" class="back-link">Haut de page</a>
-            <a href="#top" class="back-link desktop-only">Haut de page</a>
-        </div>
+        <button id="floating-back-to-top" class="floating-back-to-top" title="Retour en haut" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="19" x2="12" y2="5"></line>
+                <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+        </button>
     `,
     footer: `
         <div class="visitor-counter">
@@ -317,6 +406,20 @@ document.addEventListener('DOMContentLoaded', () => {
     initWind();
     initFireFlames();
     initWaves();
+
+    // 4. Gestion du bouton flottant "Retour en haut"
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('floating-back-to-top');
+        if (btn) {
+            // Le bouton apparaît quand on scrolle d'un tiers de la hauteur totale document
+            const scrollThreshold = (document.documentElement.scrollHeight - window.innerHeight) / 3;
+            if (window.scrollY > scrollThreshold) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        }
+    });
     initDroplets();
     initFoliage();
     initBoutiqueFilter();
@@ -819,7 +922,7 @@ function initModal() {
                 <div class="modal-close">&times;</div>
                 <div class="modal-image" style="position: relative; flex: 1; display: flex; align-items: center; justify-content: center; background: #f8f8f8; min-height: 0; overflow: hidden;">
                     <button class="crea-modal-arrow prev" id="creaModalPrev" style="display:none; position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: white; background: rgba(0,0,0,0.4); border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; z-index: 100;">&#10094;</button>
-                    <img src="" alt="Zoom produit" id="creaModalImg" style="max-width: calc(100% - 80px); max-height: 100%; height: 100%; object-fit: contain;">
+                    <img src="" alt="Zoom produit" id="creaModalImg" style="width: 100%; height: 100%; object-fit: contain; padding: 0 40px; box-sizing: border-box;">
                     <button class="crea-modal-arrow next" id="creaModalNext" style="display:none; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: white; background: rgba(0,0,0,0.4); border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; z-index: 100;">&#10095;</button>
                 </div>
                 <div class="modal-content" style="position: relative; background: white; z-index: 10;">
@@ -875,6 +978,15 @@ function initModal() {
         modalCat.textContent = data.category || "";
         modal.setAttribute('data-category', data.categoryId || "");
         modalDesc.textContent = data.description || "Cette pièce unique est le fruit d'un travail artisanal minutieux...";
+
+        const modalActions = modal.querySelector('.modal-actions');
+        if (!data.price) {
+            if (modalActions) modalActions.style.display = 'none';
+            modalPrice.style.display = 'none';
+        } else {
+            if (modalActions) modalActions.style.display = 'block';
+            modalPrice.style.display = 'block';
+        }
 
         const likeBtn = modal.querySelector('#creaModalLikeBtn');
         if (likeBtn && data.id) {
@@ -973,7 +1085,7 @@ function initModal() {
                 const itemData = {
                     image: photoItem.querySelector('img').src,
                     title: photoItem.querySelector('strong').textContent,
-                    price: photoItem.innerText.split('\n').pop().trim(),
+                    price: photoItem.querySelector('img').getAttribute('data-price') || (photoItem.querySelector('.photo-price') ? photoItem.querySelector('.photo-price').textContent.trim() : photoItem.innerText.split('\n').pop().trim()),
                     category: "Photographie",
                     id: photoItem.querySelector('.like-button')?.getAttribute('data-item-id') || Date.now()
                 };
@@ -1017,10 +1129,21 @@ function initModal() {
         }
         const portfolioItem = e.target.closest('.portfolio-item');
         if (portfolioItem && !e.target.closest('.like-button') && !e.target.closest('.quick-add-btn')) {
+            let images = [];
+            try {
+                const dataImages = portfolioItem.getAttribute('data-images');
+                if (dataImages) {
+                    images = JSON.parse(dataImages.replace(/'/g, '"'));
+                }
+            } catch (err) {
+                console.error("Error parsing data-images for portfolio", err);
+            }
+
             openModal({
                 image: portfolioItem.querySelector('img').src,
+                images: images,
                 title: portfolioItem.querySelector('.portfolio-overlay span').textContent,
-                price: "Sur devis",
+                price: "",
                 category: "Réalisation Portfolio",
                 description: "Cette réalisation fait partie de mon portfolio. Contactez-moi pour un devis personnalisé."
             });
@@ -1147,8 +1270,7 @@ function initPhotoBoutique() {
             if (!card) return;
 
             if (card.tagName.toLowerCase() === 'a') {
-                e.preventDefault();
-                history.pushState(null, '', card.getAttribute('href'));
+                return; // Laisse le navigateur suivre le lien
             } else {
                 history.pushState(null, '', '?cat=' + card.dataset.theme);
             }
@@ -1196,15 +1318,23 @@ function initPhotoBoutique() {
                                 <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
                                 <span class="like-count" style="margin-left: 5px; font-size: 0.9rem;">${displayLikes}</span>
                             </button>
-                            <button class="quick-add-btn" title="Ajout rapide au panier">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-                            </button>
                             <div class="new-badge">
                                 <span class="icon">✨</span><span class="text">Nouveauté</span>
                             </div>
                             <img src="${photo.url}" alt="${photo.title}" class="zoomable-img" loading="lazy" data-description="${photo.description || ''}" data-item-id="${photo.id}" data-price="${photo.price}">
-                            <div class="photo-info-overlay" style="padding: 10px; text-align: center; background: rgba(255,255,255,0.9); position: absolute; bottom: 0; width: 100%; font-size: 0.8rem; font-style: italic;">
-                                <strong>${photo.title}</strong><br>${photo.price}
+                            <div class="photo-info-overlay" style="box-sizing: border-box; padding: 10px; text-align: center; background: #fff; position: static; width: 100%; font-size: 0.8rem; font-style: italic; display: flex; flex-direction: column; gap: 3px;">
+                                <strong style="line-height: 1.2;">${photo.title}</strong>
+                                <div style="line-height: 1.2;"><span class="photo-price">${photo.price}</span> - <span class="tirage-mention">Tirage : 30x40cm</span></div>
+                                <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 2px;">
+                                    <a href="contact.html?sujet=devis-photo" class="btn-devis-small" style="display: inline-block; background: #2e4a3c; color: white; padding: 4px 10px; border-radius: 4px; text-decoration: none; font-style: normal; font-size: 0.75rem; font-weight: bold; transition: background 0.3s;" onmouseover="this.style.background='#1e3328'" onmouseout="this.style.background='#2e4a3c'" title="Demander un devis pour un tirage particulier">Demander un devis</a>
+                                    <button class="quick-add-btn" title="Ajout rapide au panier" style="position: static; opacity: 1; transform: none; width: 28px; height: 28px; background: rgba(0, 100, 200, 0.1); border: 1px solid #0064C8; display: flex; align-items: center; justify-content: center; padding: 0; border-radius: 50%;" onmouseover="this.style.background='#0064C8'; this.querySelector('svg').style.stroke='white'" onmouseout="this.style.background='rgba(0, 100, 200, 0.1)'; this.querySelector('svg').style.stroke='#0064C8'">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="#0064C8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px; transition: stroke 0.3s;">
+                                            <circle cx="9" cy="21" r="1" />
+                                            <circle cx="20" cy="21" r="1" />
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                         `;
                         grid.appendChild(item);
@@ -1216,7 +1346,7 @@ function initPhotoBoutique() {
         });
     }
 
-    // Gestion du paramètre URL "cat" pour ouvrir automatiquement un thème (ex: boutique-photo.html?cat=portrait)
+    // Gestion du paramètre URL "cat" pour ouvrir automatiquement un thème (ex: boutique-photos.html?cat=portrait)
     const urlParams = new URLSearchParams(window.location.search);
     const cat = urlParams.get('cat');
     if (cat && themesGrid) {
@@ -1318,7 +1448,7 @@ function initPhotoBoutique() {
             if (itemContainer) {
                 const img = itemContainer.querySelector('img');
                 const title = itemContainer.querySelector('strong');
-                const price = itemContainer.querySelector('.photo-info-overlay').innerText.split('\n').pop();
+                const price = img && img.getAttribute('data-price') ? img.getAttribute('data-price') : (itemContainer.querySelector('.photo-price') ? itemContainer.querySelector('.photo-price').textContent.trim() : itemContainer.querySelector('.photo-info-overlay').innerText.split('\n').pop().trim());
 
                 if (window.addToCart) {
                     window.addToCart({
@@ -1366,8 +1496,14 @@ function initPhotoBoutique() {
             });
         }
 
-        zoomPopup.addEventListener('click', () => { zoomPopup.style.display = 'none'; });
-        zoomPopup.addEventListener('contextmenu', (e) => { e.preventDefault(); zoomPopup.style.display = 'none'; });
+        zoomPopup.addEventListener('click', (e) => {
+            if (e.target.closest('.like-button') || e.target.closest('.quick-add-btn')) return;
+            zoomPopup.style.display = 'none';
+        });
+        zoomPopup.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            zoomPopup.style.display = 'none';
+        });
     }
 }
 
@@ -1637,7 +1773,7 @@ window.initCheckout = function () {
             const messageInput = document.getElementById('message');
             const message = messageInput ? messageInput.value : "";
             const fullAddressInfo = message ? `${address}\n\nMessage additionnel :\n${message}` : address;
-            
+
             const sendCopy = document.getElementById('sendCopy').checked;
 
             // Construction du récapitulatif pour l'email (Texte et HTML)
@@ -1886,26 +2022,26 @@ document.addEventListener('DOMContentLoaded', () => {
         let css = "linear-gradient(135deg, \n";
         let currentPos = 0;
         let isBlack = true;
-        
+
         while (currentPos < 100) {
             // Épaisseur aléatoire entre 0.3% et 1.5%
-            let thickness = (Math.random() * 1.2 + 0.3); 
+            let thickness = (Math.random() * 1.2 + 0.3);
             let nextPos = currentPos + thickness;
             if (nextPos > 100) nextPos = 100;
-            
+
             let color = isBlack ? '#000' : '#fff';
             css += `    ${color} ${currentPos.toFixed(1)}%, ${color} ${nextPos.toFixed(1)}%`;
-            
+
             currentPos = nextPos;
             isBlack = !isBlack;
-            
+
             if (currentPos < 100) {
                 css += ", \n";
             } else {
                 css += "\n)";
             }
         }
-        
+
         frame.style.background = css;
     }
 });

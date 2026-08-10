@@ -47,6 +47,72 @@
     box-shadow: 0 4px 15px rgba(0, 100, 200, 0.3);
 }
 
+/* Couleurs spécifiques des boutons de filtre */
+.filter-btn[data-filter="auteur"] {
+    border-color: rgba(58, 89, 152, 0.4);
+    color: #3a5998;
+}
+.filter-btn[data-filter="auteur"]:hover {
+    background: rgba(225, 235, 255, 0.8);
+}
+.filter-btn[data-filter="auteur"].active {
+    background: #3a5998;
+    color: white;
+    border-color: #3a5998;
+}
+
+.filter-btn[data-filter="crayon"] {
+    border-color: rgba(46, 125, 86, 0.4);
+    color: #2e7d56;
+}
+.filter-btn[data-filter="crayon"]:hover {
+    background: rgba(223, 245, 232, 0.8);
+}
+.filter-btn[data-filter="crayon"].active {
+    background: #2e7d56;
+    color: white;
+    border-color: #2e7d56;
+}
+
+.filter-btn[data-filter="aquarelle"] {
+    border-color: rgba(166, 60, 86, 0.4);
+    color: #a63c56;
+}
+.filter-btn[data-filter="aquarelle"]:hover {
+    background: rgba(255, 223, 230, 0.8);
+}
+.filter-btn[data-filter="aquarelle"].active {
+    background: #a63c56;
+    color: white;
+    border-color: #a63c56;
+}
+
+.filter-btn[data-filter="acrylique"] {
+    border-color: rgba(156, 92, 40, 0.4);
+    color: #9c5c28;
+}
+.filter-btn[data-filter="acrylique"]:hover {
+    background: rgba(255, 237, 219, 0.8);
+}
+.filter-btn[data-filter="acrylique"].active {
+    background: #9c5c28;
+    color: white;
+    border-color: #9c5c28;
+}
+
+.filter-btn[data-filter="autres"] {
+    border-color: rgba(96, 60, 166, 0.4);
+    color: #603ca6;
+}
+.filter-btn[data-filter="autres"]:hover {
+    background: rgba(230, 223, 255, 0.8);
+}
+.filter-btn[data-filter="autres"].active {
+    background: #603ca6;
+    color: white;
+    border-color: #603ca6;
+}
+
 /* --- Grille de Produits --- */
 .product-grid {
     display: grid;
@@ -113,6 +179,37 @@
     border: 1px solid rgba(0, 100, 200, 0.1);
 }
 
+/* Couleurs spécifiques par catégorie */
+.product-card[data-category="auteur"] .product-tag {
+    background: rgba(225, 235, 255, 0.9);
+    color: #3a5998;
+    border-color: rgba(58, 89, 152, 0.2);
+}
+
+.product-card[data-category="crayon"] .product-tag {
+    background: rgba(223, 245, 232, 0.9);
+    color: #2e7d56;
+    border-color: rgba(46, 125, 86, 0.2);
+}
+
+.product-card[data-category="aquarelle"] .product-tag {
+    background: rgba(255, 223, 230, 0.9);
+    color: #a63c56;
+    border-color: rgba(166, 60, 86, 0.2);
+}
+
+.product-card[data-category="acrylique"] .product-tag {
+    background: rgba(255, 237, 219, 0.9);
+    color: #9c5c28;
+    border-color: rgba(156, 92, 40, 0.2);
+}
+
+.product-card[data-category="autres"] .product-tag {
+    background: rgba(230, 223, 255, 0.9);
+    color: #603ca6;
+    border-color: rgba(96, 60, 166, 0.2);
+}
+
 /* Infos produit */
 .product-info {
     padding: 20px;
@@ -161,6 +258,42 @@
     margin-bottom: 50px;
     padding-top: 60px;
     border-top: 2px solid rgba(0, 100, 200, 0.1);
+}
+
+.portfolio-category-title {
+    text-align: center;
+    color: #0c0091;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+    width: 100%;
+}
+.portfolio-category-title::after {
+    content: '';
+    width: 200px;
+    height: 2px;
+    min-height: 2px;
+    flex-shrink: 0;
+    background-color: #FDD900;
+    margin-top: 8px;
+}
+
+.portfolio-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section-title {

@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boutique Créations - Ty Zephyrria</title>
-    <link rel="stylesheet" href="common.css?v=2">
-    <link rel="stylesheet" href="boutique-creations.css?v=2">
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Dancing+Script:wght@600&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="common.css?v=24">
+    <link rel="stylesheet" href="boutique-creations.css?v=24">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Dancing+Script:wght@400;600;700&family=Pinyon+Script&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +27,9 @@
                 <button class="filter-btn" data-filter="point-de-croix">Point de croix</button>
                 <button class="filter-btn" data-filter="gravure">Gravures diverses</button>
                 <button class="filter-btn" data-filter="bois">Travail sur bois</button>
-                <button class="filter-btn" data-filter="favoris" style="color: #ff4757; font-weight: bold;">❤️ Mes Favoris</button>
+                <button class="filter-btn" data-filter="autres">Autres divers</button>
+                <button class="filter-btn" data-filter="favoris" style="color: #ff4757; font-weight: bold;">❤️ Mes
+                    Favoris</button>
             </div>
 
             <!-- Message d'information sur le caractère unique des articles -->
@@ -41,10 +42,12 @@
 
             <!-- Grille de Produits -->
             <div class="product-grid" id="productGrid">
-                <!-- Bijoux -->
-                <div class="product-card" data-category="bijoux" data-images="['https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=400&auto=format&fit=crop', 'https://images.unsplash.com/photo-1599643478514-4a8848d7c92b?q=80&w=400&auto=format&fit=crop', 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=400&auto=format&fit=crop']">
+                <!-- BIJOUX -->
+                <div class="product-card" data-category="bijoux"
+                    data-images="['assets/1-boutique-creations-artisanales/bijoux/bo-anneaux-cage-rectangle.png', 'assets/1-boutique-creations-artisanales/bijoux/bo-anneaux-cage.jpeg']">
                     <div class="product-image">
-                        <button class="like-button" data-item-id="crea-bijoux-amethyste" title="J'aime">
+                        <button class="like-button" data-item-id="crea-bijoux-bo-anneaux-mystere-cage-nacre"
+                            title="J'aime">
                             <svg viewBox="0 0 24 24">
                                 <path
                                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
@@ -55,20 +58,21 @@
                                 <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=400&auto=format&fit=crop"
-                            alt="Collier améthyste">
+                        <img src="assets/1-boutique-creations-artisanales/bijoux/bo-anneaux-cage-rectangle.png"
+                            alt="Boucles d'oreilles en anneaux avec perle en cage pour le mystère et perle effet nacré">
                         <span class="product-tag">Bijoux</span>
                     </div>
                     <div class="product-info">
-                        <h3>Collier Améthyste</h3>
-                        <p class="product-price">25,00 €</p>
+                        <h3>Boucles d'oreilles mystère effet nacré (oreilles percées, montable en clips)</h3>
+                        <p class="product-price">20,00 €</p>
                         <button class="add-to-cart">Détails</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="bijoux" data-images="['https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop', 'https://images.unsplash.com/photo-1599643478514-4a8848d7c92b?q=80&w=400&auto=format&fit=crop', 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=400&auto=format&fit=crop']">
+                <div class="product-card" data-category="bijoux"
+                    data-images="['assets/1-boutique-creations-artisanales/bijoux/bo-anneaux-rose-chevrons-rectangle.png']">
                     <div class="product-image">
-                        <button class="like-button" data-item-id="crea-bijoux-plumes-1" title="J'aime">
+                        <button class="like-button" data-item-id="crea-bijoux-bo-anneau-rose-chevrons" title="J'aime">
                             <svg viewBox="0 0 24 24">
                                 <path
                                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
@@ -79,20 +83,49 @@
                                 <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
-                            alt="Boucles d'oreilles">
+                        <img src="assets/1-boutique-creations-artisanales/bijoux/bo-anneaux-rose-chevrons-rectangle.png"
+                            alt="Boucles d'oreilles en anneaux avec motif chevrons rosés">
                         <span class="product-tag">Bijoux</span>
                     </div>
                     <div class="product-info">
-                        <h3>Boucles d'oreilles Plumes</h3>
+                        <h3>Boucles d'oreilles chevrons cerclés rosés (clips, montables en oreilles percées)</h3>
+                        <p class="product-price">20,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bijoux"
+                    data-images="['assets/1-boutique-creations-artisanales/bijoux/bo-anneaux-rouge-blanc-rectangle.png']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bijoux-bo-anneaux-rouge-et-blanc-plume"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/bijoux/bo-anneaux-rouge-blanc-rectangle.png"
+                            alt="Boucles d'oreilles rouge et blanche en anneaux avec une plume argentée">
+                        <span class="product-tag">Bijoux</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Boucles d'oreilles anneaux rouge et blanc motif plume (clips, montables en oreilles percées)
+                        </h3>
                         <p class="product-price">18,00 €</p>
                         <button class="add-to-cart">Détails</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="bijoux">
+                <div class="product-card" data-category="bijoux"
+                    data-images="['assets/1-boutique-creations-artisanales/bijoux/bo-blanc-bleu-rectangle.png']">
                     <div class="product-image">
-                        <button class="like-button" data-item-id="crea-bijoux-plumes-2" title="J'aime">
+                        <button class="like-button" data-item-id="crea-bijoux-bo-anneaux-bleu-blanc-etoile-lune"
+                            title="J'aime">
                             <svg viewBox="0 0 24 24">
                                 <path
                                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
@@ -103,20 +136,21 @@
                                 <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
-                            alt="Boucles d'oreilles">
+                        <img src="assets/1-boutique-creations-artisanales/bijoux/bo-blanc-bleu-rectangle.png"
+                            alt="Boucles d'oreilles bleu et blanche en petits cercles type ciel avec motif étoile et lune">
                         <span class="product-tag">Bijoux</span>
                     </div>
                     <div class="product-info">
-                        <h3>Boucles d'oreilles Plumes</h3>
-                        <p class="product-price">18,00 €</p>
+                        <h3>Boucles d'oreilles ciel étoilé avec lune (oreilles percées, montables en clips)</h3>
+                        <p class="product-price">20,00 €</p>
                         <button class="add-to-cart">Détails</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="bijoux">
+                <div class="product-card" data-category="bijoux"
+                    data-images="['assets/1-boutique-creations-artisanales/bijoux/bo-bleue-blanc-pompon-rectangle.png','assets/1-boutique-creations-artisanales/bijoux/bo-bleue-blanc-pompon.jpeg']">
                     <div class="product-image">
-                        <button class="like-button" data-item-id="crea-bijoux-plumes-3" title="J'aime">
+                        <button class="like-button" data-item-id="crea-bijoux-blue-pompon-blanc-pompon-" title="J'aime">
                             <svg viewBox="0 0 24 24">
                                 <path
                                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
@@ -127,20 +161,22 @@
                                 <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
-                            alt="Boucles d'oreilles">
+                        <img src="assets/1-boutique-creations-artisanales/bijoux/bo-bleue-blanc-pompon-rectangle.png"
+                            alt="Boucles d'oreilles bleues pendantes avec pompon blanc">
                         <span class="product-tag">Bijoux</span>
                     </div>
                     <div class="product-info">
-                        <h3>Boucles d'oreilles Plumes</h3>
-                        <p class="product-price">18,00 €</p>
+                        <h3>Boucles d'oreilles bleues pendantes avec pompon blanc (clips, montables en oreilles percées)
+                        </h3>
+                        <p class="product-price">20,00 €</p>
                         <button class="add-to-cart">Détails</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="bijoux">
+                <div class="product-card" data-category="bijoux"
+                    data-images="['assets/1-boutique-creations-artisanales/bijoux/bo-des-blancs-rectangle.png']">
                     <div class="product-image">
-                        <button class="like-button" data-item-id="crea-bijoux-plumes-3" title="J'aime">
+                        <button class="like-button" data-item-id="crea-bijoux-noir-blanc-des-blancs" title="J'aime">
                             <svg viewBox="0 0 24 24">
                                 <path
                                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
@@ -151,139 +187,636 @@
                                 <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
-                            alt="Boucles d'oreilles">
+                        <img src="assets/1-boutique-creations-artisanales/bijoux/bo-des-blancs-rectangle.png"
+                            alt="Boucles d'oreilles noires et blanches motif dés blancs">
                         <span class="product-tag">Bijoux</span>
                     </div>
                     <div class="product-info">
-                        <h3>Boucles d'oreilles Plumes</h3>
-                        <p class="product-price">18,00 €</p>
-                        <button class="add-to-cart">Détails</button>
-                    </div>
-                </div>
-
-                <!-- Point de croix -->
-                <div class="product-card" data-category="point-de-croix">
-                    <div class="product-image">
-                        <button class="like-button" data-item-id="crea-pt-croix-vagues" title="J'aime">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                            </svg>
-                        </button>
-                        <button class="quick-add-btn" title="Ajout rapide au panier">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
-                            </svg>
-                        </button>
-                        <img src="assets/1-boutique-creations-artisanales/" alt="Broderie">
-                        <span class="product-tag">Point de croix</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Tableau "Vagues de Bretagne"</h3>
-                        <p class="product-price">45,00 €</p>
-                        <button class="add-to-cart">Détails</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="point-de-croix">
-                    <div class="product-image">
-                        <button class="like-button" data-item-id="crea-pt-croix-vagues" title="J'aime">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                            </svg>
-                        </button>
-                        <button class="quick-add-btn" title="Ajout rapide au panier">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
-                            </svg>
-                        </button>
-                        <img src="https://images.unsplash.com/photo-1517420812313-8054047e3350?q=80&w=400&auto=format&fit=crop"
-                            alt="Broderie">
-                        <span class="product-tag">Point de croix</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Tableau "Vagues de Bretagne"</h3>
-                        <p class="product-price">45,00 €</p>
-                        <button class="add-to-cart">Détails</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="point-de-croix">
-                    <div class="product-image">
-                        <button class="like-button" data-item-id="crea-pt-croix-vagues" title="J'aime">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                            </svg>
-                        </button>
-                        <button class="quick-add-btn" title="Ajout rapide au panier">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
-                            </svg>
-                        </button>
-                        <img src="https://images.unsplash.com/photo-1517420812313-8054047e3350?q=80&w=400&auto=format&fit=crop"
-                            alt="Broderie">
-                        <span class="product-tag">Point de croix</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Tableau "Vagues de Bretagne"</h3>
-                        <p class="product-price">45,00 €</p>
-                        <button class="add-to-cart">Détails</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="point-de-croix">
-                    <div class="product-image">
-                        <button class="like-button" data-item-id="crea-pt-croix-vagues" title="J'aime">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                            </svg>
-                        </button>
-                        <button class="quick-add-btn" title="Ajout rapide au panier">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
-                            </svg>
-                        </button>
-                        <img src="https://images.unsplash.com/photo-1517420812313-8054047e3350?q=80&w=400&auto=format&fit=crop"
-                            alt="Broderie">
-                        <span class="product-tag">Point de croix</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Tableau "Vagues de Bretagne"</h3>
-                        <p class="product-price">45,00 €</p>
-                        <button class="add-to-cart">Détails</button>
-                    </div>
-                </div>
-
-                <!-- Gravures -->
-                <div class="product-card" data-category="gravure">
-                    <div class="product-image">
-                        <button class="like-button" data-item-id="crea-gravure-verre" title="J'aime">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                            </svg>
-                        </button>
-                        <button class="quick-add-btn" title="Ajout rapide au panier">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
-                            </svg>
-                        </button>
-                        <img src="https://images.unsplash.com/photo-1589987607627-616cab5c2665?q=80&w=400&auto=format&fit=crop"
-                            alt="Verre gravé">
-                        <span class="product-tag">Gravure</span>
-                    </div>
-                    <div class="product-info">
-                        <h3>Verre Gravé Personnalisé</h3>
+                        <h3>Boucles d'oreilles dés blancs (oreilles percées, montables en clips)</h3>
                         <p class="product-price">15,00 €</p>
                         <button class="add-to-cart">Détails</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="gravure">
+                <div class="product-card" data-category="bijoux"
+                    data-images="['assets/1-boutique-creations-artisanales/bijoux/bo-des-noirs-rectangle.png']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bijoux-noir-blanc-des-noirs" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/bijoux/bo-des-noirs-rectangle.png"
+                            alt="Boucles d'oreilles noires et blanches motif dés noirs">
+                        <span class="product-tag">Bijoux</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Boucles d'oreilles dés noirs (oreilles percées, montables en clips)</h3>
+                        <p class="product-price">15,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <!-- <div class="product-card" data-category="bijoux"
+                    data-images="['assets/1-boutique-creations-artisanales/bijoux/bo-anneau-rouge-blanc-rectangle.png','assets/1-boutique-creations-artisanales/bijoux/bo-anneau-rouge-blanc.jpeg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bijoux-plumes-3" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
+                            alt="Boucles d'oreilles">
+                        <span class="product-tag">Bijoux</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Boucles d'oreilles Plumes</h3>
+                        <p class="product-price">18,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bijoux"
+                    data-images="['assets/1-boutique-creations-artisanales/bijoux/bo-anneau-rouge-blanc-rectangle.png','assets/1-boutique-creations-artisanales/bijoux/bo-anneau-rouge-blanc.jpeg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bijoux-plumes-3" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?q=80&w=400&auto=format&fit=crop"
+                            alt="Boucles d'oreilles">
+                        <span class="product-tag">Bijoux</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Boucles d'oreilles Plumes</h3>
+                        <p class="product-price">18,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div> -->
+
+                <!-- POINT DE CROIX -->
+                <div class="product-card" data-category="point-de-croix"
+                    data-images="['assets/1-boutique-creations-artisanales/point-de-croix/trousse-fillette-ballon-rectangle.png','assets/1-boutique-creations-artisanales/point-de-croix/trousse-fillette-ballon-en-cours.jpeg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-pt-croix-fillette-noire-ballon-rose-coeur"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/point-de-croix/trousse-fillette-ballon-rectangle.png"
+                            alt="Broderie point de croix d'une fillette avec son ballon rose en coeur sur une trousse">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Trousse personnalisée en point de croix avec une fillette et son ballon rose</h3>
+                        <p class="product-price">40,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="point-de-croix"
+                    data-images="['assets/1-boutique-creations-artisanales/point-de-croix/trousse-ancres.jpeg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-pt-croix-trousse-noire-ancres" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/point-de-croix/trousse-ancres.jpeg"
+                            alt="Broderie point de croix personnalisation d'une trousse blanche et rose par un motif d'ancres">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Trousse noire à motif ancres</h3>
+                        <p class="product-price">35,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="point-de-croix"
+                    data-images="['assets/1-boutique-creations-artisanales/point-de-croix/trousse-chat.jpeg']">
+                    <div class="product-image">
+                        <button class="like-button"
+                            data-item-id="crea-pt-croix-trousse-blanche-silhouette-chat-noir-dos" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/point-de-croix/trousse-chat.jpeg"
+                            alt="Broderie point de croix d'une silhouette de chat noir de dos sur une trousse blanche">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Trousse blanche à motif de silhouette de chat noir de dos</h3>
+                        <p class="product-price">35,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="point-de-croix"
+                    data-images="['assets/1-boutique-creations-artisanales/point-de-croix/trousse-gecko.jpeg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-pt-croix-trousse-noire-gecko-vert"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/point-de-croix/trousse-gecko.jpeg"
+                            alt="Broderie point de croix d'un gecko vert sur une trousse noire">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Trousse noire à motif de gecko vert</h3>
+                        <p class="product-price">38,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="point-de-croix"
+                    data-images="['assets/1-boutique-creations-artisanales/point-de-croix/trousse-phare-bateau.jpeg']">
+                    <div class="product-image">
+                        <button class="like-button"
+                            data-item-id="crea-pt-croix-trousse-fond-large-blanche-phare-voilier" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/point-de-croix/trousse-phare-bateau.jpeg"
+                            alt="Broderie point de croix d'un phare et d'un voilier sur une trousse blanche à fond large">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Trousse blanche à fond large à motif de phare et de voilier</h3>
+                        <p class="product-price">35,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="point-de-croix"
+                    data-images="['assets/1-boutique-creations-artisanales/point-de-croix/trousse-renard.jpeg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-pt-croix-trousse-blanche-renard" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/point-de-croix/trousse-renard.jpeg"
+                            alt="Broderie point de croix d'un petit renard assis sur une trousse blanche">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Trousse blanche à motif d'un petit renard</h3>
+                        <p class="product-price">45,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <!-- <div class="product-card" data-category="point-de-croix"
+                    data-images="['assets/1-boutique-creations-artisanales/point-de-croix/bo-anneau-rouge-blanc-rectangle.png','assets/1-boutique-creations-artisanales/bijoux/bo-anneau-rouge-blanc.jpeg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-pt-croix-vagues" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1517420812313-8054047e3350?q=80&w=400&auto=format&fit=crop"
+                            alt="Broderie">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tableau "Vagues de Bretagne"</h3>
+                        <p class="product-price">35,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="point-de-croix"
+                    data-images="['assets/1-boutique-creations-artisanales/point-de-croix/bo-anneau-rouge-blanc-rectangle.png','assets/1-boutique-creations-artisanales/bijoux/bo-anneau-rouge-blanc.jpeg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-pt-croix-vagues" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1517420812313-8054047e3350?q=80&w=400&auto=format&fit=crop"
+                            alt="Broderie">
+                        <span class="product-tag">Point de croix</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tableau "Vagues de Bretagne"</h3>
+                        <p class="product-price">35,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div> -->
+
+                <!-- GRAVURES -->
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-bougeoire.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-bougeoire"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-bougeoire.jpg"
+                            alt="Photophore en verre gravé motif bougeoire">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif bougeoire</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-chat-online.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-chat-online"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-chat-oneline.jpg"
+                            alt="Photophore en verre gravé motif chat style oneline">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif chat style oneline</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-felin-oneline.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-felin-oneline"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-felin-oneline.jpg"
+                            alt="Photophore en verre gravé motif félin style oneline">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif félin style oneline</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-feuille-simple.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-feuille" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-feuille-simple.jpg"
+                            alt="Photophore en verre gravé motif feuille">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif feuille</h3>
+                        <p class="product-price">8,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-feuille-erable.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-feuille-erable"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-feuille-erable.jpg"
+                            alt="Photophore en verre gravé motif feuille d'érable">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif feuille d'érable</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-girafe-girafon-oneline.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-girafe-girafon"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-girafe-girafon-oneline.jpg"
+                            alt="Photophore en verre gravé motif girafe et girafon style oneline">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif girafe et girafon style oneline</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-lion-profil-oneline.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-lion-profil-oneline"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-lion-profil-oneline.jpg"
+                            alt="Photophore en verre gravé motif profil de lion style oneline">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif profil de lion style oneline</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-lionne-face-oneline.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-lionne-face-oneline"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-lionne-face-oneline.jpg"
+                            alt="Photophore en verre gravé motif lionne de face style oneline">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif lionne de face style oneline</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-notes-musique.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-notes-musique"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-notes-musique.jpg"
+                            alt="Photophore en verre gravé motif notes de musique et clé de sol">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif notes de musique et clé de sol</h3>
+                        <p class="product-price">8,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-pissenlit.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-pissenlit"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-pissenlit.jpg"
+                            alt="Photophore en verre gravé motif pissenlit">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif pissenlit</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-plumes-2.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-plume-2" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-plumes-2.jpg"
+                            alt="Photophore en verre gravé motif plumes">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif plumes</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-renard-assis.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-renard-assis"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-renard-assis.jpg"
+                            alt="Photophore en verre gravé motif renard assis">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif renard assis</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-yin-yang.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-yin-yang"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-yin-yang.jpg"
+                            alt="Photophore en verre gravé motif yin yang">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif yin yang</h3>
+                        <p class="product-price">10,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <!-- <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/bo-anneau-rouge-blanc-rectangle.png']">
                     <div class="product-image">
                         <button class="like-button" data-item-id="crea-gravure-galet" title="J'aime">
                             <svg viewBox="0 0 24 24">
@@ -307,10 +840,10 @@
                     </div>
                 </div>
 
-                <!-- Bois -->
-                <div class="product-card" data-category="bois">
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/bo-anneau-rouge-blanc-rectangle.png']">
                     <div class="product-image">
-                        <button class="like-button" data-item-id="crea-bois-plateau" title="J'aime">
+                        <button class="like-button" data-item-id="crea-gravure-galet" title="J'aime">
                             <svg viewBox="0 0 24 24">
                                 <path
                                     d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
@@ -321,18 +854,172 @@
                                 <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
                             </svg>
                         </button>
-                        <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?q=80&w=400&auto=format&fit=crop"
-                            alt="Plateau chêne">
-                        <span class="product-tag">Travail sur bois</span>
+                        <img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?q=80&w=400&auto=format&fit=crop"
+                            alt="Galet gravé">
+                        <span class="product-tag">Gravure</span>
                     </div>
                     <div class="product-info">
-                        <h3>Plateau en Chêne Massif</h3>
-                        <p class="product-price">55,00 €</p>
+                        <h3>Pierre Gravée Mantra</h3>
+                        <p class="product-price">12,00 €</p>
                         <button class="add-to-cart">Détails</button>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="bois">
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/bo-anneau-rouge-blanc-rectangle.png']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-galet" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?q=80&w=400&auto=format&fit=crop"
+                            alt="Galet gravé">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pierre Gravée Mantra</h3>
+                        <p class="product-price">12,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/bo-anneau-rouge-blanc-rectangle.png']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-galet" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?q=80&w=400&auto=format&fit=crop"
+                            alt="Galet gravé">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pierre Gravée Mantra</h3>
+                        <p class="product-price">12,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/bo-anneau-rouge-blanc-rectangle.png']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-galet" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?q=80&w=400&auto=format&fit=crop"
+                            alt="Galet gravé">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pierre Gravée Mantra</h3>
+                        <p class="product-price">12,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-bougeoire.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-verre-photophore-bougeoire"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/photophore-bougeoire.jpg"
+                            alt="verre gravé">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Photophore en verre gravé motif bougeoire</h3>
+                        <p class="product-price">8,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>    
+
+                <div class="product-card" data-category="gravure"
+                    data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/bo-anneau-rouge-blanc-rectangle.png']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-gravure-galet" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?q=80&w=400&auto=format&fit=crop"
+                            alt="Galet gravé">
+                        <span class="product-tag">Gravure</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pierre Gravée Mantra</h3>
+                        <p class="product-price">12,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div> -->
+
+                <!-- BOIS -->
+                <div class="product-card" data-category="bois"
+                    data-images="['assets/1-boutique-creations-artisanales/pyrogravure/planche-a-decouper-hippocampe.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-bois-petite-planche-decouper-hippocampe"
+                            title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/pyrogravure/planche-a-decouper-hippocampe.jpg"
+                            alt="Petite planche à découper à motif pyrogravé d'hippocampe">
+                        <span class="product-tag">Travail sur bois</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Petite planche à découper à motif pyrogravé d'hippocampe</h3>
+                        <p class="product-price">35,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <!-- <div class="product-card" data-category="bois"
+                    data-images="['assets/1-boutique-creations-artisanales/pyrogravure/bo-anneau-rouge-blanc-rectangle.png']">
                     <div class="product-image">
                         <button class="like-button" data-item-id="crea-bois-porte-cles" title="J'aime">
                             <svg viewBox="0 0 24 24">
@@ -354,38 +1041,200 @@
                         <p class="product-price">10,00 €</p>
                         <button class="add-to-cart">Détails</button>
                     </div>
+                </div> -->
+
+                <!-- AUTRES DIVERS -->
+                <div class="product-card" data-category="autres"
+                    data-images="['assets/1-boutique-creations-artisanales/autres-divers/perles-3d/manchot-4.jpg','assets/1-boutique-creations-artisanales/autres-divers/perles-3d/manchot-3.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-autres-perles-3d-manchot-1" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/autres-divers/perles-3d/manchot-4.jpg"
+                            alt="Petit manchot en perles en 3D">
+                        <span class="product-tag">Perles 3D</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Petit manchot en perles en 3D</h3>
+                        <p class="product-price">15,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
                 </div>
+
+                <div class="product-card" data-category="autres"
+                    data-images="['assets/1-boutique-creations-artisanales/autres-divers/perles-3d/dauphin-bleu-ciel.jpg','assets/1-boutique-creations-artisanales/autres-divers/perles-3d/dauphin-bleu-ciel-2.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-autres-perles-3d-dauphin-1" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/autres-divers/perles-3d/dauphin-bleu-ciel.jpg"
+                            alt="Dauphin en perles en 3D">
+                        <span class="product-tag">Perles 3D</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Dauphin en perles en 3D</h3>
+                        <p class="product-price">25,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="autres"
+                    data-images="['assets/1-boutique-creations-artisanales/autres-divers/perles-3d/orque-2.jpg','assets/1-boutique-creations-artisanales/autres-divers/perles-3d/orque.jpg','assets/1-boutique-creations-artisanales/autres-divers/perles-3d/orque-3.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-autres-perles-3d-orque-1" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/autres-divers/perles-3d/orque-2.jpg"
+                            alt="Orque en perles en 3D">
+                        <span class="product-tag">Perles 3D</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Orque en perles en 3D</h3>
+                        <p class="product-price">25,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="autres"
+                    data-images="['assets/1-boutique-creations-artisanales/autres-divers/perles-3d/renard-3.jpg','assets/1-boutique-creations-artisanales/autres-divers/perles-3d/renard-2.jpg','assets/1-boutique-creations-artisanales/autres-divers/perles-3d/renard.jpg']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-autres-perles-3d-renard-1" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="assets/1-boutique-creations-artisanales/autres-divers/perles-3d/renard-3.jpg"
+                            alt="Renard en perles en 3D">
+                        <span class="product-tag">Perles 3D</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Renard en perles en 3D</h3>
+                        <p class="product-price">25,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div>
+
+                <!-- <div class="product-card" data-category="autres"
+                    data-images="['https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=400&auto=format&fit=crop']">
+                    <div class="product-image">
+                        <button class="like-button" data-item-id="crea-autres-exemple" title="J'aime">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                        <button class="quick-add-btn" title="Ajout rapide au panier">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" fill="currentColor" />
+                            </svg>
+                        </button>
+                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=400&auto=format&fit=crop"
+                            alt="Création artisanale diverse">
+                        <span class="product-tag">Autres divers</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Création artisanale sur mesure</h3>
+                        <p class="product-price">20,00 €</p>
+                        <button class="add-to-cart">Détails</button>
+                    </div>
+                </div> -->
             </div>
-            <!-- Section Portfolio (Exemples de créations) -->
+
+            <!-- SECTION PORTFOLIO (Exemples de créations) -->
             <section class="creations-portfolio">
                 <h2 class="section-title">Portfolio Créations Artisanales</h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=600"
-                            alt="Atelier Bijoux">
-                        <div class="portfolio-overlay">
-                            <span>Conception de bijoux fantaisies à l'atelier</span>
+                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem; font-weight: 500; color: #333;">
+                    Découvrez quelques exemples de mes réalisations
+                    passées. (Cliquez pour voir le diaporama)</p>
+
+                <div class="portfolio-categories-grid">
+                    <div class="portfolio-category-card">
+                        <h3 class="portfolio-category-title" style="margin-top: 0;">Bijoux Fantaisies</h3>
+                        <div class="portfolio-item"
+                            data-images="['assets/1-boutique-creations-artisanales/bijoux/portfolio/bo-reliques-mort.jpeg','assets/1-boutique-creations-artisanales/bijoux/portfolio/bo-bleues-goutte-metal.jpeg','assets/1-boutique-creations-artisanales/bijoux/portfolio/bo-roses.jpeg']">
+                            <img src="assets/1-boutique-creations-artisanales/bijoux/portfolio/bo-reliques-mort-rectangle.png"
+                                alt="Atelier Bijoux anciennes créations">
+                            <div class="portfolio-overlay">
+                                <span>Conception de bijoux fantaisies uniques et personnalisées</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=600"
-                            alt="Point de croix">
-                        <div class="portfolio-overlay">
-                            <span>Détails de broderie et point de croix personnalisés</span>
+
+                    <div class="portfolio-category-card">
+                        <h3 class="portfolio-category-title" style="margin-top: 0;">Point de Croix</h3>
+                        <div class="portfolio-item"
+                            data-images="['assets/1-boutique-creations-artisanales/point-de-croix/portfolio/trousse-chats-noirs.jpeg','assets/1-boutique-creations-artisanales/point-de-croix/portfolio/trousse-chats-noirs-en-cours.jpeg','assets/1-boutique-creations-artisanales/point-de-croix/portfolio/trousse-domitille.jpeg','assets/1-boutique-creations-artisanales/point-de-croix/portfolio/trousse-koala.jpeg']">
+                            <img src="assets/1-boutique-creations-artisanales/point-de-croix/portfolio/trousse-chats-noirs.jpeg"
+                                alt="Point de croix">
+                            <div class="portfolio-overlay">
+                                <span>Autres réalisations de personnalisation d'objets par point de croix</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1504221507732-5246c045949b?q=80&w=600"
-                            alt="Gravure sur verre">
-                        <div class="portfolio-overlay">
-                            <span>Travail minutieux de gravure sur verre et pierre</span>
+
+                    <div class="portfolio-category-card">
+                        <h3 class="portfolio-category-title" style="margin-top: 0;">Gravures Diverses</h3>
+                        <div class="portfolio-item"
+                            data-images="['assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-gecko-reflet.jpeg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-gecko.jpg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-bateau.jpg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-cygne.jpg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-fleurs.jpg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-lion.jpg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-musique.jpg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-pieds.jpg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-poisson-tropical.jpg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-prince-renard.jpg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-saturne.jpg','assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-tigre.jpg']">
+                            <img src="assets/1-boutique-creations-artisanales/gravure-sur-verre/portfolio/verre-gecko-reflet.jpeg"
+                                alt="Gravure sur verre">
+                            <div class="portfolio-overlay">
+                                <span>Travail minutieux de gravure sur verre et sur pierre</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="portfolio-item">
-                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=600"
-                            alt="Travail sur bois">
-                        <div class="portfolio-overlay">
-                            <span>Façonnage et finition d'objets en bois massif</span>
+
+                    <div class="portfolio-category-card">
+                        <h3 class="portfolio-category-title" style="margin-top: 0;">Travail sur Bois</h3>
+                        <div class="portfolio-item"
+                            data-images="['assets/1-boutique-creations-artisanales/pyrogravure/portfolio/boite-cam-loup.jpeg','assets/1-boutique-creations-artisanales/pyrogravure/portfolio/boite-cam-secret.jpeg','assets/1-boutique-creations-artisanales/pyrogravure/portfolio/boite-petit-prince-renard.jpg','assets/1-boutique-creations-artisanales/pyrogravure/portfolio/boite-petit-prince-avion.jpg','assets/1-boutique-creations-artisanales/pyrogravure/portfolio/boite-petit-prince-allonge.jpg','assets/1-boutique-creations-artisanales/pyrogravure/portfolio/boite-petit-prince-texte.jpg']">
+                            <img src="assets/1-boutique-creations-artisanales/pyrogravure/portfolio/boite-cam-loup.jpeg"
+                                alt="Travail sur bois">
+                            <div class="portfolio-overlay">
+                                <span>Personnalisation d'objets en bois par pyrogravure ou collage</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-category-card">
+                        <h3 class="portfolio-category-title" style="margin-top: 0;">Autres Divers</h3>
+                        <div class="portfolio-item"
+                            data-images="['https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=600']">
+                            <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=600"
+                                alt="Autres créations">
+                            <div class="portfolio-overlay">
+                                <span>Créations artisanales diverses et variées</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -399,7 +1248,7 @@
     <div id="back-to-top-placeholder"></div>
     <div id="footer-placeholder"></div>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=27"></script>
 </body>
 
 </html>

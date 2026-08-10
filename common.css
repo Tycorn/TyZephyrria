@@ -6,7 +6,8 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; /* Empêche le défilement horizontal causé par des éléments positionnés en absolu (ex: le zèbre) */
+    overflow-x: hidden;
+    /* Empêche le défilement horizontal causé par des éléments positionnés en absolu (ex: le zèbre) */
     background-color: #f4f7f6;
     color: #333;
 }
@@ -19,7 +20,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
+    height: 90px;
     background-color: #96d8fce6;
     color: #0c0091e7;
     display: flex;
@@ -34,13 +35,13 @@ body {
 
 .top-banner h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 1.1;
 }
 
 .top-banner .small-text {
     margin: 7px 0 0 0;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-family: 'Dancing Script', cursive;
 }
 
@@ -109,7 +110,7 @@ body {
    STRUCTURE DE CONTENU
    ========================================================================== */
 .main-content {
-    margin-top: 80px;
+    margin-top: 105px;
     padding: 20px;
 }
 
@@ -198,17 +199,17 @@ nav {
 .nav-item a {
     text-decoration: none;
     color: #333;
-    padding: 8px 15px;
+    padding: 10px 18px;
     display: inline-block;
     transition: all 0.3s ease;
     text-align: center;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
 }
 
 .small-text a {
-    font-size: 13px !important;
-    padding: 2px 10px !important;
+    font-size: 15px !important;
+    padding: 4px 10px !important;
 }
 
 .btn-underlined a {
@@ -231,12 +232,15 @@ nav {
 .is-logo-btn {
     padding: 0 !important;
     box-sizing: border-box !important;
-    height: 42px !important; /* Adjusted to perfectly match other buttons */
+    height: 42px !important;
+    /* Adjusted to perfectly match other buttons */
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    min-width: 0 !important; /* Remove the 140px min-width so the border wraps the logo tightly */
-    transform: translateY(3px); /* Shift down to align with other buttons */
+    min-width: 0 !important;
+    /* Remove the 140px min-width so the border wraps the logo tightly */
+    transform: translateY(3px);
+    /* Shift down to align with other buttons */
 }
 
 .is-logo-btn .home-icon-logo {
@@ -416,9 +420,10 @@ nav {
 }
 
 /* Modales spécifiques aux réseaux sociaux */
-.social-modal-container {
+.modal-container.social-modal-container {
     max-width: 480px;
     width: 90%;
+    height: auto;
     flex-direction: column;
     padding: 30px;
     box-sizing: border-box;
@@ -474,39 +479,61 @@ nav {
    ========================================================================== */
 footer {
     background-color: #afffd7;
-    padding: 10px 10px; /* Réduit de 15px à 10px */
+    padding: 10px 10px;
+    /* Réduit de 15px à 10px */
     text-align: center;
     color: #2e4a3c;
     font-weight: normal;
 }
 
 footer p {
-    margin: 2px 0; /* Réduit de 5px à 2px */
-    line-height: 1.2; /* Réduit de 1.4 à 1.2 */
+    margin: 2px 0;
+    /* Réduit de 5px à 2px */
+    line-height: 1.2;
+    /* Réduit de 1.4 à 1.2 */
     font-weight: normal;
 }
 
 /* ==========================================================================
    HAUT DE PAGE
    ========================================================================== */
-.back-to-top-row {
+.floating-back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #0064C8;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
     display: flex;
-    justify-content: space-between;
-    padding: 20px 10%;
-    background-color: transparent;
-}
-
-.back-link {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.15rem;
-    color: #333;
-    text-decoration: underline;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
     transition: all 0.3s ease;
 }
 
-.back-link:hover {
-    color: #0064C8;
-    opacity: 0.8;
+.floating-back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.floating-back-to-top:hover {
+    background-color: #004b99;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.floating-back-to-top svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* ==========================================================================
@@ -516,7 +543,11 @@ footer p {
 /* TABLETTES (max 1000px) */
 @media (max-width: 1000px) {
     .top-banner h1 {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
+    }
+
+    .top-banner .small-text {
+        font-size: 1.3rem;
     }
 
     .row-main {
@@ -536,8 +567,8 @@ footer p {
     }
 
     .nav-item a {
-        font-size: 14px;
-        padding: 8px 10px;
+        font-size: 15px;
+        padding: 9px 12px;
         white-space: nowrap;
     }
 
@@ -571,6 +602,22 @@ footer p {
 
 /* MOBILES (max 768px) */
 @media (max-width: 768px) {
+    .top-banner {
+        height: 80px;
+    }
+
+    .top-banner h1 {
+        font-size: 1.3rem;
+    }
+
+    .top-banner .small-text {
+        font-size: 1.1rem;
+    }
+
+    .main-content {
+        margin-top: 90px;
+    }
+
     .menu-center-buttons {
         flex-wrap: wrap;
         justify-content: center;
@@ -583,11 +630,11 @@ footer p {
     }
 
     .menu-center-buttons .nav-item:nth-child(odd) {
-        justify-content: flex-end;
+        justify-content: center;
     }
 
     .menu-center-buttons .nav-item:nth-child(even) {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .menu-center-buttons .nav-item a {
@@ -597,24 +644,28 @@ footer p {
     }
 
     .menu-center-buttons .nav-item a {
-        font-size: 14px !important;
+        font-size: 15px !important;
         padding: 8px 10px !important;
     }
 
     /* Le bouton d'accueil (petite maison) doit rester petit/carré sur portable */
     .menu-center-buttons .home-btn a {
         min-width: 0 !important;
-        margin-right: 58px; /* Le décale encore plus vers la gauche pour l'aligner au centre du bouton en dessous */
+        margin-right: 0;
+        /* Margin removed since the column is now centered */
     }
 
     .is-logo-btn {
-        height: 40px !important; /* Match mobile height */
+        height: 40px !important;
+        /* Match mobile height */
         transform: none;
-        overflow: hidden !important; /* For the zoomed logo */
+        overflow: hidden !important;
+        /* For the zoomed logo */
     }
 
     .is-logo-btn .home-icon-logo {
-        transform: scale(1.3); /* Enlarge logo on mobile only */
+        transform: scale(1.3);
+        /* Enlarge logo on mobile only */
     }
 
     .social-line {
@@ -631,12 +682,11 @@ footer p {
         font-size: 0.75rem;
     }
 
-    .back-to-top-row {
-        justify-content: center;
-    }
-
-    .desktop-only {
-        display: none;
+    .floating-back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
     }
 }
 
@@ -815,9 +865,10 @@ footer p {
 
 .modal-container {
     background: white;
-    width: 90%;
-    max-width: 1000px;
-    max-height: 90vh;
+    width: 95%;
+    max-width: 1400px;
+    height: 85vh;
+    max-height: 95vh;
     border-radius: 20px;
     position: relative;
     display: flex;
@@ -843,7 +894,8 @@ footer p {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 100; /* Ensure it is above modal-content */
+    z-index: 100;
+    /* Ensure it is above modal-content */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-size: 24px;
     color: #333;
@@ -857,7 +909,7 @@ footer p {
 }
 
 .modal-image {
-    flex: 1.5;
+    flex: 2;
     background: #f8f8f8;
     display: flex;
     align-items: center;
@@ -880,10 +932,11 @@ footer p {
 }
 
 .modal-title {
-    font-family: 'Cinzel', serif;
+    font-family: inherit;
     font-size: 2rem;
     color: #333;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .crea-modal-like {
@@ -898,10 +951,11 @@ footer p {
     justify-content: center;
     gap: 8px;
     border-radius: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     background: white;
     z-index: 150;
 }
+
 @media (max-width: 768px) {
     .crea-modal-like {
         left: 25px;
@@ -1033,8 +1087,9 @@ footer p {
 @media (max-width: 768px) {
     .modal-container {
         flex-direction: column;
-        width: 95%;
-        max-height: 90vh;
+        width: 98%;
+        height: 95vh;
+        max-height: 95vh;
     }
 
     .modal-image {
@@ -1052,9 +1107,10 @@ footer p {
     .modal-title {
         font-size: 1.2rem;
         margin-top: 15px !important;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
+        text-align: center;
     }
-    
+
     .modal-description {
         font-size: 0.9rem;
         margin-bottom: 10px;
@@ -1634,22 +1690,28 @@ footer p {
 
 /* Voile gris très pale et transparent */
 #newsModal {
-    background: rgba(150, 160, 170, 0.5) !important; /* Gris moyen/clair et transparent */
-    backdrop-filter: blur(4px); /* Floute le texte de la page derrière */
-    animation: none; /* Removed breathing animation to keep it clean */
+    background: rgba(150, 160, 170, 0.5) !important;
+    /* Gris moyen/clair et transparent */
+    backdrop-filter: blur(4px);
+    /* Floute le texte de la page derrière */
+    animation: none;
+    /* Removed breathing animation to keep it clean */
 }
 
 .news-modal-container {
-    background: #fdfaf6; /* Beige vintage très clair */
+    background: #fdfaf6;
+    /* Beige vintage très clair */
     width: 85%;
-    max-width: 420px; 
+    max-width: 420px;
     padding: 40px 30px;
-    border-radius: 8px; /* Cadre rectangulaire */
+    border-radius: 8px;
+    /* Cadre rectangulaire */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     position: relative;
     text-align: center;
-    margin: auto; /* Centrage dans le flex du modal */
-    
+    margin: auto;
+    /* Centrage dans le flex du modal */
+
     /* Animation de zoom d'entrée */
     transform: scale(0.5);
     opacity: 0;
@@ -1657,37 +1719,69 @@ footer p {
 }
 
 @keyframes floatNews {
-    0% { transform: scale(1) translateY(0); }
-    50% { transform: scale(1) translateY(-8px); }
-    100% { transform: scale(1) translateY(0); }
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1) translateY(-8px);
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
 }
 
 #newsModal.active .news-modal-container {
     transform: scale(1);
     opacity: 1;
     animation: floatNews 4s ease-in-out infinite;
-    animation-delay: 0.5s; /* Démarre après l'animation de zoom */
+    animation-delay: 0.5s;
+    /* Démarre après l'animation de zoom */
 }
 
 /* Etoiles décoratives aux coins */
 .star-deco {
     position: absolute;
     font-size: 24px;
-    color: #d4af37; /* Doré */
+    color: #d4af37;
+    /* Doré */
     animation: twinkle 2s infinite alternate;
     pointer-events: none;
     z-index: 10;
 }
 
 @keyframes twinkle {
-    0% { transform: scale(0.8); opacity: 0.5; }
-    100% { transform: scale(1.2); opacity: 1; }
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
 }
 
-.star-tl { top: 6px; left: 8px; }
-.star-tr { top: 6px; right: 8px; }
-.star-bl { bottom: 6px; left: 8px; }
-.star-br { bottom: 6px; right: 8px; }
+.star-tl {
+    top: 6px;
+    left: 8px;
+}
+
+.star-tr {
+    top: 6px;
+    right: 8px;
+}
+
+.star-bl {
+    bottom: 6px;
+    left: 8px;
+}
+
+.star-br {
+    bottom: 6px;
+    right: 8px;
+}
 
 .news-close {
     position: absolute;
@@ -1706,7 +1800,7 @@ footer p {
     color: #333;
     transition: all 0.2s ease;
     z-index: 100;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .news-close:hover {
